@@ -1,0 +1,16 @@
+D:\source\dsg\dsg\bin\Debug\dsg.exe
+D:\source\dsg\dsg\bin\Debug\dsg.pdb
+D:\source\dsg\dsg\obj\Debug\dsg.csprojResolveAssemblyReference.cache
+D:\source\dsg\dsg\obj\Debug\dsg.FrmMain.resources
+D:\source\dsg\dsg\obj\Debug\dsg.Properties.Resources.resources
+D:\source\dsg\dsg\obj\Debug\dsg.csproj.GenerateResource.Cache
+D:\source\dsg\dsg\obj\Debug\dsg.exe
+D:\source\dsg\dsg\obj\Debug\dsg.pdb
+D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmLogin.resources
+D:\source\dsg\dsg\obj\Debug\lottory.gui.FrmStaffAdd.resources
+D:\source\dsg\dsg\obj\Debug\lottory.gui.FrmStaffView.resources
+D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmInitConfig.resources
+D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPassword.resources
+D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartAdd.resources
+D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartReceive.resources
+D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartView.resources
