@@ -29,38 +29,22 @@ namespace dsg.gui
         {
             Cursor cursor = Cursor.Current;
             Cursor.Current = Cursors.WaitCursor;
-            //if (dc.getLoginByCode(txtId.Text, txtPwd.Text))
-            //{
-            //    Staff sf = dc.sfdb.selectByCode(txtId.Text);
-            //    if (sf.Priority.Equals("1"))
-            //    {
-            //        FrmInputAdd frm = new FrmInputAdd(txtId.Text,dc);
-            //        //frm.setLC(lc);
-            //        frm.Show();
-            //        this.Hide();
-            //    }
-            //    else if (sf.Priority.Equals("2"))
-            //    {
-            //        FrmLottoApprove frm = new FrmLottoApprove(txtId.Text,dc);
-            //        frm.Show();
-            //        this.Hide();
-            //    }
-            //    else if (sf.Priority.Equals("3"))
-            //    {
-            //        FrmMain frm = new FrmMain(null, txtId.Text,dc);
-            //        frm.Show();
-            //        this.Hide();
-            //    }
-            //}
-            //else
-            //{
-            //    if (txtId.Text.Equals("pop") && txtPwd.Text.Equals("Ekartc2c5"))
-            //    {
-            //        FrmMain frm = new FrmMain(null, txtId.Text, dc);
-            //        frm.Show();
-            //        this.Hide();
-            //    }
-            //}
+            if (dc.getLoginByCode(txtId.Text, txtPwd.Text))
+            {
+                Staff sf = dc.sfdb.selectByCode(txtId.Text);
+                FrmMain frm = new FrmMain(null, txtId.Text, dc);
+                frm.Show();
+                this.Hide();
+            }
+            else
+            {
+                if (txtId.Text.Equals("pop") && txtPwd.Text.Equals("Ekartc2c5"))
+                {
+                    FrmMain frm = new FrmMain(null, txtId.Text, dc);
+                    frm.Show();
+                    this.Hide();
+                }
+            }
             Cursor.Current = cursor;
         }
 

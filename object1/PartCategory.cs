@@ -7,6 +7,6 @@ namespace dsg.object1
 {
     public class PartCategory:Persistent
     {
-        public String Id = "", cateName = "", Actice = "", remark = "";
+        public String Id = "", cateName = "", Actice = "", remark = "", Code="";
     }
 }

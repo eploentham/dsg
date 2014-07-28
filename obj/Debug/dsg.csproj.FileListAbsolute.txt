@@ -14,3 +14,4 @@ D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPassword.resources
 D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartAdd.resources
 D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartReceive.resources
 D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartView.resources
+D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartStockCard.resources

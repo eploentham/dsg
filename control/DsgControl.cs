@@ -16,9 +16,17 @@ namespace dsg.control
         public ConnectDB conn;//
         public StaffDB sfdb;
         public CustomerDB cudb;
+        public PartDB padb;
+        public PartTypeDB ptdb;
+        public PartSerialNoDB psdb;
+        public PartCategoryDB pcdb;
         
         public Staff staff;
         public Customer cu;
+        public Part pa;
+        public PartType pt;
+        public PartSerialNo ps;
+        public PartCategory pc;
         
         public String thooId = "";
 
@@ -44,10 +52,17 @@ namespace dsg.control
             conn = new ConnectDB(initC);
             sfdb = new StaffDB(conn);
             cudb = new CustomerDB(conn);
+            padb = new PartDB(conn);
+            ptdb = new PartTypeDB(conn);
+            psdb = new PartSerialNoDB(conn);
+            pcdb = new PartCategoryDB(conn);
             
             staff = new Staff();
             cu = new Customer();
-            
+            pa = new Part();
+            pt = new PartType();
+            ps = new PartSerialNo();
+            pc = new PartCategory();
         }
         public ComboBoxItem getCboItem(ComboBox c, String valueId)
         {

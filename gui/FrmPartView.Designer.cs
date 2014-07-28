@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,17 +72,30 @@
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(907, 12);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(99, 39);
+            this.btnAdd.TabIndex = 5;
+            this.btnAdd.Text = "เพื่มใหม่";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // FrmPartView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1265, 774);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvView);
             this.Name = "FrmPartView";
             this.Text = "FrmPartView";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmPartView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -94,5 +108,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

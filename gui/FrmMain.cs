@@ -1,4 +1,5 @@
 ﻿using dsg.control;
+using dsg.gui;
 using dsg.object1;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,10 @@ namespace dsg
         DsgControl dc;
         Form frm;
         Staff sf;
-        public FrmMain()
+        public FrmMain(Form f, String sfCode, DsgControl l)
         {
             InitializeComponent();
+            initConfig(f, sfCode, l);
         }
         private void initConfig(Form f, String sfCode, DsgControl l)
         {
@@ -41,7 +43,7 @@ namespace dsg
 
             //if (sf.Priority.Equals("1") || sf.Priority.Equals("3"))
             //{
-            //    tv1.Nodes.Add("nInputAdd", "ป้อนข้อมูล");
+            tv1.Nodes.Add("nPartView", "ข้อมูลอะไหล่ต่างๆ");
             //    tv1.Nodes.Add("nInputImage", "ป้อนข้อมูลจากรูป");
             //    tv1.Nodes.Add("nInputView", "ดูข้อมูลเก่า");
             //    tv1.Nodes.Add("nRewardAdd", "ป้อนรางวัล");
@@ -88,11 +90,11 @@ namespace dsg
 
         private void tv1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            //if (e.Node.Name.ToString() == "nThooView")
-            //{
-            //    FrmThooView frm = new FrmThooView();
-            //    showFrame(frm);
-            //}
+            if (e.Node.Name.ToString() == "nPartView")
+            {
+                FrmPartView frm = new FrmPartView();
+                showFrame(frm);
+            }
             //else if (e.Node.Name.ToString() == "nStaffView")
             //{
             //    FrmStaffView frm = new FrmStaffView();
