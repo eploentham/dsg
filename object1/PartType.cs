@@ -7,6 +7,6 @@ namespace dsg.object1
 {
     public class PartType:Persistent
     {
-        public String Id = "", partTName = "", Active = "", Remark = "", Code="";
+        public String Id = "", partTName = "", Active = "", Remark = "", Code="", sort1="";
     }
 }

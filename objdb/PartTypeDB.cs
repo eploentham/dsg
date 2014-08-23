@@ -25,9 +25,10 @@ namespace dsg.objdb
             pt.partTName = "part_type_name";
             pt.Remark = "part_type_remark";
             pt.Code = "part_type_code";
+            pt.sort1 = "sort1";
 
-            pt.table = "part_type_id";
-            pt.pkField = "b_part_type";
+            pt.table = "b_part_type";
+            pt.pkField = "part_type_id";
         }
         private PartType setData(PartType item, DataTable dt)
         {
@@ -36,6 +37,7 @@ namespace dsg.objdb
             item.partTName = dt.Rows[0][pt.partTName].ToString();
             item.Remark = dt.Rows[0][pt.Remark].ToString();
             item.Code = dt.Rows[0][pt.Code].ToString();
+            item.sort1 = dt.Rows[0][pt.sort1].ToString();
 
             return item;
         }
@@ -43,7 +45,7 @@ namespace dsg.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + pt.table + " Where " + pt.Active + "='1'";
+            sql = "Select * From " + pt.table + " Where " + pt.Active + "='1' Order By "+pt.sort1;
             dt = conn.selectData(sql);
 
             return dt;
@@ -62,6 +64,7 @@ namespace dsg.objdb
                     item.partTName = dt1.Rows[0][pt.partTName].ToString();
                     item.Remark = dt1.Rows[0][pt.Remark].ToString();
                     item.Code = dt1.Rows[0][pt.Code].ToString();
+                    item.sort1 = dt1.Rows[0][pt.sort1].ToString();
                     ls.Add(item);
                 }
             }
@@ -98,7 +101,7 @@ namespace dsg.objdb
             String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
-                p.Id = p.getGenID();
+                p.Id = "pt"+p.getGenID();
             }
             //if (p.Limit1.Equals(""))
             //{
@@ -107,9 +110,9 @@ namespace dsg.objdb
             p.partTName = p.partTName.Replace("''", "'");
             p.Remark = p.Remark.Replace("''", "'");
             sql = "Insert Into " + pt.table + " (" + pt.pkField + "," + pt.Active + "," + pt.partTName + "," +
-                pt.Remark + "," + pt.Code + ") " +
+                pt.Remark + "," + pt.Code + "," + pt.sort1 + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.partTName + "','" +
-                p.Remark + "','" + p.Code + "')";
+                p.Remark + "','" + p.Code + "','" + p.sort1 + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -132,6 +135,7 @@ namespace dsg.objdb
             p.partTName = p.partTName.Replace("''", "'");
             sql = "Update " + pt.table + " Set " + pt.partTName + "='" + p.partTName + "', " +
                 pt.Remark + "='" + p.Remark + "', " +
+                pt.sort1 + "='" + p.sort1 + "', " +
                 pt.Code + "='" + p.Code + "' " +
                 "Where " + pt.pkField + "='" + p.Id + "'";
             try
@@ -147,11 +151,15 @@ namespace dsg.objdb
             }
             return chk;
         }
-        public String insertSale(PartType p)
+        public String insertPartType(PartType p)
         {
             PartType item = new PartType();
             String chk = "";
             item = selectByPk(p.Id);
+            if (item.sort1.Equals(""))
+            {
+                item.sort1 = "99";
+            }
             if (item.Id == "")
             {
                 chk = insert(p);
@@ -169,7 +177,7 @@ namespace dsg.objdb
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }
-        public ComboBox getCboSale(ComboBox c)
+        public ComboBox getCboPartType(ComboBox c)
         {
             ComboBoxItem item = new ComboBoxItem();
             DataTable dt = selectAll();
@@ -178,7 +186,7 @@ namespace dsg.objdb
             {
                 item = new ComboBoxItem();
                 item.Value = dt.Rows[i][pt.Id].ToString();
-                item.Text = dt.Rows[i][pt.Code].ToString();
+                item.Text = dt.Rows[i][pt.partTName].ToString();
                 c.Items.Add(item);
                 //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
                 //c.Items.Add(new );

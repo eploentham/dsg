@@ -260,6 +260,7 @@ namespace dsg.object1
                 return iSale.Value;
             }
         }
+
         public String LottoNull(object o)
         {
             String chk = "";
@@ -289,18 +290,21 @@ namespace dsg.object1
                 a = 0;
             }
             return a.ToString();
-            //if (o == null)
-            //{
-            //    return "0";
-            //}
-            //else if (o.ToString() == "")
-            //{
-            //    return "0";
-            //}
-            //else
-            //{
-            //    return o.ToString();
-            //}
+
+        }
+        public String NumberNullSort(object o)
+        {
+            float a = new float();
+            try
+            {
+                a = float.Parse(o.ToString());
+            }
+            catch (Exception ex)
+            {
+                a = 99;
+            }
+            return a.ToString();
+
         }
         //public String shortPaidName(String name)
         //{

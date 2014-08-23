@@ -20,6 +20,8 @@ namespace dsg.control
         public PartTypeDB ptdb;
         public PartSerialNoDB psdb;
         public PartCategoryDB pcdb;
+        public PartTypeSubDB ptsdb;
+        public TPartDB tpadb;
         
         public Staff staff;
         public Customer cu;
@@ -27,10 +29,12 @@ namespace dsg.control
         public PartType pt;
         public PartSerialNo ps;
         public PartCategory pc;
+        public PartTypeSub pts;
+        public TPart tpa;
         
         public String thooId = "";
 
-        public ComboBox cboStaff, cboSale, cboThoo;
+        public ComboBox cboType, cboSale, cboThoo;
         //public List<Thoo> lTho = new List<Thoo>();
         //public List<Font1> thoColor = new List<Font1>();
 
@@ -56,6 +60,8 @@ namespace dsg.control
             ptdb = new PartTypeDB(conn);
             psdb = new PartSerialNoDB(conn);
             pcdb = new PartCategoryDB(conn);
+            ptsdb = new PartTypeSubDB(conn);
+            tpadb = new TPartDB(conn);
             
             staff = new Staff();
             cu = new Customer();
@@ -63,6 +69,11 @@ namespace dsg.control
             pt = new PartType();
             ps = new PartSerialNo();
             pc = new PartCategory();
+            pts = new PartTypeSub();
+            tpa = new TPart();
+
+            cboType = new ComboBox();
+            cboType = ptdb.getCboPartType(cboType);
         }
         public ComboBoxItem getCboItem(ComboBox c, String valueId)
         {
@@ -76,7 +87,20 @@ namespace dsg.control
             }
             return r;
         }
-
+        public String getTextCboItem(ComboBox c, String valueId)
+        {
+            ComboBoxItem r = new ComboBoxItem();
+            r.Text = "";
+            r.Value = "";
+            foreach (ComboBoxItem cc in c.Items)
+            {
+                if (cc.Value.Equals(valueId))
+                {
+                    r = cc;
+                }
+            }
+            return r.Text;
+        }
         public Staff selectStaffbyPk(String staffId)
         {
             staff = sfdb.selectByPk(staffId);

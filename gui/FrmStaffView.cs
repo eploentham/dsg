@@ -15,7 +15,7 @@ namespace lottory.gui
 {
     public partial class FrmStaffView : Form
     {
-        DsgControl lc;
+        DsgControl dc;
         DataTable dt;
         int colCnt = 7;
         int colRow = 0, colName = 2, colRemark = 3, colId=4, colCode=1, colPassword=6, colPriority=5;
@@ -24,11 +24,11 @@ namespace lottory.gui
         {
             InitializeComponent();
             initConfig();
-            setControl();
+            setGrd();
         }
         private void initConfig()
         {
-            lc = new DsgControl();
+            dc = new DsgControl();
             //dt = lc.selectStaffAll();
 
         }
@@ -40,10 +40,10 @@ namespace lottory.gui
             groupBox1.Width = this.Width - 50;
             //groupBox1.Height = this.Height = 150;
         }
-        public void setControl()
+        public void setGrd()
         {
             DataTable dt = new DataTable();
-            dt = lc.selectStaffAll();
+            dt = dc.selectStaffAll();
             dgvView.ColumnCount = colCnt;
 
             dgvView.RowCount = dt.Rows.Count + 1;
@@ -73,19 +73,19 @@ namespace lottory.gui
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     dgvView[colRow, i].Value = (i + 1);
-                    dgvView[colCode, i].Value = dt.Rows[i][lc.sfdb.sf.Code].ToString();
-                    dgvView[colName, i].Value = dt.Rows[i][lc.sfdb.sf.Name].ToString();
-                    dgvView[colRemark, i].Value = dt.Rows[i][lc.sfdb.sf.Remark].ToString();
-                    dgvView[colId, i].Value = dt.Rows[i][lc.sfdb.sf.Id].ToString();
-                    if (dt.Rows[i][lc.sfdb.sf.Priority].ToString().Equals("1"))
+                    dgvView[colCode, i].Value = dt.Rows[i][dc.sfdb.sf.Code].ToString();
+                    dgvView[colName, i].Value = dt.Rows[i][dc.sfdb.sf.Name].ToString();
+                    dgvView[colRemark, i].Value = dt.Rows[i][dc.sfdb.sf.Remark].ToString();
+                    dgvView[colId, i].Value = dt.Rows[i][dc.sfdb.sf.Id].ToString();
+                    if (dt.Rows[i][dc.sfdb.sf.Priority].ToString().Equals("1"))
                     {
                         dgvView[colPriority, i].Value = "ป้อนรางวัลอย่างเดียว";
                     }
-                    else if (dt.Rows[i][lc.sfdb.sf.Priority].ToString().Equals("2"))
+                    else if (dt.Rows[i][dc.sfdb.sf.Priority].ToString().Equals("2"))
                     {
                         dgvView[colPriority, i].Value = "ตรวจสอบข้อมูลอย่างเดียว";
                     }
-                    else if (dt.Rows[i][lc.sfdb.sf.Priority].ToString().Equals("3"))
+                    else if (dt.Rows[i][dc.sfdb.sf.Priority].ToString().Equals("3"))
                     {
                         dgvView[colPriority, i].Value = "ทุกหน้าจอ";
                     }
@@ -107,7 +107,7 @@ namespace lottory.gui
             FrmStaffAdd frm = new FrmStaffAdd("");
             //frm.setControl("");
             frm.ShowDialog(this);
-            setControl();
+            setGrd();
         }
 
         private void dgvView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -130,7 +130,7 @@ namespace lottory.gui
                 FrmStaffAdd frm = new FrmStaffAdd(dgvView[colId, e.RowIndex].Value.ToString());
                 //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
                 frm.ShowDialog(this);
-                setControl();
+                setGrd();
             }
         }
     }

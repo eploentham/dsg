@@ -1,6 +1,5 @@
 D:\source\dsg\dsg\bin\Debug\dsg.exe
 D:\source\dsg\dsg\bin\Debug\dsg.pdb
-D:\source\dsg\dsg\obj\Debug\dsg.csprojResolveAssemblyReference.cache
 D:\source\dsg\dsg\obj\Debug\dsg.FrmMain.resources
 D:\source\dsg\dsg\obj\Debug\dsg.Properties.Resources.resources
 D:\source\dsg\dsg\obj\Debug\dsg.csproj.GenerateResource.Cache
@@ -15,3 +14,10 @@ D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartAdd.resources
 D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartReceive.resources
 D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartView.resources
 D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartStockCard.resources
+D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartTypeView.resources
+D:\source\dsg\dsg\obj\Debug\dsg.gui.FRmPartTypeAdd.resources
+D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartCateAdd.resources
+D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartCateView.resources
+D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartTypeSubView.resources
+D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartTypeSubAdd.resources
+D:\source\dsg\dsg\obj\Debug\dsg.csprojResolveAssemblyReference.cache

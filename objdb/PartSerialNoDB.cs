@@ -30,8 +30,17 @@ namespace dsg.objdb
             ps.serialNo = "serial_no";
             ps.Remark = "part_serial_no_remark";
             ps.Active = "part_serial_no_active";
+            ps.rowNumber = "row_number";
+            ps.StatusTran = "status_tran";
+            ps.userCancel = "user_cancel";
+            ps.userCreate = "user_create";
+            ps.userModi = "user_modi";
+            ps.DateCancel = "date_cancel";
+            ps.DateCreate = "date_create";
+            ps.DateModi = "date_modi";
+            ps.RemarkDraw = "remark_draw";
 
-            ps.table = "";
+            ps.table = "b_part_serial_no";
             ps.pkField = "part_serial_no_id";
         }
         private PartSerialNo setData(PartSerialNo item, DataTable dt)
@@ -41,11 +50,23 @@ namespace dsg.objdb
             item.Id = dt.Rows[0][ps.Id].ToString();
             item.locaId = dt.Rows[0][ps.locaId].ToString();
             item.partId = dt.Rows[0][ps.partId].ToString();
+
             item.priceCost = dt.Rows[0][ps.priceCost].ToString();
             item.priceSale = dt.Rows[0][ps.priceSale].ToString();
             item.serialNo = dt.Rows[0][ps.serialNo].ToString();
             item.Remark = dt.Rows[0][ps.Remark].ToString();
             item.Active = dt.Rows[0][ps.Active].ToString();
+            
+            item.rowNumber = dt.Rows[0][ps.rowNumber].ToString();
+            item.StatusTran = dt.Rows[0][ps.StatusTran].ToString();
+            item.userCancel = dt.Rows[0][ps.userCancel].ToString();
+            item.userCreate = dt.Rows[0][ps.userCreate].ToString();
+            item.userModi = dt.Rows[0][ps.userModi].ToString();
+
+            item.DateCancel = dt.Rows[0][ps.DateCancel].ToString();
+            item.DateCreate = dt.Rows[0][ps.DateCreate].ToString();
+            item.DateModi = dt.Rows[0][ps.DateModi].ToString();
+            item.RemarkDraw = dt.Rows[0][ps.RemarkDraw].ToString();
 
             return item;
         }
@@ -61,34 +82,45 @@ namespace dsg.objdb
         public List<PartSerialNo> selectSAll()
         {
             List<PartSerialNo> ls = new List<PartSerialNo>();
-            DataTable dt1 = selectAll();
-            if (dt1.Rows.Count > 0)
+            DataTable dt = selectAll();
+            if (dt.Rows.Count > 0)
             {
-                for (int i = 0; i < dt1.Rows.Count; i++)
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     PartSerialNo item = new PartSerialNo();
-                    item.dateInv = dt1.Rows[0][ps.dateInv].ToString();
-                    item.dateReceive = dt1.Rows[0][ps.dateReceive].ToString();
-                    item.Id = dt1.Rows[0][ps.Id].ToString();
-                    item.locaId = dt1.Rows[0][ps.locaId].ToString();
-                    item.partId = dt1.Rows[0][ps.partId].ToString();
-                    item.priceCost = dt1.Rows[0][ps.priceCost].ToString();
-                    item.priceSale = dt1.Rows[0][ps.priceSale].ToString();
-                    item.serialNo = dt1.Rows[0][ps.serialNo].ToString();
-                    item.Remark = dt1.Rows[0][ps.Remark].ToString();
-                    item.Active = dt1.Rows[0][ps.Active].ToString();
+                    item.dateInv = dt.Rows[0][ps.dateInv].ToString();
+                    item.dateReceive = dt.Rows[0][ps.dateReceive].ToString();
+                    item.Id = dt.Rows[0][ps.Id].ToString();
+                    item.locaId = dt.Rows[0][ps.locaId].ToString();
+                    item.partId = dt.Rows[0][ps.partId].ToString();
+
+                    item.priceCost = dt.Rows[0][ps.priceCost].ToString();
+                    item.priceSale = dt.Rows[0][ps.priceSale].ToString();
+                    item.serialNo = dt.Rows[0][ps.serialNo].ToString();
+                    item.Remark = dt.Rows[0][ps.Remark].ToString();
+                    item.Active = dt.Rows[0][ps.Active].ToString();
+
+                    item.StatusTran = dt.Rows[0][ps.StatusTran].ToString();
+                    item.userCancel = dt.Rows[0][ps.userCancel].ToString();
+                    item.userCreate = dt.Rows[0][ps.userCreate].ToString();
+                    item.userModi = dt.Rows[0][ps.userModi].ToString();
+                    item.DateCancel = dt.Rows[0][ps.DateCancel].ToString();
+
+                    item.DateCreate = dt.Rows[0][ps.DateCreate].ToString();
+                    item.DateModi = dt.Rows[0][ps.DateModi].ToString();
+                    item.RemarkDraw = dt.Rows[0][ps.RemarkDraw].ToString();
 
                     ls.Add(item);
                 }
             }
             return ls;
         }
-        public PartSerialNo selectByPk(String saleId)
+        public PartSerialNo selectByPk(String psId)
         {
             PartSerialNo item = new PartSerialNo();
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + ps.table + " Where " + ps.pkField + "='" + saleId + "'";
+            sql = "Select * From " + ps.table + " Where " + ps.pkField + "='" + psId + "'";
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
@@ -96,40 +128,83 @@ namespace dsg.objdb
             }
             return item;
         }
-        public PartSerialNo selectByCode(String saleId)
+        public PartSerialNo selectByCode(String psCode)
         {
             PartSerialNo item = new PartSerialNo();
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + ps.table + " Where " + ps.Id + "='" + saleId + "' and " + ps.Active + "='1' ";
+            sql = "Select * From " + ps.table + " Where " + ps.Id + "='" + psCode + "' and " + ps.Active + "='1' ";
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
                 item = setData(item, dt);
             }
             return item;
+        }
+        public DataTable selectByPartId(String paId)
+        {
+            PartSerialNo item = new PartSerialNo();
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + ps.table + " Where " + ps.partId + "='" + paId + "' and "+ps.Active+"='1' and "+ps.StatusTran+"='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public String selectMaxRowNumberByPartId(String paId)
+        {
+            PartSerialNo item = new PartSerialNo();
+            String sql = "", cnt="";
+            DataTable dt = new DataTable();
+            sql = "Select max("+ps.rowNumber+") as cnt From " + ps.table + " Where " + ps.partId + "='" + paId + "'";
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                if (dt.Rows[0][ps.rowNumber] != null)
+                {
+                    if (dt.Rows[0][ps.rowNumber].ToString().Equals(""))
+                    {
+                        cnt = "1";
+                    }
+                    else
+                    {
+                        cnt = dt.Rows[0][ps.rowNumber].ToString();
+                    }
+                    
+                }
+                else
+                {
+                    cnt = "1";
+                }
+            }
+            else
+            {
+                cnt = "1";
+            }
+            return cnt;
         }
         private String insert(PartSerialNo p)
         {
             String sql = "", chk = "";
             if (p.Id.Equals(""))
             {
-                p.Id = p.getGenID();
+                p.Id = "ps"+p.getGenID();
             }
             //if (p.Limit1.Equals(""))
             //{
             //    p.Limit1 = "0";
             //}
             //p.Remark = p.Remark.Replace("''", "'");
+            p.DateCreate = p.dateGenDB;
             p.Remark = p.Remark.Replace("''", "'");
             sql = "Insert Into " + ps.table + " (" + ps.pkField + "," + ps.dateInv + "," + ps.dateReceive + "," +
                 ps.locaId + "," + ps.partId + "," + ps.priceCost + "," +
-                ps.priceSale + "," + ps.serialNo + "," + ps.Remark + "," + 
-                ps.Active + ") " +
+                ps.priceSale + "," + ps.serialNo + "," + ps.Remark + "," +
+                ps.Active + "," + ps.StatusTran + "," + ps.DateCreate + ") " +
                 "Values('" + p.Id + "','" + p.dateInv + "','" + p.dateReceive + "','" +
                 p.locaId + "','" + p.partId + "','" + p.priceCost + "','" +
-                p.priceSale + "','" + p.serialNo + "','" + p.Remark + "','" + 
-                p.Active + "')";
+                p.priceSale + "','" + p.serialNo + "','" + p.Remark + "','" +
+                p.Active + "','" + p.StatusTran + "'," + p.DateCreate + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -149,6 +224,7 @@ namespace dsg.objdb
             String sql = "", chk = "";
 
             p.Remark = p.Remark.Replace("''", "'");
+            p.DateModi = p.dateGenDB;
             //p.partTName = p.partTName.Replace("''", "'");
             sql = "Update " + ps.table + " Set " + ps.dateInv + "='" + p.dateInv + "', " +
                 ps.dateReceive + "='" + p.dateReceive + "', " +
@@ -158,8 +234,8 @@ namespace dsg.objdb
                 ps.priceSale + "='" + p.priceSale + "', " +
                 ps.serialNo + "='" + p.serialNo + "', " +
                 ps.Remark + "='" + p.Remark + "', " +
-                ps.Active + "='" + p.Active + "' " +
-
+                ps.Active + "='" + p.Active + "', " +
+                ps.DateModi + "=" + p.DateModi + " " +
                 "Where " + ps.pkField + "='" + p.Id + "'";
             try
             {
@@ -174,7 +250,7 @@ namespace dsg.objdb
             }
             return chk;
         }
-        public String insertSale(PartSerialNo p)
+        public String insertPartSerialNo(PartSerialNo p)
         {
             PartSerialNo item = new PartSerialNo();
             String chk = "";
@@ -212,12 +288,30 @@ namespace dsg.objdb
             }
             return c;
         }
-        public String VoidPartSerialNo(String ptId)
+        public String VoidPartSerialNo(String psId)
         {
             String sql = "", chk = "";
 
             sql = "Update " + ps.table + " Set " + ps.Active + "='3' " +
-                "Where " + ps.pkField + "='" + ptId + "'";
+                "Where " + ps.pkField + "='" + psId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
+        public String updateDraw(String psId, String remarkDraw)
+        {
+            String sql = "", chk = "";
+            remarkDraw = remarkDraw.Replace("''", "'");
+            sql = "Update " + ps.table + " Set " + ps.StatusTran + "='2', "+ps.RemarkDraw+"='"+remarkDraw+"' " +
+                "Where " + ps.pkField + "='" + psId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
+        public String updateReceive(String psId)
+        {
+            String sql = "", chk = "";
+
+            sql = "Update " + ps.table + " Set " + ps.StatusTran + "='1' " +
+                "Where " + ps.pkField + "='" + psId + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }

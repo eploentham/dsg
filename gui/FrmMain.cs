@@ -57,10 +57,11 @@ namespace dsg
             //}
             //if (sf.Priority.Equals("3"))
             //{
-            //    tv1.Nodes.Add("nInitConfig", "กำหนดค่าโปรแกรม");
-            //    tv1.Nodes["nInitConfig"].Nodes.Add("nThooView", "สร้างเจ้ามือ");
-            //    tv1.Nodes["nInitConfig"].Nodes.Add("nSaleView", "สร้างคนเก็บโพย");
-            //    //tv1.Nodes["nInitConfig"].Nodes.Add("nSaleDiscount", "สร้างส่วนลดคนเก็บโพย");
+            tv1.Nodes.Add("nInitConfig", "กำหนดค่าโปรแกรม");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nPartTypeView", "สร้างประเภทอะไหล่");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nPartTypeSubView", "สร้างประเภทย่อยอะไหล่");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nPartCateView", "สร้างชนิดอะไหล่");
+            
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nStaffView", "สร้างคนป้อนข้อมูล");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nRateView", "สร้างอัตรา");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nPassword", "เปลี่ยนรหัสผ่าน");
@@ -92,24 +93,24 @@ namespace dsg
         {
             if (e.Node.Name.ToString() == "nPartView")
             {
-                FrmPartView frm = new FrmPartView();
+                FrmPartView frm = new FrmPartView(dc);
                 showFrame(frm);
             }
-            //else if (e.Node.Name.ToString() == "nStaffView")
-            //{
-            //    FrmStaffView frm = new FrmStaffView();
-            //    showFrame(frm);
-            //}
-            //else if (e.Node.Name.ToString() == "nSaleView")
-            //{
-            //    FrmSaleView frm = new FrmSaleView();
-            //    showFrame(frm);
-            //}
-            //else if (e.Node.Name.ToString() == "nRateView")
-            //{
-            //    FrmRateView frm = new FrmRateView();
-            //    showFrame(frm);
-            //}
+            else if (e.Node.Name.ToString() == "nPartTypeView")
+            {
+                FrmPartTypeView frm = new FrmPartTypeView(dc);
+                showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nPartCateView")
+            {
+                FrmPartCateView frm = new FrmPartCateView(dc);
+                showFrame(frm);
+            }
+            else if (e.Node.Name.ToString() == "nPartTypeSubView")
+            {
+                FrmPartTypeSubView frm = new FrmPartTypeSubView(dc);
+                showFrame(frm);
+            }
             //else if (e.Node.Name.ToString() == "nPassword")
             //{
             //    FrmPassword frm = new FrmPassword(sf.Id);

@@ -45,6 +45,7 @@
             this.dgvView.RowTemplate.Height = 24;
             this.dgvView.Size = new System.Drawing.Size(1241, 705);
             this.dgvView.TabIndex = 1;
+            this.dgvView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellDoubleClick);
             // 
             // label1
             // 
