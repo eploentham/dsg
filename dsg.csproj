@@ -64,6 +64,12 @@
     <Compile Include="gui\FrmPartAdd.Designer.cs">
       <DependentUpon>FrmPartAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\FrmPartAddLot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\FrmPartAddLot.Designer.cs">
+      <DependentUpon>FrmPartAddLot.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\FrmPartCateAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,8 @@
     <Compile Include="objdb\CustomerDB.cs" />
     <Compile Include="objdb\PartCategoryDB.cs" />
     <Compile Include="objdb\PartDB.cs" />
+    <Compile Include="objdb\PartReceiveDB.cs" />
+    <Compile Include="objdb\PartReceiveItemDB.cs" />
     <Compile Include="objdb\PartSerialNoDB.cs" />
     <Compile Include="objdb\PartTypeDB.cs" />
     <Compile Include="objdb\PartTypeSubDB.cs" />
@@ -164,6 +172,8 @@
     </Compile>
     <Compile Include="object1\Part.cs" />
     <Compile Include="object1\PartCategory.cs" />
+    <Compile Include="object1\PartReceive.cs" />
+    <Compile Include="object1\PartReceiveItem.cs" />
     <Compile Include="object1\PartSerialNo.cs" />
     <Compile Include="object1\PartType.cs" />
     <Compile Include="object1\PartTypeSub.cs" />
@@ -185,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmPartAdd.resx">
       <DependentUpon>FrmPartAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\FrmPartAddLot.resx">
+      <DependentUpon>FrmPartAddLot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\FrmPartCateAdd.resx">
       <DependentUpon>FrmPartCateAdd.cs</DependentUpon>

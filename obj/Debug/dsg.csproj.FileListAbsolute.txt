@@ -21,3 +21,5 @@ D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartCateView.resources
 D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartTypeSubView.resources
 D:\source\dsg\dsg\obj\Debug\dsg.gui.FrmPartTypeSubAdd.resources
 D:\source\dsg\dsg\obj\Debug\dsg.csprojResolveAssemblyReference.cache
+C:\source\dsg\obj\Debug\dsg.exe
+C:\source\dsg\obj\Debug\dsg.pdb
