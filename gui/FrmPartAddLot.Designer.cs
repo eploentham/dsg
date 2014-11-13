@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.txtDateInv = new System.Windows.Forms.DateTimePicker();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtInvNumber = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.txtRemark = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -37,6 +42,32 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.txtSnPriceSale = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtSnPriceCost = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.chkLoca5 = new System.Windows.Forms.RadioButton();
+            this.chkLoca4 = new System.Windows.Forms.RadioButton();
+            this.chkLoca3 = new System.Windows.Forms.RadioButton();
+            this.chkLoca2 = new System.Windows.Forms.RadioButton();
+            this.chkLoca1 = new System.Windows.Forms.RadioButton();
+            this.txtSerialNo = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cboModel = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cboAcftModel = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtPriceSale = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtPriceCost = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtCertify = new System.Windows.Forms.TextBox();
+            this.txtOnHand = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.txtPaNumber = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.cboTypeSub = new System.Windows.Forms.ComboBox();
@@ -54,37 +85,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtPaCode = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cboModel = new System.Windows.Forms.ComboBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cboAcftModel = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtPriceSale = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtPriceCost = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtCertify = new System.Windows.Forms.TextBox();
-            this.txtOnHand = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtSerialNo = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtSnPriceSale = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtSnPriceCost = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.chkLoca5 = new System.Windows.Forms.RadioButton();
-            this.chkLoca4 = new System.Windows.Forms.RadioButton();
-            this.chkLoca3 = new System.Windows.Forms.RadioButton();
-            this.chkLoca2 = new System.Windows.Forms.RadioButton();
-            this.chkLoca1 = new System.Windows.Forms.RadioButton();
-            this.txtDateInv = new System.Windows.Forms.DateTimePicker();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtInvNumber = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -92,6 +94,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.txtDateInv);
             this.groupBox1.Controls.Add(this.label19);
@@ -105,9 +109,55 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(918, 103);
+            this.groupBox1.Size = new System.Drawing.Size(1133, 103);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(1072, 51);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(56, 38);
+            this.btnSave.TabIndex = 55;
+            this.btnSave.Text = "บันทึก";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // txtDateInv
+            // 
+            this.txtDateInv.Location = new System.Drawing.Point(535, 46);
+            this.txtDateInv.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDateInv.Name = "txtDateInv";
+            this.txtDateInv.Size = new System.Drawing.Size(97, 20);
+            this.txtDateInv.TabIndex = 54;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(461, 50);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(71, 13);
+            this.label19.TabIndex = 53;
+            this.label19.Text = "invoice date :";
+            // 
+            // txtInvNumber
+            // 
+            this.txtInvNumber.Location = new System.Drawing.Point(525, 19);
+            this.txtInvNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtInvNumber.Name = "txtInvNumber";
+            this.txtInvNumber.Size = new System.Drawing.Size(107, 20);
+            this.txtInvNumber.TabIndex = 52;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(461, 22);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(62, 13);
+            this.label22.TabIndex = 51;
+            this.label22.Text = "invoice no :";
             // 
             // txtRemark
             // 
@@ -170,7 +220,7 @@
             this.dgv1.Margin = new System.Windows.Forms.Padding(2);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowTemplate.Height = 24;
-            this.dgv1.Size = new System.Drawing.Size(530, 474);
+            this.dgv1.Size = new System.Drawing.Size(632, 600);
             this.dgv1.TabIndex = 3;
             // 
             // groupBox2
@@ -218,11 +268,263 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtPaCode);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(547, 113);
+            this.groupBox2.Location = new System.Drawing.Point(652, 112);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(393, 473);
+            this.groupBox2.Size = new System.Drawing.Size(493, 599);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(339, 29);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(44, 37);
+            this.btnAdd.TabIndex = 92;
+            this.btnAdd.Text = "+";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // txtSnPriceSale
+            // 
+            this.txtSnPriceSale.Location = new System.Drawing.Point(250, 444);
+            this.txtSnPriceSale.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSnPriceSale.Name = "txtSnPriceSale";
+            this.txtSnPriceSale.Size = new System.Drawing.Size(76, 20);
+            this.txtSnPriceSale.TabIndex = 91;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(188, 446);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(54, 13);
+            this.label16.TabIndex = 90;
+            this.label16.Text = "ราคาขาย :";
+            // 
+            // txtSnPriceCost
+            // 
+            this.txtSnPriceCost.Location = new System.Drawing.Point(89, 444);
+            this.txtSnPriceCost.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSnPriceCost.Name = "txtSnPriceCost";
+            this.txtSnPriceCost.Size = new System.Drawing.Size(76, 20);
+            this.txtSnPriceCost.TabIndex = 89;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(27, 446);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(51, 13);
+            this.label17.TabIndex = 88;
+            this.label17.Text = "ราคาทุน :";
+            // 
+            // chkLoca5
+            // 
+            this.chkLoca5.AutoSize = true;
+            this.chkLoca5.Location = new System.Drawing.Point(315, 420);
+            this.chkLoca5.Margin = new System.Windows.Forms.Padding(2);
+            this.chkLoca5.Name = "chkLoca5";
+            this.chkLoca5.Size = new System.Drawing.Size(49, 17);
+            this.chkLoca5.TabIndex = 87;
+            this.chkLoca5.TabStop = true;
+            this.chkLoca5.Text = "other";
+            this.chkLoca5.UseVisualStyleBackColor = true;
+            // 
+            // chkLoca4
+            // 
+            this.chkLoca4.AutoSize = true;
+            this.chkLoca4.Location = new System.Drawing.Point(242, 420);
+            this.chkLoca4.Margin = new System.Windows.Forms.Padding(2);
+            this.chkLoca4.Name = "chkLoca4";
+            this.chkLoca4.Size = new System.Drawing.Size(47, 17);
+            this.chkLoca4.TabIndex = 86;
+            this.chkLoca4.TabStop = true;
+            this.chkLoca4.Text = "SRA";
+            this.chkLoca4.UseVisualStyleBackColor = true;
+            // 
+            // chkLoca3
+            // 
+            this.chkLoca3.AutoSize = true;
+            this.chkLoca3.Location = new System.Drawing.Point(166, 420);
+            this.chkLoca3.Margin = new System.Windows.Forms.Padding(2);
+            this.chkLoca3.Name = "chkLoca3";
+            this.chkLoca3.Size = new System.Drawing.Size(47, 17);
+            this.chkLoca3.TabIndex = 85;
+            this.chkLoca3.TabStop = true;
+            this.chkLoca3.Text = "BOA";
+            this.chkLoca3.UseVisualStyleBackColor = true;
+            // 
+            // chkLoca2
+            // 
+            this.chkLoca2.AutoSize = true;
+            this.chkLoca2.Location = new System.Drawing.Point(96, 420);
+            this.chkLoca2.Margin = new System.Windows.Forms.Padding(2);
+            this.chkLoca2.Name = "chkLoca2";
+            this.chkLoca2.Size = new System.Drawing.Size(46, 17);
+            this.chkLoca2.TabIndex = 84;
+            this.chkLoca2.TabStop = true;
+            this.chkLoca2.Text = "BKK";
+            this.chkLoca2.UseVisualStyleBackColor = true;
+            // 
+            // chkLoca1
+            // 
+            this.chkLoca1.AutoSize = true;
+            this.chkLoca1.Location = new System.Drawing.Point(21, 420);
+            this.chkLoca1.Margin = new System.Windows.Forms.Padding(2);
+            this.chkLoca1.Name = "chkLoca1";
+            this.chkLoca1.Size = new System.Drawing.Size(48, 17);
+            this.chkLoca1.TabIndex = 83;
+            this.chkLoca1.TabStop = true;
+            this.chkLoca1.Text = "LUM";
+            this.chkLoca1.UseVisualStyleBackColor = true;
+            // 
+            // txtSerialNo
+            // 
+            this.txtSerialNo.Location = new System.Drawing.Point(82, 375);
+            this.txtSerialNo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSerialNo.Name = "txtSerialNo";
+            this.txtSerialNo.Size = new System.Drawing.Size(202, 20);
+            this.txtSerialNo.TabIndex = 82;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(19, 377);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 13);
+            this.label14.TabIndex = 81;
+            this.label14.Text = "serial no :";
+            // 
+            // cboModel
+            // 
+            this.cboModel.FormattingEnabled = true;
+            this.cboModel.Location = new System.Drawing.Point(82, 201);
+            this.cboModel.Margin = new System.Windows.Forms.Padding(2);
+            this.cboModel.Name = "cboModel";
+            this.cboModel.Size = new System.Drawing.Size(288, 21);
+            this.cboModel.TabIndex = 80;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(13, 205);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(42, 13);
+            this.label21.TabIndex = 79;
+            this.label21.Text = "Model :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(13, 343);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(58, 13);
+            this.label15.TabIndex = 78;
+            this.label15.Text = "หมายเหตุ :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(82, 340);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(306, 20);
+            this.textBox1.TabIndex = 77;
+            // 
+            // cboAcftModel
+            // 
+            this.cboAcftModel.FormattingEnabled = true;
+            this.cboAcftModel.Location = new System.Drawing.Point(82, 224);
+            this.cboAcftModel.Margin = new System.Windows.Forms.Padding(2);
+            this.cboAcftModel.Name = "cboAcftModel";
+            this.cboAcftModel.Size = new System.Drawing.Size(288, 21);
+            this.cboAcftModel.TabIndex = 72;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 228);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 13);
+            this.label9.TabIndex = 71;
+            this.label9.Text = "ACFT Model :";
+            // 
+            // txtPriceSale
+            // 
+            this.txtPriceSale.Location = new System.Drawing.Point(82, 318);
+            this.txtPriceSale.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPriceSale.Name = "txtPriceSale";
+            this.txtPriceSale.Size = new System.Drawing.Size(76, 20);
+            this.txtPriceSale.TabIndex = 74;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 322);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 13);
+            this.label10.TabIndex = 73;
+            this.label10.Text = "ราคาขาย :";
+            // 
+            // txtPriceCost
+            // 
+            this.txtPriceCost.Location = new System.Drawing.Point(82, 296);
+            this.txtPriceCost.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPriceCost.Name = "txtPriceCost";
+            this.txtPriceCost.Size = new System.Drawing.Size(76, 20);
+            this.txtPriceCost.TabIndex = 70;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(13, 299);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 13);
+            this.label11.TabIndex = 69;
+            this.label11.Text = "ราคาทุน :";
+            // 
+            // txtCertify
+            // 
+            this.txtCertify.Location = new System.Drawing.Point(82, 248);
+            this.txtCertify.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCertify.Name = "txtCertify";
+            this.txtCertify.Size = new System.Drawing.Size(288, 20);
+            this.txtCertify.TabIndex = 68;
+            // 
+            // txtOnHand
+            // 
+            this.txtOnHand.Location = new System.Drawing.Point(82, 273);
+            this.txtOnHand.Margin = new System.Windows.Forms.Padding(2);
+            this.txtOnHand.Name = "txtOnHand";
+            this.txtOnHand.Size = new System.Drawing.Size(76, 20);
+            this.txtOnHand.TabIndex = 76;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(13, 254);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 67;
+            this.label12.Text = "certify :";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(13, 276);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(49, 13);
+            this.label13.TabIndex = 75;
+            this.label13.Text = "onhand :";
             // 
             // txtPaNumber
             // 
@@ -383,315 +685,36 @@
             this.label6.TabIndex = 50;
             this.label6.Text = "รหัส:";
             // 
-            // cboModel
+            // textBox2
             // 
-            this.cboModel.FormattingEnabled = true;
-            this.cboModel.Location = new System.Drawing.Point(82, 201);
-            this.cboModel.Margin = new System.Windows.Forms.Padding(2);
-            this.cboModel.Name = "cboModel";
-            this.cboModel.Size = new System.Drawing.Size(288, 21);
-            this.cboModel.TabIndex = 80;
+            this.textBox2.Location = new System.Drawing.Point(797, 45);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(76, 20);
+            this.textBox2.TabIndex = 91;
             // 
-            // label21
+            // label23
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(13, 205);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(42, 13);
-            this.label21.TabIndex = 79;
-            this.label21.Text = "Model :";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(13, 343);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(58, 13);
-            this.label15.TabIndex = 78;
-            this.label15.Text = "หมายเหตุ :";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(82, 340);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(306, 20);
-            this.textBox1.TabIndex = 77;
-            // 
-            // cboAcftModel
-            // 
-            this.cboAcftModel.FormattingEnabled = true;
-            this.cboAcftModel.Location = new System.Drawing.Point(82, 224);
-            this.cboAcftModel.Margin = new System.Windows.Forms.Padding(2);
-            this.cboAcftModel.Name = "cboAcftModel";
-            this.cboAcftModel.Size = new System.Drawing.Size(288, 21);
-            this.cboAcftModel.TabIndex = 72;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 228);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 13);
-            this.label9.TabIndex = 71;
-            this.label9.Text = "ACFT Model :";
-            // 
-            // txtPriceSale
-            // 
-            this.txtPriceSale.Location = new System.Drawing.Point(82, 318);
-            this.txtPriceSale.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPriceSale.Name = "txtPriceSale";
-            this.txtPriceSale.Size = new System.Drawing.Size(76, 20);
-            this.txtPriceSale.TabIndex = 74;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 322);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
-            this.label10.TabIndex = 73;
-            this.label10.Text = "ราคาขาย :";
-            // 
-            // txtPriceCost
-            // 
-            this.txtPriceCost.Location = new System.Drawing.Point(82, 296);
-            this.txtPriceCost.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPriceCost.Name = "txtPriceCost";
-            this.txtPriceCost.Size = new System.Drawing.Size(76, 20);
-            this.txtPriceCost.TabIndex = 70;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 299);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 13);
-            this.label11.TabIndex = 69;
-            this.label11.Text = "ราคาทุน :";
-            // 
-            // txtCertify
-            // 
-            this.txtCertify.Location = new System.Drawing.Point(82, 248);
-            this.txtCertify.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCertify.Name = "txtCertify";
-            this.txtCertify.Size = new System.Drawing.Size(288, 20);
-            this.txtCertify.TabIndex = 68;
-            // 
-            // txtOnHand
-            // 
-            this.txtOnHand.Location = new System.Drawing.Point(82, 273);
-            this.txtOnHand.Margin = new System.Windows.Forms.Padding(2);
-            this.txtOnHand.Name = "txtOnHand";
-            this.txtOnHand.Size = new System.Drawing.Size(76, 20);
-            this.txtOnHand.TabIndex = 76;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(13, 254);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
-            this.label12.TabIndex = 67;
-            this.label12.Text = "certify :";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(13, 276);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 13);
-            this.label13.TabIndex = 75;
-            this.label13.Text = "onhand :";
-            // 
-            // txtSerialNo
-            // 
-            this.txtSerialNo.Location = new System.Drawing.Point(82, 375);
-            this.txtSerialNo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSerialNo.Name = "txtSerialNo";
-            this.txtSerialNo.Size = new System.Drawing.Size(202, 20);
-            this.txtSerialNo.TabIndex = 82;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(19, 377);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 13);
-            this.label14.TabIndex = 81;
-            this.label14.Text = "serial no :";
-            // 
-            // txtSnPriceSale
-            // 
-            this.txtSnPriceSale.Location = new System.Drawing.Point(250, 444);
-            this.txtSnPriceSale.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSnPriceSale.Name = "txtSnPriceSale";
-            this.txtSnPriceSale.Size = new System.Drawing.Size(76, 20);
-            this.txtSnPriceSale.TabIndex = 91;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(188, 446);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(54, 13);
-            this.label16.TabIndex = 90;
-            this.label16.Text = "ราคาขาย :";
-            // 
-            // txtSnPriceCost
-            // 
-            this.txtSnPriceCost.Location = new System.Drawing.Point(89, 444);
-            this.txtSnPriceCost.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSnPriceCost.Name = "txtSnPriceCost";
-            this.txtSnPriceCost.Size = new System.Drawing.Size(76, 20);
-            this.txtSnPriceCost.TabIndex = 89;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(27, 446);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(51, 13);
-            this.label17.TabIndex = 88;
-            this.label17.Text = "ราคาทุน :";
-            // 
-            // chkLoca5
-            // 
-            this.chkLoca5.AutoSize = true;
-            this.chkLoca5.Location = new System.Drawing.Point(315, 420);
-            this.chkLoca5.Margin = new System.Windows.Forms.Padding(2);
-            this.chkLoca5.Name = "chkLoca5";
-            this.chkLoca5.Size = new System.Drawing.Size(49, 17);
-            this.chkLoca5.TabIndex = 87;
-            this.chkLoca5.TabStop = true;
-            this.chkLoca5.Text = "other";
-            this.chkLoca5.UseVisualStyleBackColor = true;
-            // 
-            // chkLoca4
-            // 
-            this.chkLoca4.AutoSize = true;
-            this.chkLoca4.Location = new System.Drawing.Point(242, 420);
-            this.chkLoca4.Margin = new System.Windows.Forms.Padding(2);
-            this.chkLoca4.Name = "chkLoca4";
-            this.chkLoca4.Size = new System.Drawing.Size(47, 17);
-            this.chkLoca4.TabIndex = 86;
-            this.chkLoca4.TabStop = true;
-            this.chkLoca4.Text = "SRA";
-            this.chkLoca4.UseVisualStyleBackColor = true;
-            // 
-            // chkLoca3
-            // 
-            this.chkLoca3.AutoSize = true;
-            this.chkLoca3.Location = new System.Drawing.Point(166, 420);
-            this.chkLoca3.Margin = new System.Windows.Forms.Padding(2);
-            this.chkLoca3.Name = "chkLoca3";
-            this.chkLoca3.Size = new System.Drawing.Size(47, 17);
-            this.chkLoca3.TabIndex = 85;
-            this.chkLoca3.TabStop = true;
-            this.chkLoca3.Text = "BOA";
-            this.chkLoca3.UseVisualStyleBackColor = true;
-            // 
-            // chkLoca2
-            // 
-            this.chkLoca2.AutoSize = true;
-            this.chkLoca2.Location = new System.Drawing.Point(96, 420);
-            this.chkLoca2.Margin = new System.Windows.Forms.Padding(2);
-            this.chkLoca2.Name = "chkLoca2";
-            this.chkLoca2.Size = new System.Drawing.Size(46, 17);
-            this.chkLoca2.TabIndex = 84;
-            this.chkLoca2.TabStop = true;
-            this.chkLoca2.Text = "BKK";
-            this.chkLoca2.UseVisualStyleBackColor = true;
-            // 
-            // chkLoca1
-            // 
-            this.chkLoca1.AutoSize = true;
-            this.chkLoca1.Location = new System.Drawing.Point(21, 420);
-            this.chkLoca1.Margin = new System.Windows.Forms.Padding(2);
-            this.chkLoca1.Name = "chkLoca1";
-            this.chkLoca1.Size = new System.Drawing.Size(48, 17);
-            this.chkLoca1.TabIndex = 83;
-            this.chkLoca1.TabStop = true;
-            this.chkLoca1.Text = "LUM";
-            this.chkLoca1.UseVisualStyleBackColor = true;
-            // 
-            // txtDateInv
-            // 
-            this.txtDateInv.Location = new System.Drawing.Point(535, 46);
-            this.txtDateInv.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDateInv.Name = "txtDateInv";
-            this.txtDateInv.Size = new System.Drawing.Size(97, 20);
-            this.txtDateInv.TabIndex = 54;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(461, 50);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(71, 13);
-            this.label19.TabIndex = 53;
-            this.label19.Text = "invoice date :";
-            // 
-            // txtInvNumber
-            // 
-            this.txtInvNumber.Location = new System.Drawing.Point(525, 19);
-            this.txtInvNumber.Margin = new System.Windows.Forms.Padding(2);
-            this.txtInvNumber.Name = "txtInvNumber";
-            this.txtInvNumber.Size = new System.Drawing.Size(107, 20);
-            this.txtInvNumber.TabIndex = 52;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(461, 22);
-            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(62, 13);
-            this.label22.TabIndex = 51;
-            this.label22.Text = "invoice no :";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(339, 29);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(44, 37);
-            this.btnAdd.TabIndex = 92;
-            this.btnAdd.Text = "+";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(843, 22);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(56, 38);
-            this.btnSave.TabIndex = 55;
-            this.btnSave.Text = "บันทึก";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(735, 47);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(51, 13);
+            this.label23.TabIndex = 90;
+            this.label23.Text = "ราคาทุน :";
             // 
             // FrmPartAddLot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 639);
+            this.ClientSize = new System.Drawing.Size(1157, 723);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmPartAddLot";
             this.Text = "FrmPartAddLot";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmPartAddLot_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
@@ -760,5 +783,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label23;
     }
 }

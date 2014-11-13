@@ -15,5 +15,10 @@ namespace dsg.gui
         {
             InitializeComponent();
         }
+
+        private void FrmPartAddLot_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
