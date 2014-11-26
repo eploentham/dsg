@@ -75,11 +75,12 @@ namespace dsg.gui
         }
         private void setResize()
         {
-            dgvView.Width = this.Width - 50;
-            dgvView.Height = this.Height - 150;
+            btnAdd.Left = this.Width - btnAdd.Width - 40;
+            groupBox1.Width = this.Width - btnAdd.Width- 60;
+            groupBox1.Height = this.Height - 100;
+            dgvView.Width = groupBox1.Width - 10;
+            dgvView.Height = groupBox1.Height - 30;
 
-            groupBox1.Width = this.Width - 50;
-            //groupBox1.Height = this.Height = 150;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -91,7 +92,7 @@ namespace dsg.gui
 
         private void FrmPartTypeView_Resize(object sender, EventArgs e)
         {
-            //setResize();
+            setResize();
         }
 
         private void dgvView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

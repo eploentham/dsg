@@ -76,11 +76,11 @@ namespace dsg.gui
         }
         private void setResize()
         {
-            dgvView.Width = this.Width - 50;
-            dgvView.Height = this.Height - 150;
-
-            groupBox1.Width = this.Width - 50;
-            //groupBox1.Height = this.Height = 150;
+            btnAdd.Left = this.Width - btnAdd.Width - 40;
+            groupBox1.Width = this.Width - btnAdd.Width - 60;
+            groupBox1.Height = this.Height - 100;
+            dgvView.Width = groupBox1.Width - 10;
+            dgvView.Height = groupBox1.Height - 30;
         }
 
         private void FrmPartCateView_Load(object sender, EventArgs e)
@@ -109,6 +109,11 @@ namespace dsg.gui
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             setGrd();
+        }
+
+        private void FrmPartCateView_Resize(object sender, EventArgs e)
+        {
+            setResize();
         }
     }
 }

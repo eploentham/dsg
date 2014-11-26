@@ -25,7 +25,6 @@ C:\source\dsg\obj\Debug\dsg.exe
 C:\source\dsg\obj\Debug\dsg.pdb
 D:\source\dsg\obj\Debug\dsg.exe
 D:\source\dsg\obj\Debug\dsg.pdb
-D:\source\dsg\obj\Debug\dsg.csprojResolveAssemblyReference.cache
 D:\source\dsg\obj\Debug\dsg.gui.FrmInitConfig.resources
 D:\source\dsg\obj\Debug\dsg.gui.FrmLogin.resources
 D:\source\dsg\obj\Debug\dsg.FrmMain.resources
@@ -69,3 +68,4 @@ C:\source\dsg\obj\Debug\dsg.Properties.Resources.resources
 C:\source\dsg\obj\Debug\dsg.csproj.GenerateResource.Cache
 C:\source\dsg\bin\Debug\dsg.exe
 C:\source\dsg\bin\Debug\dsg.pdb
+D:\source\dsg\obj\Debug\dsg.csprojResolveAssemblyReference.cache

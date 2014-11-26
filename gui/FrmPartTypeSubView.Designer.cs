@@ -39,9 +39,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(1032, 58);
+            this.btnAdd.Location = new System.Drawing.Point(774, 47);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 48);
+            this.btnAdd.Size = new System.Drawing.Size(56, 39);
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "ป้อนใหม่";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -50,9 +51,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvView);
-            this.groupBox1.Location = new System.Drawing.Point(22, 49);
+            this.groupBox1.Location = new System.Drawing.Point(16, 40);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1004, 714);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(753, 580);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
@@ -60,44 +63,49 @@
             // 
             this.dgvView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvView.Location = new System.Drawing.Point(6, 21);
+            this.dgvView.Location = new System.Drawing.Point(4, 17);
+            this.dgvView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvView.Name = "dgvView";
             this.dgvView.RowTemplate.Height = 24;
-            this.dgvView.Size = new System.Drawing.Size(992, 687);
+            this.dgvView.Size = new System.Drawing.Size(744, 558);
             this.dgvView.TabIndex = 0;
             this.dgvView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvView_CellDoubleClick);
             // 
             // cboPaType
             // 
             this.cboPaType.FormattingEnabled = true;
-            this.cboPaType.Location = new System.Drawing.Point(122, 19);
+            this.cboPaType.Location = new System.Drawing.Point(92, 15);
+            this.cboPaType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboPaType.Name = "cboPaType";
-            this.cboPaType.Size = new System.Drawing.Size(268, 24);
+            this.cboPaType.Size = new System.Drawing.Size(202, 21);
             this.cboPaType.TabIndex = 15;
             this.cboPaType.SelectedIndexChanged += new System.EventHandler(this.cboPaType_SelectedIndexChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(39, 19);
+            this.label7.Location = new System.Drawing.Point(29, 15);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 17);
+            this.label7.Size = new System.Drawing.Size(50, 13);
             this.label7.TabIndex = 14;
             this.label7.Text = "ประเภท :";
             // 
             // FrmPartTypeSubView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 806);
+            this.ClientSize = new System.Drawing.Size(839, 655);
             this.Controls.Add(this.cboPaType);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmPartTypeSubView";
             this.Text = "FrmPartTypeSubView";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmPartTypeSubView_Load);
+            this.Resize += new System.EventHandler(this.FrmPartTypeSubView_Resize);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.ResumeLayout(false);

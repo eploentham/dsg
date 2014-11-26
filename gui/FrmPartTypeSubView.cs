@@ -91,11 +91,11 @@ namespace dsg.gui
         }
         private void setResize()
         {
-            dgvView.Width = this.Width - 50;
-            dgvView.Height = this.Height - 150;
-
-            groupBox1.Width = this.Width - 50;
-            //groupBox1.Height = this.Height = 150;
+            btnAdd.Left = this.Width - btnAdd.Width - 40;
+            groupBox1.Width = this.Width - btnAdd.Width - 60;
+            groupBox1.Height = this.Height - cboPaType.Height - 100;
+            dgvView.Width = groupBox1.Width - 10;
+            dgvView.Height = groupBox1.Height - 30;
         }
         private void FrmPartTypeSubView_Load(object sender, EventArgs e)
         {
@@ -128,6 +128,11 @@ namespace dsg.gui
         private void cboPaType_SelectedIndexChanged(object sender, EventArgs e)
         {
             setGrd(dc.cf.getValueCboItem(cboPaType));
+        }
+
+        private void FrmPartTypeSubView_Resize(object sender, EventArgs e)
+        {
+            setResize();
         }
     }
 }
