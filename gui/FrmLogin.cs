@@ -38,7 +38,7 @@ namespace dsg.gui
             }
             else
             {
-                if (txtId.Text.Equals("pop") && txtPwd.Text.Equals("Ekartc2c5"))
+                if (txtId.Text.Equals("pop") && txtPwd.Text.Equals("pop"))
                 {
                     FrmMain frm = new FrmMain(null, txtId.Text, dc);
                     frm.Show();

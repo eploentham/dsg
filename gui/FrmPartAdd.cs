@@ -602,5 +602,10 @@ namespace dsg.gui
             saveImage("_4");
             chkPic4.Checked = true;
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

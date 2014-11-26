@@ -44,7 +44,7 @@ namespace dsg
             //if (sf.Priority.Equals("1") || sf.Priority.Equals("3"))
             //{
             tv1.Nodes.Add("nPartView", "ข้อมูลอะไหล่ต่างๆ");
-            //    tv1.Nodes.Add("nInputImage", "ป้อนข้อมูลจากรูป");
+            tv1.Nodes.Add("nPartLotAdd", "เพิ่มข้อมูลอะไหล่เป็นLOT");
             //    tv1.Nodes.Add("nInputView", "ดูข้อมูลเก่า");
             //    tv1.Nodes.Add("nRewardAdd", "ป้อนรางวัล");
             //}
@@ -111,11 +111,11 @@ namespace dsg
                 FrmPartTypeSubView frm = new FrmPartTypeSubView(dc);
                 showFrame(frm);
             }
-            //else if (e.Node.Name.ToString() == "nPassword")
-            //{
-            //    FrmPassword frm = new FrmPassword(sf.Id);
-            //    showFrame(frm);
-            //}
+            else if (e.Node.Name.ToString() == "nPartLotAdd")
+            {
+                FrmPartAddLot frm = new FrmPartAddLot(dc,"");
+                showFrame(frm);
+            }
             //else if (e.Node.Name.ToString() == "nInputView")
             //{
             //    FrmInputView frm = new FrmInputView(sf.Code);

@@ -152,9 +152,9 @@
             this.groupBox1.Controls.Add(this.txtPaCode);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(9, 6);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(946, 664);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -164,7 +164,7 @@
             // 
             this.cboModel.FormattingEnabled = true;
             this.cboModel.Location = new System.Drawing.Point(459, 11);
-            this.cboModel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboModel.Margin = new System.Windows.Forms.Padding(2);
             this.cboModel.Name = "cboModel";
             this.cboModel.Size = new System.Drawing.Size(288, 21);
             this.cboModel.TabIndex = 51;
@@ -182,7 +182,7 @@
             // txtPaNumber
             // 
             this.txtPaNumber.Location = new System.Drawing.Point(77, 128);
-            this.txtPaNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPaNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtPaNumber.Name = "txtPaNumber";
             this.txtPaNumber.Size = new System.Drawing.Size(202, 20);
             this.txtPaNumber.TabIndex = 49;
@@ -200,7 +200,7 @@
             // picCertify
             // 
             this.picCertify.Location = new System.Drawing.Point(814, 14);
-            this.picCertify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picCertify.Margin = new System.Windows.Forms.Padding(2);
             this.picCertify.Name = "picCertify";
             this.picCertify.Size = new System.Drawing.Size(122, 154);
             this.picCertify.TabIndex = 47;
@@ -209,7 +209,7 @@
             // btnPicCertify
             // 
             this.btnPicCertify.Location = new System.Drawing.Point(750, 55);
-            this.btnPicCertify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPicCertify.Margin = new System.Windows.Forms.Padding(2);
             this.btnPicCertify.Name = "btnPicCertify";
             this.btnPicCertify.Size = new System.Drawing.Size(41, 24);
             this.btnPicCertify.TabIndex = 46;
@@ -221,7 +221,7 @@
             // 
             this.cboTypeSub.FormattingEnabled = true;
             this.cboTypeSub.Location = new System.Drawing.Point(77, 59);
-            this.cboTypeSub.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboTypeSub.Margin = new System.Windows.Forms.Padding(2);
             this.cboTypeSub.Name = "cboTypeSub";
             this.cboTypeSub.Size = new System.Drawing.Size(202, 21);
             this.cboTypeSub.TabIndex = 45;
@@ -249,7 +249,7 @@
             // txtRemark
             // 
             this.txtRemark.Location = new System.Drawing.Point(459, 150);
-            this.txtRemark.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRemark.Margin = new System.Windows.Forms.Padding(2);
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(352, 20);
             this.txtRemark.TabIndex = 33;
@@ -257,7 +257,7 @@
             // txtPaId
             // 
             this.txtPaId.Location = new System.Drawing.Point(571, 83);
-            this.txtPaId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPaId.Margin = new System.Windows.Forms.Padding(2);
             this.txtPaId.Name = "txtPaId";
             this.txtPaId.Size = new System.Drawing.Size(76, 20);
             this.txtPaId.TabIndex = 32;
@@ -265,7 +265,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(284, 81);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(27, 24);
             this.button3.TabIndex = 30;
@@ -275,7 +275,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(284, 36);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(27, 24);
             this.button2.TabIndex = 29;
@@ -285,7 +285,7 @@
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(284, 16);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(27, 24);
             this.btnSearch.TabIndex = 21;
@@ -295,7 +295,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(754, 106);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 38);
             this.btnSave.TabIndex = 22;
@@ -314,9 +314,9 @@
             this.gBSerial.Controls.Add(this.dgv1);
             this.gBSerial.Controls.Add(this.btnSaveSerialNo);
             this.gBSerial.Location = new System.Drawing.Point(4, 170);
-            this.gBSerial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gBSerial.Margin = new System.Windows.Forms.Padding(2);
             this.gBSerial.Name = "gBSerial";
-            this.gBSerial.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gBSerial.Padding = new System.Windows.Forms.Padding(2);
             this.gBSerial.Size = new System.Drawing.Size(937, 482);
             this.gBSerial.TabIndex = 20;
             this.gBSerial.TabStop = false;
@@ -335,7 +335,7 @@
             // txtRemarkDraw
             // 
             this.txtRemarkDraw.Location = new System.Drawing.Point(303, 25);
-            this.txtRemarkDraw.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRemarkDraw.Margin = new System.Windows.Forms.Padding(2);
             this.txtRemarkDraw.Name = "txtRemarkDraw";
             this.txtRemarkDraw.Size = new System.Drawing.Size(265, 20);
             this.txtRemarkDraw.TabIndex = 64;
@@ -363,7 +363,7 @@
             this.panel3.Controls.Add(this.txtSerialNo);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(572, 11);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(361, 153);
             this.panel3.TabIndex = 56;
@@ -371,7 +371,7 @@
             // txtRowNumber
             // 
             this.txtRowNumber.Location = new System.Drawing.Point(239, 84);
-            this.txtRowNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRowNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtRowNumber.Name = "txtRowNumber";
             this.txtRowNumber.Size = new System.Drawing.Size(76, 20);
             this.txtRowNumber.TabIndex = 64;
@@ -389,7 +389,7 @@
             // txtPsRemark
             // 
             this.txtPsRemark.Location = new System.Drawing.Point(78, 130);
-            this.txtPsRemark.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPsRemark.Margin = new System.Windows.Forms.Padding(2);
             this.txtPsRemark.Name = "txtPsRemark";
             this.txtPsRemark.Size = new System.Drawing.Size(265, 20);
             this.txtPsRemark.TabIndex = 62;
@@ -397,7 +397,7 @@
             // txtPsId
             // 
             this.txtPsId.Location = new System.Drawing.Point(239, 107);
-            this.txtPsId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPsId.Margin = new System.Windows.Forms.Padding(2);
             this.txtPsId.Name = "txtPsId";
             this.txtPsId.Size = new System.Drawing.Size(76, 20);
             this.txtPsId.TabIndex = 61;
@@ -405,7 +405,7 @@
             // txtSnPriceSale
             // 
             this.txtSnPriceSale.Location = new System.Drawing.Point(239, 58);
-            this.txtSnPriceSale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSnPriceSale.Margin = new System.Windows.Forms.Padding(2);
             this.txtSnPriceSale.Name = "txtSnPriceSale";
             this.txtSnPriceSale.Size = new System.Drawing.Size(76, 20);
             this.txtSnPriceSale.TabIndex = 60;
@@ -423,7 +423,7 @@
             // txtSnPriceCost
             // 
             this.txtSnPriceCost.Location = new System.Drawing.Point(78, 58);
-            this.txtSnPriceCost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSnPriceCost.Margin = new System.Windows.Forms.Padding(2);
             this.txtSnPriceCost.Name = "txtSnPriceCost";
             this.txtSnPriceCost.Size = new System.Drawing.Size(76, 20);
             this.txtSnPriceCost.TabIndex = 58;
@@ -441,7 +441,7 @@
             // txtDateInv
             // 
             this.txtDateInv.Location = new System.Drawing.Point(88, 107);
-            this.txtDateInv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDateInv.Margin = new System.Windows.Forms.Padding(2);
             this.txtDateInv.Name = "txtDateInv";
             this.txtDateInv.Size = new System.Drawing.Size(97, 20);
             this.txtDateInv.TabIndex = 50;
@@ -460,7 +460,7 @@
             // 
             this.chkLoca5.AutoSize = true;
             this.chkLoca5.Location = new System.Drawing.Point(304, 34);
-            this.chkLoca5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkLoca5.Margin = new System.Windows.Forms.Padding(2);
             this.chkLoca5.Name = "chkLoca5";
             this.chkLoca5.Size = new System.Drawing.Size(49, 17);
             this.chkLoca5.TabIndex = 56;
@@ -471,7 +471,7 @@
             // txtInvNumber
             // 
             this.txtInvNumber.Location = new System.Drawing.Point(78, 80);
-            this.txtInvNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtInvNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtInvNumber.Name = "txtInvNumber";
             this.txtInvNumber.Size = new System.Drawing.Size(107, 20);
             this.txtInvNumber.TabIndex = 48;
@@ -490,7 +490,7 @@
             // 
             this.chkLoca4.AutoSize = true;
             this.chkLoca4.Location = new System.Drawing.Point(231, 34);
-            this.chkLoca4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkLoca4.Margin = new System.Windows.Forms.Padding(2);
             this.chkLoca4.Name = "chkLoca4";
             this.chkLoca4.Size = new System.Drawing.Size(47, 17);
             this.chkLoca4.TabIndex = 55;
@@ -502,7 +502,7 @@
             // 
             this.chkLoca3.AutoSize = true;
             this.chkLoca3.Location = new System.Drawing.Point(155, 34);
-            this.chkLoca3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkLoca3.Margin = new System.Windows.Forms.Padding(2);
             this.chkLoca3.Name = "chkLoca3";
             this.chkLoca3.Size = new System.Drawing.Size(47, 17);
             this.chkLoca3.TabIndex = 54;
@@ -514,7 +514,7 @@
             // 
             this.chkLoca2.AutoSize = true;
             this.chkLoca2.Location = new System.Drawing.Point(85, 34);
-            this.chkLoca2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkLoca2.Margin = new System.Windows.Forms.Padding(2);
             this.chkLoca2.Name = "chkLoca2";
             this.chkLoca2.Size = new System.Drawing.Size(46, 17);
             this.chkLoca2.TabIndex = 53;
@@ -526,7 +526,7 @@
             // 
             this.chkLoca1.AutoSize = true;
             this.chkLoca1.Location = new System.Drawing.Point(10, 34);
-            this.chkLoca1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkLoca1.Margin = new System.Windows.Forms.Padding(2);
             this.chkLoca1.Name = "chkLoca1";
             this.chkLoca1.Size = new System.Drawing.Size(48, 17);
             this.chkLoca1.TabIndex = 52;
@@ -537,17 +537,18 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(278, 6);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(31, 23);
             this.btnAdd.TabIndex = 51;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtSerialNo
             // 
             this.txtSerialNo.Location = new System.Drawing.Point(73, 9);
-            this.txtSerialNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSerialNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtSerialNo.Name = "txtSerialNo";
             this.txtSerialNo.Size = new System.Drawing.Size(202, 20);
             this.txtSerialNo.TabIndex = 46;
@@ -573,7 +574,7 @@
             this.panel2.Controls.Add(this.btnPicPart3);
             this.panel2.Controls.Add(this.btnPicPart4);
             this.panel2.Location = new System.Drawing.Point(580, 170);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(231, 50);
             this.panel2.TabIndex = 55;
@@ -582,7 +583,7 @@
             // 
             this.chkPic1.AutoSize = true;
             this.chkPic1.Location = new System.Drawing.Point(8, 5);
-            this.chkPic1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkPic1.Margin = new System.Windows.Forms.Padding(2);
             this.chkPic1.Name = "chkPic1";
             this.chkPic1.Size = new System.Drawing.Size(44, 17);
             this.chkPic1.TabIndex = 51;
@@ -595,7 +596,7 @@
             // 
             this.chkPic4.AutoSize = true;
             this.chkPic4.Location = new System.Drawing.Point(176, 5);
-            this.chkPic4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkPic4.Margin = new System.Windows.Forms.Padding(2);
             this.chkPic4.Name = "chkPic4";
             this.chkPic4.Size = new System.Drawing.Size(44, 17);
             this.chkPic4.TabIndex = 54;
@@ -607,7 +608,7 @@
             // btnPicPart1
             // 
             this.btnPicPart1.Location = new System.Drawing.Point(8, 24);
-            this.btnPicPart1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPicPart1.Margin = new System.Windows.Forms.Padding(2);
             this.btnPicPart1.Name = "btnPicPart1";
             this.btnPicPart1.Size = new System.Drawing.Size(39, 24);
             this.btnPicPart1.TabIndex = 47;
@@ -619,7 +620,7 @@
             // 
             this.chkPic3.AutoSize = true;
             this.chkPic3.Location = new System.Drawing.Point(118, 5);
-            this.chkPic3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkPic3.Margin = new System.Windows.Forms.Padding(2);
             this.chkPic3.Name = "chkPic3";
             this.chkPic3.Size = new System.Drawing.Size(44, 17);
             this.chkPic3.TabIndex = 53;
@@ -631,7 +632,7 @@
             // btnPicPart2
             // 
             this.btnPicPart2.Location = new System.Drawing.Point(64, 24);
-            this.btnPicPart2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPicPart2.Margin = new System.Windows.Forms.Padding(2);
             this.btnPicPart2.Name = "btnPicPart2";
             this.btnPicPart2.Size = new System.Drawing.Size(39, 24);
             this.btnPicPart2.TabIndex = 48;
@@ -643,7 +644,7 @@
             // 
             this.chkPic2.AutoSize = true;
             this.chkPic2.Location = new System.Drawing.Point(64, 5);
-            this.chkPic2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkPic2.Margin = new System.Windows.Forms.Padding(2);
             this.chkPic2.Name = "chkPic2";
             this.chkPic2.Size = new System.Drawing.Size(44, 17);
             this.chkPic2.TabIndex = 52;
@@ -655,7 +656,7 @@
             // btnPicPart3
             // 
             this.btnPicPart3.Location = new System.Drawing.Point(118, 24);
-            this.btnPicPart3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPicPart3.Margin = new System.Windows.Forms.Padding(2);
             this.btnPicPart3.Name = "btnPicPart3";
             this.btnPicPart3.Size = new System.Drawing.Size(39, 24);
             this.btnPicPart3.TabIndex = 49;
@@ -666,7 +667,7 @@
             // btnPicPart4
             // 
             this.btnPicPart4.Location = new System.Drawing.Point(176, 24);
-            this.btnPicPart4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPicPart4.Margin = new System.Windows.Forms.Padding(2);
             this.btnPicPart4.Name = "btnPicPart4";
             this.btnPicPart4.Size = new System.Drawing.Size(39, 24);
             this.btnPicPart4.TabIndex = 50;
@@ -679,7 +680,7 @@
             this.panel1.Controls.Add(this.chkDraw);
             this.panel1.Controls.Add(this.chkReceive);
             this.panel1.Location = new System.Drawing.Point(15, 17);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(194, 33);
             this.panel1.TabIndex = 43;
@@ -688,7 +689,7 @@
             // 
             this.chkDraw.AutoSize = true;
             this.chkDraw.Location = new System.Drawing.Point(100, 8);
-            this.chkDraw.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkDraw.Margin = new System.Windows.Forms.Padding(2);
             this.chkDraw.Name = "chkDraw";
             this.chkDraw.Size = new System.Drawing.Size(89, 17);
             this.chkDraw.TabIndex = 37;
@@ -701,7 +702,7 @@
             // 
             this.chkReceive.AutoSize = true;
             this.chkReceive.Location = new System.Drawing.Point(15, 8);
-            this.chkReceive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkReceive.Margin = new System.Windows.Forms.Padding(2);
             this.chkReceive.Name = "chkReceive";
             this.chkReceive.Size = new System.Drawing.Size(80, 17);
             this.chkReceive.TabIndex = 36;
@@ -713,7 +714,7 @@
             // pic1
             // 
             this.pic1.Location = new System.Drawing.Point(572, 233);
-            this.pic1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pic1.Margin = new System.Windows.Forms.Padding(2);
             this.pic1.Name = "pic1";
             this.pic1.Size = new System.Drawing.Size(361, 229);
             this.pic1.TabIndex = 28;
@@ -724,7 +725,7 @@
             this.dgv1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Location = new System.Drawing.Point(9, 55);
-            this.dgv1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv1.Margin = new System.Windows.Forms.Padding(2);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowTemplate.Height = 24;
             this.dgv1.Size = new System.Drawing.Size(558, 407);
@@ -734,7 +735,7 @@
             // btnSaveSerialNo
             // 
             this.btnSaveSerialNo.Location = new System.Drawing.Point(876, 172);
-            this.btnSaveSerialNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaveSerialNo.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveSerialNo.Name = "btnSaveSerialNo";
             this.btnSaveSerialNo.Size = new System.Drawing.Size(56, 38);
             this.btnSaveSerialNo.TabIndex = 30;
@@ -746,7 +747,7 @@
             // 
             this.cboAcftModel.FormattingEnabled = true;
             this.cboAcftModel.Location = new System.Drawing.Point(459, 34);
-            this.cboAcftModel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboAcftModel.Margin = new System.Windows.Forms.Padding(2);
             this.cboAcftModel.Name = "cboAcftModel";
             this.cboAcftModel.Size = new System.Drawing.Size(288, 21);
             this.cboAcftModel.TabIndex = 17;
@@ -764,7 +765,7 @@
             // txtPriceSale
             // 
             this.txtPriceSale.Location = new System.Drawing.Point(459, 128);
-            this.txtPriceSale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPriceSale.Margin = new System.Windows.Forms.Padding(2);
             this.txtPriceSale.Name = "txtPriceSale";
             this.txtPriceSale.Size = new System.Drawing.Size(76, 20);
             this.txtPriceSale.TabIndex = 19;
@@ -773,7 +774,7 @@
             // 
             this.cboPaCate.FormattingEnabled = true;
             this.cboPaCate.Location = new System.Drawing.Point(77, 81);
-            this.cboPaCate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboPaCate.Margin = new System.Windows.Forms.Padding(2);
             this.cboPaCate.Name = "cboPaCate";
             this.cboPaCate.Size = new System.Drawing.Size(202, 21);
             this.cboPaCate.TabIndex = 15;
@@ -801,7 +802,7 @@
             // txtPriceCost
             // 
             this.txtPriceCost.Location = new System.Drawing.Point(459, 106);
-            this.txtPriceCost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPriceCost.Margin = new System.Windows.Forms.Padding(2);
             this.txtPriceCost.Name = "txtPriceCost";
             this.txtPriceCost.Size = new System.Drawing.Size(76, 20);
             this.txtPriceCost.TabIndex = 11;
@@ -820,7 +821,7 @@
             // 
             this.cboPaType.FormattingEnabled = true;
             this.cboPaType.Location = new System.Drawing.Point(77, 37);
-            this.cboPaType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboPaType.Margin = new System.Windows.Forms.Padding(2);
             this.cboPaType.Name = "cboPaType";
             this.cboPaType.Size = new System.Drawing.Size(202, 21);
             this.cboPaType.TabIndex = 13;
@@ -838,7 +839,7 @@
             // txtCertify
             // 
             this.txtCertify.Location = new System.Drawing.Point(459, 58);
-            this.txtCertify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCertify.Margin = new System.Windows.Forms.Padding(2);
             this.txtCertify.Name = "txtCertify";
             this.txtCertify.Size = new System.Drawing.Size(288, 20);
             this.txtCertify.TabIndex = 9;
@@ -846,7 +847,7 @@
             // txtOnHand
             // 
             this.txtOnHand.Location = new System.Drawing.Point(459, 83);
-            this.txtOnHand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtOnHand.Margin = new System.Windows.Forms.Padding(2);
             this.txtOnHand.Name = "txtOnHand";
             this.txtOnHand.Size = new System.Drawing.Size(76, 20);
             this.txtOnHand.TabIndex = 21;
@@ -864,7 +865,7 @@
             // txtPaName
             // 
             this.txtPaName.Location = new System.Drawing.Point(77, 150);
-            this.txtPaName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPaName.Margin = new System.Windows.Forms.Padding(2);
             this.txtPaName.Name = "txtPaName";
             this.txtPaName.Size = new System.Drawing.Size(288, 20);
             this.txtPaName.TabIndex = 5;
@@ -892,7 +893,7 @@
             // txtBarcode
             // 
             this.txtBarcode.Location = new System.Drawing.Point(77, 108);
-            this.txtBarcode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBarcode.Margin = new System.Windows.Forms.Padding(2);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(202, 20);
             this.txtBarcode.TabIndex = 3;
@@ -910,7 +911,7 @@
             // txtPaCode
             // 
             this.txtPaCode.Location = new System.Drawing.Point(77, 17);
-            this.txtPaCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPaCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtPaCode.Name = "txtPaCode";
             this.txtPaCode.Size = new System.Drawing.Size(200, 20);
             this.txtPaCode.TabIndex = 1;
@@ -931,7 +932,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(961, 680);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmPartAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPartAdd";

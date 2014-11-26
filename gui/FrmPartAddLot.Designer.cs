@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtDateInv = new System.Windows.Forms.DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
@@ -85,8 +87,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtPaCode = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -113,6 +113,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(797, 45);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(76, 20);
+            this.textBox2.TabIndex = 91;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(735, 47);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(51, 13);
+            this.label23.TabIndex = 90;
+            this.label23.Text = "ราคาทุน :";
+            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(1072, 51);
@@ -137,9 +155,9 @@
             this.label19.Location = new System.Drawing.Point(461, 50);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(71, 13);
+            this.label19.Size = new System.Drawing.Size(72, 13);
             this.label19.TabIndex = 53;
-            this.label19.Text = "invoice date :";
+            this.label19.Text = "Invoice date :";
             // 
             // txtInvNumber
             // 
@@ -155,9 +173,9 @@
             this.label22.Location = new System.Drawing.Point(461, 22);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(62, 13);
+            this.label22.Size = new System.Drawing.Size(63, 13);
             this.label22.TabIndex = 51;
-            this.label22.Text = "invoice no :";
+            this.label22.Text = "Invoice no :";
             // 
             // txtRemark
             // 
@@ -283,6 +301,7 @@
             this.btnAdd.TabIndex = 92;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtSnPriceSale
             // 
@@ -684,24 +703,6 @@
             this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 50;
             this.label6.Text = "รหัส:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(797, 45);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(76, 20);
-            this.textBox2.TabIndex = 91;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(735, 47);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(51, 13);
-            this.label23.TabIndex = 90;
-            this.label23.Text = "ราคาทุน :";
             // 
             // FrmPartAddLot
             // 

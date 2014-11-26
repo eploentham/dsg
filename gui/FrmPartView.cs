@@ -35,11 +35,13 @@ namespace dsg.gui
             dgvView.RowCount = dt.Rows.Count + 1;
             dgvView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvView.Columns[colRow].Width = 50;
-            dgvView.Columns[colName].Width = 150;
-            dgvView.Columns[colRemark].Width = 120;
+            dgvView.Columns[colName].Width = 180;
+            dgvView.Columns[colRemark].Width = 180;
             dgvView.Columns[colId].Width = 80;
-            dgvView.Columns[colCode].Width = 80;
-            //dgvView.Columns[colPriority].Width = 180;
+            dgvView.Columns[colCode].Width = 120;
+            dgvView.Columns[colModel].Width = 250;
+            dgvView.Columns[colType].Width = 180;
+            dgvView.Columns[colCate].Width = 180;
 
             dgvView.Columns[colRow].HeaderText = "ลำดับ";
             dgvView.Columns[colCode].HeaderText = "code";
@@ -112,6 +114,11 @@ namespace dsg.gui
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
             frm.ShowDialog(this);
             setGrd();
+        }
+
+        private void FrmPartView_Resize(object sender, EventArgs e)
+        {
+            setResize();
         }
     }
 }
