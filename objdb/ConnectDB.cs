@@ -49,7 +49,7 @@ namespace dsg.objdb
             if (initc.connectServer.ToLower().Equals("yes"))
             {
                 cMysql = new MySql.Data.MySqlClient.MySqlConnection();
-                cMysql.ConnectionString = "server="+initc.ServerIP+";uid="+initc.User+";pwd="+initc.Password+";database=dsg;";
+                cMysql.ConnectionString = "server=" + initc.ServerIP + ";uid=" + initc.User + ";pwd=" + initc.Password + ";database=dsg;CharSet=utf8;";
             }
             else
             {

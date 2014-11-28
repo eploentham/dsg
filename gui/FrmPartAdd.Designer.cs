@@ -785,9 +785,9 @@
             this.label10.Location = new System.Drawing.Point(455, 157);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
+            this.label10.Size = new System.Drawing.Size(57, 13);
             this.label10.TabIndex = 18;
-            this.label10.Text = "ราคาขาย :";
+            this.label10.Text = "ราคาขาย  :";
             // 
             // label8
             // 

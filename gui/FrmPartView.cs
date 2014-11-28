@@ -96,7 +96,9 @@ namespace dsg.gui
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FrmPartAdd frm = new FrmPartAdd(dc,"");
+            this.Hide();
             frm.ShowDialog(this);
+            this.Show();
             setGrd();
         }
 
@@ -112,7 +114,9 @@ namespace dsg.gui
             }
             FrmPartAdd frm = new FrmPartAdd(dc, dgvView[colId, e.RowIndex].Value.ToString());
             //frm.setControl(dgvView[colId, e.RowIndex].Value.ToString());
+            this.Hide();
             frm.ShowDialog(this);
+            this.Show();
             setGrd();
         }
 
