@@ -66,7 +66,7 @@ namespace dsg
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nRateView", "สร้างอัตรา");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nPassword", "เปลี่ยนรหัสผ่าน");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nThooDefault", "กำหนดเจ้ามือ (เจ้าของโปรแกรม)");
-            //    tv1.Nodes["nInitConfig"].Nodes.Add("nInitConfig1", "กำหนดค่าโปรแกรม");
+            tv1.Nodes["nInitConfig"].Nodes.Add("nInitConfig1", "กำหนดค่าโปรแกรม");
             //}
 
             tv1.ExpandAll();
@@ -116,11 +116,11 @@ namespace dsg
                 FrmPartAddLot frm = new FrmPartAddLot(dc,"");
                 showFrame(frm);
             }
-            //else if (e.Node.Name.ToString() == "nInputView")
-            //{
-            //    FrmInputView frm = new FrmInputView(sf.Code);
-            //    showFrame(frm);
-            //}
+            else if (e.Node.Name.ToString() == "nInitConfig1")
+            {
+                FrmInitConfig frm = new FrmInitConfig("",dc);
+                showFrame(frm);
+            }
             //else if (e.Node.Name.ToString() == "nInputAdd")
             //{
             //    FrmInputAdd frm = new FrmInputAdd(sf.Code, lc);

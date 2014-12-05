@@ -422,7 +422,7 @@ namespace dsg.gui
             if (dc.padb.insertPart(pa).Length >= 1)
             {
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
-                this.Dispose();
+                //this.Dispose();
                 //this.Hide();
             }
         }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnConvert = new System.Windows.Forms.Button();
             this.btnPath1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPath1 = new System.Windows.Forms.TextBox();
@@ -51,8 +53,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkClearInput = new System.Windows.Forms.CheckBox();
-            this.btnConvert = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -73,17 +73,39 @@
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(680, 496);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(473, 155);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(56, 26);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnConvert
+            // 
+            this.btnConvert.Location = new System.Drawing.Point(567, 155);
+            this.btnConvert.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConvert.Name = "btnConvert";
+            this.btnConvert.Size = new System.Drawing.Size(56, 26);
+            this.btnConvert.TabIndex = 20;
+            this.btnConvert.Text = "Convert";
+            this.btnConvert.UseVisualStyleBackColor = true;
+            this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
+            // 
             // btnPath1
             // 
             this.btnPath1.Location = new System.Drawing.Point(653, 70);
-            this.btnPath1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPath1.Margin = new System.Windows.Forms.Padding(2);
             this.btnPath1.Name = "btnPath1";
             this.btnPath1.Size = new System.Drawing.Size(22, 26);
             this.btnPath1.TabIndex = 19;
@@ -104,7 +126,7 @@
             // txtPath1
             // 
             this.txtPath1.Location = new System.Drawing.Point(374, 74);
-            this.txtPath1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPath1.Margin = new System.Windows.Forms.Padding(2);
             this.txtPath1.Name = "txtPath1";
             this.txtPath1.Size = new System.Drawing.Size(276, 20);
             this.txtPath1.TabIndex = 17;
@@ -113,7 +135,7 @@
             // 
             this.chkDelImage.AutoSize = true;
             this.chkDelImage.Location = new System.Drawing.Point(308, 108);
-            this.chkDelImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkDelImage.Margin = new System.Windows.Forms.Padding(2);
             this.chkDelImage.Name = "chkDelImage";
             this.chkDelImage.Size = new System.Drawing.Size(153, 17);
             this.chkDelImage.TabIndex = 16;
@@ -123,7 +145,7 @@
             // btnPath
             // 
             this.btnPath.Location = new System.Drawing.Point(653, 20);
-            this.btnPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPath.Margin = new System.Windows.Forms.Padding(2);
             this.btnPath.Name = "btnPath";
             this.btnPath.Size = new System.Drawing.Size(22, 26);
             this.btnPath.TabIndex = 15;
@@ -144,7 +166,7 @@
             // txtPath
             // 
             this.txtPath.Location = new System.Drawing.Point(374, 24);
-            this.txtPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPath.Margin = new System.Windows.Forms.Padding(2);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(276, 20);
             this.txtPath.TabIndex = 13;
@@ -163,9 +185,9 @@
             this.groupBox3.Controls.Add(this.txtHost);
             this.groupBox3.Controls.Add(this.chkConnectServer);
             this.groupBox3.Location = new System.Drawing.Point(4, 172);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(296, 174);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
@@ -184,7 +206,7 @@
             // txtDatabase
             // 
             this.txtDatabase.Location = new System.Drawing.Point(69, 62);
-            this.txtDatabase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDatabase.Margin = new System.Windows.Forms.Padding(2);
             this.txtDatabase.Name = "txtDatabase";
             this.txtDatabase.Size = new System.Drawing.Size(97, 20);
             this.txtDatabase.TabIndex = 11;
@@ -192,7 +214,7 @@
             // lV1
             // 
             this.lV1.Location = new System.Drawing.Point(170, 63);
-            this.lV1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lV1.Margin = new System.Windows.Forms.Padding(2);
             this.lV1.Name = "lV1";
             this.lV1.Size = new System.Drawing.Size(122, 80);
             this.lV1.TabIndex = 10;
@@ -201,7 +223,7 @@
             // btnTest
             // 
             this.btnTest.Location = new System.Drawing.Point(170, 35);
-            this.btnTest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTest.Margin = new System.Windows.Forms.Padding(2);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(56, 26);
             this.btnTest.TabIndex = 9;
@@ -241,7 +263,7 @@
             // txtPwd
             // 
             this.txtPwd.Location = new System.Drawing.Point(69, 113);
-            this.txtPwd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPwd.Margin = new System.Windows.Forms.Padding(2);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(97, 20);
             this.txtPwd.TabIndex = 5;
@@ -249,7 +271,7 @@
             // txtUser
             // 
             this.txtUser.Location = new System.Drawing.Point(69, 90);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(97, 20);
             this.txtUser.TabIndex = 4;
@@ -257,7 +279,7 @@
             // txtHost
             // 
             this.txtHost.Location = new System.Drawing.Point(69, 39);
-            this.txtHost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHost.Margin = new System.Windows.Forms.Padding(2);
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(97, 20);
             this.txtHost.TabIndex = 3;
@@ -266,7 +288,7 @@
             // 
             this.chkConnectServer.AutoSize = true;
             this.chkConnectServer.Location = new System.Drawing.Point(4, 17);
-            this.chkConnectServer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkConnectServer.Margin = new System.Windows.Forms.Padding(2);
             this.chkConnectServer.Name = "chkConnectServer";
             this.chkConnectServer.Size = new System.Drawing.Size(147, 17);
             this.chkConnectServer.TabIndex = 2;
@@ -277,7 +299,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(593, 450);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 41);
             this.btnSave.TabIndex = 3;
@@ -289,9 +311,9 @@
             // 
             this.groupBox2.Controls.Add(this.chkClearInput);
             this.groupBox2.Location = new System.Drawing.Point(4, 8);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(296, 159);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -301,32 +323,12 @@
             // 
             this.chkClearInput.AutoSize = true;
             this.chkClearInput.Location = new System.Drawing.Point(4, 17);
-            this.chkClearInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkClearInput.Margin = new System.Windows.Forms.Padding(2);
             this.chkClearInput.Name = "chkClearInput";
             this.chkClearInput.Size = new System.Drawing.Size(127, 17);
             this.chkClearInput.TabIndex = 0;
             this.chkClearInput.Text = "ให้ล้างข้อมูลหลังบันทึก";
             this.chkClearInput.UseVisualStyleBackColor = true;
-            // 
-            // btnConvert
-            // 
-            this.btnConvert.Location = new System.Drawing.Point(567, 155);
-            this.btnConvert.Margin = new System.Windows.Forms.Padding(2);
-            this.btnConvert.Name = "btnConvert";
-            this.btnConvert.Size = new System.Drawing.Size(56, 26);
-            this.btnConvert.TabIndex = 20;
-            this.btnConvert.Text = "Convert";
-            this.btnConvert.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(473, 155);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 26);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmInitConfig
             // 
@@ -334,7 +336,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 515);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmInitConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInitConfig";

@@ -15,6 +15,9 @@ namespace dsg.gui
     {
         DsgControl dc;
         Staff sf;
+        object misValue = System.Reflection.Missing.Value;
+        OpenFileDialog ofd = new OpenFileDialog();
+        String fileName = "";
         public FrmInitConfig(String sfCode, DsgControl l)
         {
             InitializeComponent();
@@ -122,6 +125,113 @@ namespace dsg.gui
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             DialogResult result = fbd.ShowDialog();
             txtPath1.Text = fbd.SelectedPath;
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Unable to release the Object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
+        private void btnConvert_Click(object sender, EventArgs e)
+        {
+            String code = "", partName = "", partNumber = "", SerialNo = "", certify = "", model = "";
+            Cursor cursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileName);
+            Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+            int rowCount = xlRange.Rows.Count, row = 0, normal = 0;
+            xlApp.Visible = false;
+            for (int i = 6; i <= rowCount; i++)
+            {
+
+                if (xlRange.Cells[i, 2].Value2 != null)
+                {
+                    code = xlRange.Cells[i, 2].Value2.ToString();
+                }
+                else
+                {
+                    code = "";
+                }
+                if (xlRange.Cells[i, 3].Value2 != null)
+                {
+                    partName = xlRange.Cells[i, 3].Value2.ToString();
+                }
+                else
+                {
+                    partName = "";
+                }
+                if (xlRange.Cells[i+1, 3].Value2 != null)
+                {
+                    model = xlRange.Cells[i+1, 3].Value2.ToString();
+                }
+                else
+                {
+                    model = "";
+                }
+                if (xlRange.Cells[i, 4].Value2 != null)
+                {
+                    partNumber = xlRange.Cells[i, 4].Value2.ToString();
+                }
+                else
+                {
+                    partNumber = "";
+                }
+                if (xlRange.Cells[i, 5].Value2 != null)
+                {
+                    SerialNo = xlRange.Cells[i, 5].Value2.ToString();
+                }
+                else
+                {
+                    SerialNo = "";
+                }
+                Part pa = new Part();
+                //pa.acftModel = cboAcftModel.Text;
+                //pa.Model = model;
+                //pa.Active = "1";
+                //pa.barcode = "";
+                //pa.CateId = dc.cf.getValueCboItem(cboPaCate);
+                //pa.CateName = cboPaCate.Text;
+                //pa.Certify = txtCertify.Text;
+                //pa.Code = code;
+                //pa.Name = partName;
+                //pa.Id = "";
+                //pa.TypeId = dc.cf.getValueCboItem(cboPaType);
+                //pa.TypeName = cboPaType.Text;
+                //pa.Remark = txtRemark.Text;
+                //pa.Number = partNumber;
+
+                //setPart();
+                if (dc.padb.insertPart(pa).Length >= 1)
+                {
+                    MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
+                    this.Dispose();
+                    //this.Hide();
+                }
+            }
+
+            xlWorkbook.Close(true, misValue, misValue);
+            xlApp.Quit();
+            releaseObject(xlApp);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            fileName = ofd.FileName;
         }
     }
 }
