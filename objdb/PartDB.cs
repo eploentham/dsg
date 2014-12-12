@@ -115,7 +115,7 @@ namespace dsg.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + pa.table + " Where " + pa.Active + "='1'";
+            sql = "Select * From " + pa.table + " Where " + pa.Active + "='1' Order By "+pa.Code;
             dt = conn.selectData(sql);
 
             return dt;
@@ -125,6 +125,18 @@ namespace dsg.objdb
             String sql = "";
             DataTable dt = new DataTable();
             sql = "Select distinct "+pa.acftModel+" From " + pa.table + " Where " + pa.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectBitemListPrint()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select pa.part_id , pa.part_code, pa.part_number, pa.barcode, pa.serial_no, pa.certify, pa.description, pa.part_model, pa.date_receive, pa.acft_model, " +
+                "pa.part_remark, '' as stock_location, pa.part_cate_name, pa.part_type_name, pa.price_cost, pa.price_sale, pa.sort1, pas.part_serial_no_remark as serial_remark  " +
+                "From " + pa.table + " pa Left Join b_part_serial_no pas on pa.part_id = pas.part_id "+
+                " Where " + pa.Active + "='1'";
             dt = conn.selectData(sql);
 
             return dt;
@@ -213,6 +225,24 @@ namespace dsg.objdb
                 item = setData(item, dt);
             }
             return item;
+        }
+        public DataTable selectDistinctModel()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + pa.Model + " From " + pa.table + " Where " + pa.Active + "='1' Order By "+pa.Model;
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectDistinctAcftModel()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select Distinct " + pa.acftModel + " From " + pa.table + " Where " + pa.Active + "='1' Order By " + pa.acftModel;
+            dt = conn.selectData(sql);
+
+            return dt;
         }
         private String insert(Part p)
         {
@@ -359,7 +389,23 @@ namespace dsg.objdb
         public ComboBox getCboModel(ComboBox c)
         {
             ComboBoxItem item = new ComboBoxItem();
-            DataTable dt = selectModel();
+            DataTable dt = selectDistinctModel();
+            //String aaa = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new ComboBoxItem();
+                item.Value = dt.Rows[i][pa.Model].ToString();
+                item.Text = dt.Rows[i][pa.Model].ToString();
+                c.Items.Add(item);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return c;
+        }
+        public ComboBox getCboAcftModel(ComboBox c)
+        {
+            ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectDistinctAcftModel();
             //String aaa = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {

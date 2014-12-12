@@ -7,6 +7,6 @@ namespace dsg.object1
 {
     public class InitConfig
     {
-        public String clearInput = "", connectServer = "", ServerIP="", User="", Password="", Database="", pathImage="", delImage="", pathImageBefore="";
+        public String clearInput = "", connectServer = "", ServerIP = "", User = "", Password = "", Database = "", pathImage = "", delImage = "", pathImageBefore = "", PathReport="";
     }
 }

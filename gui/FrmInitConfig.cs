@@ -57,6 +57,7 @@ namespace dsg.gui
             }
             txtPath.Text = dc.initC.pathImage;
             txtPath1.Text = dc.initC.pathImageBefore;
+            txtPathReport.Text = dc.initC.PathReport;
             if (dc.initC.delImage.Equals("yes"))
             {
                 chkDelImage.Checked = true;
@@ -79,6 +80,8 @@ namespace dsg.gui
             dc.SetPathImage(txtPath.Text);
             dc.SetPathImageBefore(txtPath1.Text);
             dc.SetDelImage(chkDelImage.Checked);
+
+            dc.SetPathReport(txtPathReport.Text);
 
             dc.GetConfig();
         }
@@ -232,6 +235,13 @@ namespace dsg.gui
         {
             ofd.ShowDialog();
             fileName = ofd.FileName;
+        }
+
+        private void btnPathReport_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            DialogResult result = fbd.ShowDialog();
+            txtPathReport.Text = fbd.SelectedPath;
         }
     }
 }

@@ -180,17 +180,25 @@ namespace dsg.objdb
         public ComboBox getCboPartType(ComboBox c)
         {
             ComboBoxItem item = new ComboBoxItem();
-            DataTable dt = selectAll();
-            //String aaa = "";
-            for (int i = 0; i < dt.Rows.Count; i++)
+            try
             {
-                item = new ComboBoxItem();
-                item.Value = dt.Rows[i][pt.Id].ToString();
-                item.Text = dt.Rows[i][pt.partTName].ToString();
-                c.Items.Add(item);
-                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
-                //c.Items.Add(new );
+                DataTable dt = selectAll();
+                //String aaa = "";
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    item = new ComboBoxItem();
+                    item.Value = dt.Rows[i][pt.Id].ToString();
+                    item.Text = dt.Rows[i][pt.partTName].ToString();
+                    c.Items.Add(item);
+                    //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                    //c.Items.Add(new );
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(""+ex.Message, "");
+            }
+            
             return c;
         }
         public String VoidPartType(String ptId)

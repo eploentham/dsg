@@ -53,6 +53,9 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkClearInput = new System.Windows.Forms.CheckBox();
+            this.btnPathReport = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtPathReport = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -60,6 +63,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnPathReport);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.txtPathReport);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnConvert);
             this.groupBox1.Controls.Add(this.btnPath1);
@@ -82,7 +88,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(473, 155);
+            this.button1.Location = new System.Drawing.Point(477, 236);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 26);
@@ -93,7 +99,7 @@
             // 
             // btnConvert
             // 
-            this.btnConvert.Location = new System.Drawing.Point(567, 155);
+            this.btnConvert.Location = new System.Drawing.Point(571, 236);
             this.btnConvert.Margin = new System.Windows.Forms.Padding(2);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(56, 26);
@@ -330,6 +336,35 @@
             this.chkClearInput.Text = "ให้ล้างข้อมูลหลังบันทึก";
             this.chkClearInput.UseVisualStyleBackColor = true;
             // 
+            // btnPathReport
+            // 
+            this.btnPathReport.Location = new System.Drawing.Point(653, 158);
+            this.btnPathReport.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPathReport.Name = "btnPathReport";
+            this.btnPathReport.Size = new System.Drawing.Size(22, 26);
+            this.btnPathReport.TabIndex = 36;
+            this.btnPathReport.Text = "...";
+            this.btnPathReport.UseVisualStyleBackColor = true;
+            this.btnPathReport.Click += new System.EventHandler(this.btnPathReport_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(305, 142);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(67, 13);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "path รายงาน";
+            // 
+            // txtPathReport
+            // 
+            this.txtPathReport.Location = new System.Drawing.Point(374, 162);
+            this.txtPathReport.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPathReport.Name = "txtPathReport";
+            this.txtPathReport.Size = new System.Drawing.Size(275, 20);
+            this.txtPathReport.TabIndex = 34;
+            // 
             // FrmInitConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,5 +413,8 @@
         private System.Windows.Forms.TextBox txtPath1;
         private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPathReport;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtPathReport;
     }
 }

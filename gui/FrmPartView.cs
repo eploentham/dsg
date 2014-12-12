@@ -124,5 +124,14 @@ namespace dsg.gui
         {
             setResize();
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            //String sql = "";
+            DataTable dt = dc.padb.selectBitemListPrint();
+            FrmReport frm = new FrmReport(dc);
+            frm.setReportBtem(dt);
+            frm.ShowDialog(this);
+        }
     }
 }

@@ -1,0 +1,24 @@
+11/12/2557 14:01->rpt.setReportCheckUpSticker OK 
+11/12/2557 14:01->rpt.setReportCheckUpSticker Error โหลดรายงานไม่สำเร็จ
+11/12/2557 14:02->rpt.setReportBtem OK 
+11/12/2557 14:02->rpt.setReportBtem OK LoadD:\source\dsg\report\ItemPrint.rpt
+11/12/2557 14:02->rpt.setReportBtem OK 
+11/12/2557 14:03->rpt.setReportBtem OK LoadD:\source\dsg\report\ItemPrint.rpt
+11/12/2557 14:05->rpt.setReportBtem OK 
+11/12/2557 14:05->rpt.setReportBtem OK LoadD:\source\dsg\report\ItemPrint.rpt
+11/12/2557 14:05->rpt.setReportBtem OK SetDataSource
+11/12/2557 14:05->rpt.setReportBtem OK 
+11/12/2557 14:05->rpt.setReportBtem OK LoadD:\source\dsg\report\ItemPrint.rpt
+11/12/2557 14:05->rpt.setReportBtem OK SetDataSource
+11/12/2557 14:08->rpt.setReportBtem OK 
+11/12/2557 14:08->rpt.setReportBtem OK LoadD:\source\dsg\report\ItemPrint.rpt
+11/12/2557 14:08->rpt.setReportBtem OK SetDataSource
+11/12/2557 14:49->rpt.setReportBtem OK 
+11/12/2557 14:49->rpt.setReportBtem OK LoadD:\source\dsg\report\ItemPrint.rpt
+11/12/2557 14:49->rpt.setReportBtem OK SetDataSource
+11/12/2557 15:00->rpt.setReportBtem OK 
+11/12/2557 15:00->rpt.setReportBtem OK LoadD:\source\dsg\report\ItemPrint.rpt
+11/12/2557 15:00->rpt.setReportBtem OK SetDataSource
+11/12/2557 15:03->rpt.setReportBtem OK 
+11/12/2557 15:03->rpt.setReportBtem OK LoadD:\source\dsg\report\ItemPrint.rpt
+11/12/2557 15:03->rpt.setReportBtem OK SetDataSource

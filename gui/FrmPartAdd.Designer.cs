@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnUnActive = new System.Windows.Forms.Button();
+            this.ChkUnActive = new System.Windows.Forms.RadioButton();
+            this.chkActive = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboCurrPriceSale = new System.Windows.Forms.ComboBox();
+            this.cboCurrPriceCost = new System.Windows.Forms.ComboBox();
             this.cboModel = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.txtPaNumber = new System.Windows.Forms.TextBox();
@@ -49,13 +52,16 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.gBSerial = new System.Windows.Forms.GroupBox();
+            this.btnSerialUnActive = new System.Windows.Forms.Button();
+            this.chkSerialUnActive = new System.Windows.Forms.RadioButton();
+            this.chkSerialActive = new System.Windows.Forms.RadioButton();
             this.label19 = new System.Windows.Forms.Label();
             this.txtRemarkDraw = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboCurrPriceSaleS = new System.Windows.Forms.ComboBox();
+            this.cboCurrPriceCostS = new System.Windows.Forms.ComboBox();
             this.txtRowNumber = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPsRemark = new System.Windows.Forms.TextBox();
@@ -123,10 +129,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnUnActive);
+            this.groupBox1.Controls.Add(this.ChkUnActive);
+            this.groupBox1.Controls.Add(this.chkActive);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cboCurrPriceSale);
+            this.groupBox1.Controls.Add(this.cboCurrPriceCost);
             this.groupBox1.Controls.Add(this.cboModel);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.txtPaNumber);
@@ -172,6 +181,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "รายละเอียด";
             // 
+            // btnUnActive
+            // 
+            this.btnUnActive.Location = new System.Drawing.Point(821, 206);
+            this.btnUnActive.Name = "btnUnActive";
+            this.btnUnActive.Size = new System.Drawing.Size(86, 23);
+            this.btnUnActive.TabIndex = 66;
+            this.btnUnActive.Text = "ยกเลิกการใช้งาน";
+            this.btnUnActive.UseVisualStyleBackColor = true;
+            // 
+            // ChkUnActive
+            // 
+            this.ChkUnActive.AutoSize = true;
+            this.ChkUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.ChkUnActive.Location = new System.Drawing.Point(759, 206);
+            this.ChkUnActive.Margin = new System.Windows.Forms.Padding(2);
+            this.ChkUnActive.Name = "ChkUnActive";
+            this.ChkUnActive.Size = new System.Drawing.Size(60, 21);
+            this.ChkUnActive.TabIndex = 65;
+            this.ChkUnActive.TabStop = true;
+            this.ChkUnActive.Text = "ยกเลิก";
+            this.ChkUnActive.UseVisualStyleBackColor = true;
+            // 
+            // chkActive
+            // 
+            this.chkActive.AutoSize = true;
+            this.chkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkActive.Location = new System.Drawing.Point(675, 206);
+            this.chkActive.Margin = new System.Windows.Forms.Padding(2);
+            this.chkActive.Name = "chkActive";
+            this.chkActive.Size = new System.Drawing.Size(61, 21);
+            this.chkActive.TabIndex = 64;
+            this.chkActive.TabStop = true;
+            this.chkActive.Text = "ใช้งาน";
+            this.chkActive.UseVisualStyleBackColor = true;
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(692, 154);
@@ -188,23 +232,23 @@
             this.textBox2.Size = new System.Drawing.Size(104, 20);
             this.textBox2.TabIndex = 54;
             // 
-            // comboBox2
+            // cboCurrPriceSale
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(635, 154);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(53, 21);
-            this.comboBox2.TabIndex = 53;
+            this.cboCurrPriceSale.FormattingEnabled = true;
+            this.cboCurrPriceSale.Location = new System.Drawing.Point(635, 154);
+            this.cboCurrPriceSale.Margin = new System.Windows.Forms.Padding(2);
+            this.cboCurrPriceSale.Name = "cboCurrPriceSale";
+            this.cboCurrPriceSale.Size = new System.Drawing.Size(53, 21);
+            this.cboCurrPriceSale.TabIndex = 53;
             // 
-            // comboBox1
+            // cboCurrPriceCost
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(635, 127);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(53, 21);
-            this.comboBox1.TabIndex = 52;
+            this.cboCurrPriceCost.FormattingEnabled = true;
+            this.cboCurrPriceCost.Location = new System.Drawing.Point(635, 127);
+            this.cboCurrPriceCost.Margin = new System.Windows.Forms.Padding(2);
+            this.cboCurrPriceCost.Name = "cboCurrPriceCost";
+            this.cboCurrPriceCost.Size = new System.Drawing.Size(53, 21);
+            this.cboCurrPriceCost.TabIndex = 52;
             // 
             // cboModel
             // 
@@ -351,6 +395,9 @@
             // 
             // gBSerial
             // 
+            this.gBSerial.Controls.Add(this.btnSerialUnActive);
+            this.gBSerial.Controls.Add(this.chkSerialUnActive);
+            this.gBSerial.Controls.Add(this.chkSerialActive);
             this.gBSerial.Controls.Add(this.label19);
             this.gBSerial.Controls.Add(this.txtRemarkDraw);
             this.gBSerial.Controls.Add(this.panel3);
@@ -359,14 +406,49 @@
             this.gBSerial.Controls.Add(this.pic1);
             this.gBSerial.Controls.Add(this.dgv1);
             this.gBSerial.Controls.Add(this.btnSaveSerialNo);
-            this.gBSerial.Location = new System.Drawing.Point(4, 206);
+            this.gBSerial.Location = new System.Drawing.Point(4, 233);
             this.gBSerial.Margin = new System.Windows.Forms.Padding(2);
             this.gBSerial.Name = "gBSerial";
             this.gBSerial.Padding = new System.Windows.Forms.Padding(2);
-            this.gBSerial.Size = new System.Drawing.Size(1134, 538);
+            this.gBSerial.Size = new System.Drawing.Size(1134, 508);
             this.gBSerial.TabIndex = 20;
             this.gBSerial.TabStop = false;
             this.gBSerial.Text = "Stock";
+            // 
+            // btnSerialUnActive
+            // 
+            this.btnSerialUnActive.Location = new System.Drawing.Point(551, 114);
+            this.btnSerialUnActive.Name = "btnSerialUnActive";
+            this.btnSerialUnActive.Size = new System.Drawing.Size(86, 23);
+            this.btnSerialUnActive.TabIndex = 68;
+            this.btnSerialUnActive.Text = "ยกเลิกการใช้งาน";
+            this.btnSerialUnActive.UseVisualStyleBackColor = true;
+            // 
+            // chkSerialUnActive
+            // 
+            this.chkSerialUnActive.AutoSize = true;
+            this.chkSerialUnActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkSerialUnActive.Location = new System.Drawing.Point(489, 114);
+            this.chkSerialUnActive.Margin = new System.Windows.Forms.Padding(2);
+            this.chkSerialUnActive.Name = "chkSerialUnActive";
+            this.chkSerialUnActive.Size = new System.Drawing.Size(60, 21);
+            this.chkSerialUnActive.TabIndex = 67;
+            this.chkSerialUnActive.TabStop = true;
+            this.chkSerialUnActive.Text = "ยกเลิก";
+            this.chkSerialUnActive.UseVisualStyleBackColor = true;
+            // 
+            // chkSerialActive
+            // 
+            this.chkSerialActive.AutoSize = true;
+            this.chkSerialActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.chkSerialActive.Location = new System.Drawing.Point(405, 114);
+            this.chkSerialActive.Margin = new System.Windows.Forms.Padding(2);
+            this.chkSerialActive.Name = "chkSerialActive";
+            this.chkSerialActive.Size = new System.Drawing.Size(61, 21);
+            this.chkSerialActive.TabIndex = 66;
+            this.chkSerialActive.TabStop = true;
+            this.chkSerialActive.Text = "ใช้งาน";
+            this.chkSerialActive.UseVisualStyleBackColor = true;
             // 
             // label19
             // 
@@ -390,8 +472,8 @@
             // 
             this.panel3.Controls.Add(this.textBox3);
             this.panel3.Controls.Add(this.textBox4);
-            this.panel3.Controls.Add(this.comboBox3);
-            this.panel3.Controls.Add(this.comboBox4);
+            this.panel3.Controls.Add(this.cboCurrPriceSaleS);
+            this.panel3.Controls.Add(this.cboCurrPriceCostS);
             this.panel3.Controls.Add(this.txtRowNumber);
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.txtPsRemark);
@@ -434,23 +516,23 @@
             this.textBox4.Size = new System.Drawing.Size(104, 20);
             this.textBox4.TabIndex = 67;
             // 
-            // comboBox3
+            // cboCurrPriceSaleS
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(161, 85);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(53, 21);
-            this.comboBox3.TabIndex = 66;
+            this.cboCurrPriceSaleS.FormattingEnabled = true;
+            this.cboCurrPriceSaleS.Location = new System.Drawing.Point(161, 85);
+            this.cboCurrPriceSaleS.Margin = new System.Windows.Forms.Padding(2);
+            this.cboCurrPriceSaleS.Name = "cboCurrPriceSaleS";
+            this.cboCurrPriceSaleS.Size = new System.Drawing.Size(53, 21);
+            this.cboCurrPriceSaleS.TabIndex = 66;
             // 
-            // comboBox4
+            // cboCurrPriceCostS
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(161, 58);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(53, 21);
-            this.comboBox4.TabIndex = 65;
+            this.cboCurrPriceCostS.FormattingEnabled = true;
+            this.cboCurrPriceCostS.Location = new System.Drawing.Point(161, 58);
+            this.cboCurrPriceCostS.Margin = new System.Windows.Forms.Padding(2);
+            this.cboCurrPriceCostS.Name = "cboCurrPriceCostS";
+            this.cboCurrPriceCostS.Size = new System.Drawing.Size(53, 21);
+            this.cboCurrPriceCostS.TabIndex = 65;
             // 
             // txtRowNumber
             // 
@@ -493,6 +575,7 @@
             this.txtSnPriceSale.Name = "txtSnPriceSale";
             this.txtSnPriceSale.Size = new System.Drawing.Size(76, 20);
             this.txtSnPriceSale.TabIndex = 60;
+            this.txtSnPriceSale.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSnPriceSale_KeyPress);
             // 
             // label13
             // 
@@ -511,6 +594,7 @@
             this.txtSnPriceCost.Name = "txtSnPriceCost";
             this.txtSnPriceCost.Size = new System.Drawing.Size(76, 20);
             this.txtSnPriceCost.TabIndex = 58;
+            this.txtSnPriceCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSnPriceCost_KeyPress);
             // 
             // label12
             // 
@@ -812,7 +896,7 @@
             this.dgv1.Margin = new System.Windows.Forms.Padding(2);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowTemplate.Height = 24;
-            this.dgv1.Size = new System.Drawing.Size(1126, 229);
+            this.dgv1.Size = new System.Drawing.Size(1126, 204);
             this.dgv1.TabIndex = 2;
             this.dgv1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellDoubleClick);
             // 
@@ -853,6 +937,8 @@
             this.txtPriceSale.Name = "txtPriceSale";
             this.txtPriceSale.Size = new System.Drawing.Size(76, 20);
             this.txtPriceSale.TabIndex = 19;
+            this.txtPriceSale.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceSale_KeyPress);
+            this.txtPriceSale.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPriceSale_KeyUp);
             // 
             // cboPaCate
             // 
@@ -890,6 +976,8 @@
             this.txtPriceCost.Name = "txtPriceCost";
             this.txtPriceCost.Size = new System.Drawing.Size(76, 20);
             this.txtPriceCost.TabIndex = 11;
+            this.txtPriceCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceCost_KeyPress);
+            this.txtPriceCost.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPriceCost_KeyUp);
             // 
             // label6
             // 
@@ -1116,13 +1204,19 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cboModel;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboCurrPriceCost;
+        private System.Windows.Forms.ComboBox cboCurrPriceSale;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cboCurrPriceSaleS;
+        private System.Windows.Forms.ComboBox cboCurrPriceCostS;
+        private System.Windows.Forms.Button btnUnActive;
+        private System.Windows.Forms.RadioButton ChkUnActive;
+        private System.Windows.Forms.RadioButton chkActive;
+        private System.Windows.Forms.Button btnSerialUnActive;
+        private System.Windows.Forms.RadioButton chkSerialUnActive;
+        private System.Windows.Forms.RadioButton chkSerialActive;
     }
 }

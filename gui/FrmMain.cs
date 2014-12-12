@@ -61,8 +61,8 @@ namespace dsg
             tv1.Nodes["nInitConfig"].Nodes.Add("nPartTypeView", "สร้างประเภทอะไหล่");
             tv1.Nodes["nInitConfig"].Nodes.Add("nPartTypeSubView", "สร้างประเภทย่อยอะไหล่");
             tv1.Nodes["nInitConfig"].Nodes.Add("nPartCateView", "สร้างชนิดอะไหล่");
-            
-            //    tv1.Nodes["nInitConfig"].Nodes.Add("nStaffView", "สร้างคนป้อนข้อมูล");
+
+            tv1.Nodes["nInitConfig"].Nodes.Add("nCurrencyView", "สร้างอัตราสกุลเงิน");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nRateView", "สร้างอัตรา");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nPassword", "เปลี่ยนรหัสผ่าน");
             //    tv1.Nodes["nInitConfig"].Nodes.Add("nThooDefault", "กำหนดเจ้ามือ (เจ้าของโปรแกรม)");
@@ -121,11 +121,11 @@ namespace dsg
                 FrmInitConfig frm = new FrmInitConfig("",dc);
                 showFrame(frm);
             }
-            //else if (e.Node.Name.ToString() == "nInputAdd")
-            //{
-            //    FrmInputAdd frm = new FrmInputAdd(sf.Code, lc);
-            //    showFrame(frm);
-            //}
+            else if (e.Node.Name.ToString() == "nCurrencyView")
+            {
+                FrmCurrencyView frm = new FrmCurrencyView(dc);
+                showFrame(frm);
+            }
             //else if (e.Node.Name.ToString() == "nRewardAdd")
             //{
             //    FrmRewardAdd frm = new FrmRewardAdd(sf.Code);

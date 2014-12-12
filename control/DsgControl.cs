@@ -22,6 +22,7 @@ namespace dsg.control
         public PartCategoryDB pcdb;
         public PartTypeSubDB ptsdb;
         public TPartDB tpadb;
+        public CurrencyDB currdb;
         
         public Staff staff;
         public Customer cu;
@@ -31,6 +32,9 @@ namespace dsg.control
         public PartCategory pc;
         public PartTypeSub pts;
         public TPart tpa;
+        public Currency curr;
+
+        public LogWriter lw;
         
         public String thooId = "";
 
@@ -62,6 +66,7 @@ namespace dsg.control
             pcdb = new PartCategoryDB(conn);
             ptsdb = new PartTypeSubDB(conn);
             tpadb = new TPartDB(conn);
+            currdb = new CurrencyDB(conn);
             
             staff = new Staff();
             cu = new Customer();
@@ -71,6 +76,9 @@ namespace dsg.control
             pc = new PartCategory();
             pts = new PartTypeSub();
             tpa = new TPart();
+            curr = new Currency();
+
+            lw = new LogWriter();
 
             cboType = new ComboBox();
             cboType = ptdb.getCboPartType(cboType);
@@ -197,6 +205,8 @@ namespace dsg.control
 
             initC.pathImage = iniFile.Read("pathimage");
             initC.pathImageBefore = iniFile.Read("pathimagebefore");
+            initC.PathReport = iniFile.Read("pathreport");
+
             initC.delImage = iniFile.Read("delimage");
             //initC.connectServer = regE.getConnectServer();
             //initC.ServerIP = regE.getServerIP();
@@ -210,6 +220,10 @@ namespace dsg.control
         public void SetPathImageBefore(String path)
         {
             iniFile.Write("pathimagebefore", path);
+        }
+        public void SetPathReport(String path)
+        {
+            iniFile.Write("pathreport", path);
         }
         public void SetClearInput(Boolean value)
         {

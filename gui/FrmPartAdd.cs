@@ -35,7 +35,9 @@ namespace dsg.gui
             //gBSerial.Visible = false;
             cboPaCate = dc.pcdb.getCboPartCate(cboPaCate);
             cboPaType = dc.ptdb.getCboPartType(cboPaType);
-            cboAcftModel = dc.padb.getCboModel(cboAcftModel);
+            cboModel = dc.padb.getCboModel(cboModel);
+            cboAcftModel = dc.padb.getCboAcftModel(cboAcftModel);
+            cboCurrPriceCost = dc.currdb.getCboCurrency(cboCurrPriceCost);
             setGrd();
             setControl(paId);
             ofd = new OpenFileDialog();
@@ -389,6 +391,7 @@ namespace dsg.gui
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            String paId = "";
             if (cboPaType.Text.Equals(""))
             {
                 MessageBox.Show("ไม่ได้ป้อนประเภท", "ป้อนข้อมูลไม่ครบ");
@@ -419,8 +422,10 @@ namespace dsg.gui
                 }
             }
             setPart();
-            if (dc.padb.insertPart(pa).Length >= 1)
+            paId = dc.padb.insertPart(pa);
+            if (paId.Length >= 1)
             {
+                txtPaId.Text = paId;
                 MessageBox.Show("บันทึกข้อมูล เรียบร้อย", "บันทึกข้อมูล");
                 //this.Dispose();
                 //this.Hide();
@@ -430,6 +435,12 @@ namespace dsg.gui
         private void btnSaveSerialNo_Click(object sender, EventArgs e)
         {
             String psId = "", tpa1="", ups="";
+            if ((!chkReceive.Checked) && (!chkDraw.Checked))
+            {
+                MessageBox.Show("ไม่ได้เลือก การรับเข้า หรือเบิกออก", "ป้อนข้อมูลไม่ครบ");
+                return;
+            }
+
             if (chkReceive.Checked)
             {
                 if (txtSnPriceCost.Text.Equals(""))
@@ -458,7 +469,8 @@ namespace dsg.gui
                             }
                         }
                     }
-                }
+                }                
+                //txtPaId.Text = psId;
                 setPartSerialNo();
                 psId = dc.psdb.insertPartSerialNo(ps);
                 if (psId.Length >= 1)
@@ -606,6 +618,37 @@ namespace dsg.gui
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtPriceCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !(e.KeyChar == 46);
+            
+        }
+
+        private void txtPriceSale_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !(e.KeyChar == 46);
+        }
+
+        private void txtSnPriceCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !(e.KeyChar == 46);
+        }
+
+        private void txtSnPriceSale_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !(e.KeyChar == 46);
+        }
+
+        private void txtPriceCost_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtSnPriceCost.Text = txtPriceCost.Text;
+        }
+
+        private void txtPriceSale_KeyUp(object sender, KeyEventArgs e)
+        {
+            txtSnPriceSale.Text = txtPriceSale.Text;
         }
     }
 }
