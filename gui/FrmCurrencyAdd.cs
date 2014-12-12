@@ -37,6 +37,14 @@ namespace dsg.gui
             txtSort1.Text = curr.Sort1;
             txtRate.Text = curr.CurrRate;
             txtX.Text = curr.CurrX;
+            if (curr.Default.Equals("1"))
+            {
+                chkDefault.Checked = true;
+            }
+            else
+            {
+                chkDefault.Checked = false;
+            }
             if (curr.Active.Equals("1") || currId.Equals(""))
             {
                 chkActive.Checked = true;
@@ -59,6 +67,15 @@ namespace dsg.gui
             curr.CurrRate = txtRate.Text;
             curr.CurrX = txtX.Text;
             curr.Active = "1";
+            if (chkDefault.Checked)
+            {
+                curr.Default = "1";
+                curr.Sort1 = "0000";
+            }
+            else
+            {
+                curr.Default = "0";
+            }
         }
         private void FrmCurrencyAdd_Load(object sender, EventArgs e)
         {

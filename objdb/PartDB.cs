@@ -59,6 +59,15 @@ namespace dsg.objdb
             pa.pathPic4 = "path_pic4";
             pa.pathPic5 = "path_pic5";
 
+            pa.CurrNamePriceCost = "current_name_price_cost";
+            pa.CurrNamePriceSale = "current_name_price_sale";
+            pa.CurrRatePriceCost = "current_rate_price_cost";
+            pa.CurrRatePriceSale = "current_rate_price_sale";
+            pa.CurrXPriceCost = "current_x_price_cost";
+            pa.CurrXriceSale = "current_x_price_sale";
+            pa.PriceCostCurrent = "price_cost_current";
+            pa.PriceSaleCurrent = "price_sale_current";
+
             pa.table = "b_part";
             pa.pkField = "part_id";
         }
@@ -108,6 +117,15 @@ namespace dsg.objdb
 
             item.TypeId = dt.Rows[0][pa.TypeId].ToString();
             item.CateName = dt.Rows[0][pa.CateName].ToString();
+
+            item.CurrNamePriceCost = dt.Rows[0][pa.CurrNamePriceCost].ToString();
+            item.CurrNamePriceSale = dt.Rows[0][pa.CurrNamePriceSale].ToString();
+            item.CurrRatePriceCost = dt.Rows[0][pa.CurrRatePriceCost].ToString();
+            item.CurrRatePriceSale = dt.Rows[0][pa.CurrRatePriceSale].ToString();
+            item.CurrXPriceCost = dt.Rows[0][pa.CurrXPriceCost].ToString();
+            item.CurrXriceSale = dt.Rows[0][pa.CurrXriceSale].ToString();
+            item.PriceCostCurrent = dt.Rows[0][pa.PriceCostCurrent].ToString();
+            item.PriceSaleCurrent = dt.Rows[0][pa.PriceSaleCurrent].ToString();
 
             return item;
         }

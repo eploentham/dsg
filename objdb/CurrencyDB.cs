@@ -27,6 +27,7 @@ namespace dsg.objdb
             curr.CurrX = "currency_x";
             curr.Remark = "remark";
             curr.Sort1 = "sort1";
+            curr.Default = "current_default";
 
             curr.table = "b_currency";
             curr.pkField = "currency_id";
@@ -40,6 +41,7 @@ namespace dsg.objdb
             item.CurrX = dt.Rows[0][curr.CurrX].ToString();
             item.Remark = dt.Rows[0][curr.Remark].ToString();
             item.Sort1 = dt.Rows[0][curr.Sort1].ToString();
+            item.Default = dt.Rows[0][curr.Default].ToString();
 
             return item;
         }
@@ -47,7 +49,7 @@ namespace dsg.objdb
         {
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + curr.table + " Where " + curr.Active + "='1' Order By "+curr.Sort1;
+            sql = "Select * From " + curr.table + " Where " + curr.Active + "='1' Order By "+curr.Default+" desc,"+curr.Sort1+" asc";
             dt = conn.selectData(sql);
 
             return dt;
@@ -76,9 +78,9 @@ namespace dsg.objdb
             p.Name = p.Name.Replace("''", "'");
             //p.Remark = p.Remark.Replace("''", "'");
             sql = "Insert Into " + curr.table + " (" + curr.pkField + "," + curr.Active + "," + curr.Name + "," +
-                curr.CurrRate + "," + curr.CurrX + "," + curr.Remark + "," + curr.Sort1 + ") " +
+                curr.CurrRate + "," + curr.CurrX + "," + curr.Remark + "," + curr.Sort1 + "," + curr.Default + ") " +
                 "Values('" + p.Id + "','" + p.Active + "','" + p.Name + "'," +
-                NumberNull1(p.CurrRate) + "," + NumberNull1(p.CurrX) + ",'" + p.Remark + "','" + p.Sort1 + "')";
+                NumberNull1(p.CurrRate) + "," + NumberNull1(p.CurrX) + ",'" + p.Remark + "','" + p.Sort1 + "','" + p.Default + "')";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -104,7 +106,8 @@ namespace dsg.objdb
                 curr.CurrRate + "=" + NumberNull1(p.CurrRate) + ", " +
                 curr.CurrX + "=" + NumberNull1(p.CurrX) + ", " +
                 curr.Remark + "='" + p.Remark + "', " +
-                curr.Sort1 + "='" + p.Sort1 + "' " +
+                curr.Sort1 + "='" + p.Sort1 + "', " +
+                curr.Default + "='" + p.Default + "' " +
                 "Where " + curr.pkField + "='" + p.Id + "'";
             try
             {
@@ -149,9 +152,13 @@ namespace dsg.objdb
         {
             ComboBoxItem item = new ComboBoxItem();
             DataTable dt = selectAll();
-            //String aaa = "";
+            String default1 = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
+                if (i == 0)
+                {
+                    default1 = dt.Rows[i][curr.Name].ToString();
+                }
                 item = new ComboBoxItem();
                 item.Value = dt.Rows[i][curr.Id].ToString();
                 item.Text = dt.Rows[i][curr.Name].ToString();
@@ -159,6 +166,7 @@ namespace dsg.objdb
                 //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
                 //c.Items.Add(new );
             }
+            c.Text = default1;
             return c;
         }
         public String VoidCurrency(String saleId)
@@ -179,6 +187,31 @@ namespace dsg.objdb
             {
                 return o;
             }
+        }
+        public List<Currency> getListItemGroup(List<Currency> item)
+        {
+            //ComboBoxItem item = new ComboBoxItem();
+            DataTable dt = selectAll();
+            //c.Items.Clear();
+            //String aaa = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Currency itg1 = new Currency();
+                itg1.Active = dt.Rows[i][curr.Active].ToString();
+                //item.Code = dt.Rows[0][itg.Code].ToString();
+                itg1.Id = dt.Rows[i][curr.Id].ToString();
+                itg1.Name = dt.Rows[i][curr.Name].ToString();
+                itg1.CurrRate = dt.Rows[i][curr.CurrRate].ToString();
+                itg1.CurrX = dt.Rows[i][curr.CurrX].ToString();
+                itg1.Remark = dt.Rows[i][curr.Remark].ToString();
+                itg1.Sort1 = dt.Rows[i][curr.Sort1].ToString();
+                itg1.Default = dt.Rows[i][curr.Default].ToString();
+                
+                item.Add(itg1);
+                //aaa += "new { Text = "+dt.Rows[i][sale.Name].ToString()+", Value = "+dt.Rows[i][sale.Id].ToString()+" },";
+                //c.Items.Add(new );
+            }
+            return item;
         }
     }
 }

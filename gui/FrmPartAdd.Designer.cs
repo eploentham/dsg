@@ -32,8 +32,8 @@
             this.btnUnActive = new System.Windows.Forms.Button();
             this.ChkUnActive = new System.Windows.Forms.RadioButton();
             this.chkActive = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPriceSaleCurr = new System.Windows.Forms.TextBox();
+            this.txtPriceCostCurr = new System.Windows.Forms.TextBox();
             this.cboCurrPriceSale = new System.Windows.Forms.ComboBox();
             this.cboCurrPriceCost = new System.Windows.Forms.ComboBox();
             this.cboModel = new System.Windows.Forms.ComboBox();
@@ -58,10 +58,10 @@
             this.label19 = new System.Windows.Forms.Label();
             this.txtRemarkDraw = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.cboCurrPriceSaleS = new System.Windows.Forms.ComboBox();
-            this.cboCurrPriceCostS = new System.Windows.Forms.ComboBox();
+            this.txtSnPriceSaleCurr = new System.Windows.Forms.TextBox();
+            this.txtSnPriceCostCurr = new System.Windows.Forms.TextBox();
+            this.cboSnCurrPriceSale = new System.Windows.Forms.ComboBox();
+            this.cboSnCurrPriceCost = new System.Windows.Forms.ComboBox();
             this.txtRowNumber = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPsRemark = new System.Windows.Forms.TextBox();
@@ -132,8 +132,8 @@
             this.groupBox1.Controls.Add(this.btnUnActive);
             this.groupBox1.Controls.Add(this.ChkUnActive);
             this.groupBox1.Controls.Add(this.chkActive);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtPriceSaleCurr);
+            this.groupBox1.Controls.Add(this.txtPriceCostCurr);
             this.groupBox1.Controls.Add(this.cboCurrPriceSale);
             this.groupBox1.Controls.Add(this.cboCurrPriceCost);
             this.groupBox1.Controls.Add(this.cboModel);
@@ -202,6 +202,7 @@
             this.ChkUnActive.TabStop = true;
             this.ChkUnActive.Text = "ยกเลิก";
             this.ChkUnActive.UseVisualStyleBackColor = true;
+            this.ChkUnActive.Click += new System.EventHandler(this.ChkUnActive_Click);
             // 
             // chkActive
             // 
@@ -215,22 +216,23 @@
             this.chkActive.TabStop = true;
             this.chkActive.Text = "ใช้งาน";
             this.chkActive.UseVisualStyleBackColor = true;
+            this.chkActive.Click += new System.EventHandler(this.chkActive_Click);
             // 
-            // textBox1
+            // txtPriceSaleCurr
             // 
-            this.textBox1.Location = new System.Drawing.Point(692, 154);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(104, 20);
-            this.textBox1.TabIndex = 55;
+            this.txtPriceSaleCurr.Location = new System.Drawing.Point(692, 154);
+            this.txtPriceSaleCurr.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPriceSaleCurr.Name = "txtPriceSaleCurr";
+            this.txtPriceSaleCurr.Size = new System.Drawing.Size(104, 20);
+            this.txtPriceSaleCurr.TabIndex = 55;
             // 
-            // textBox2
+            // txtPriceCostCurr
             // 
-            this.textBox2.Location = new System.Drawing.Point(692, 127);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(104, 20);
-            this.textBox2.TabIndex = 54;
+            this.txtPriceCostCurr.Location = new System.Drawing.Point(692, 127);
+            this.txtPriceCostCurr.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPriceCostCurr.Name = "txtPriceCostCurr";
+            this.txtPriceCostCurr.Size = new System.Drawing.Size(104, 20);
+            this.txtPriceCostCurr.TabIndex = 54;
             // 
             // cboCurrPriceSale
             // 
@@ -470,10 +472,10 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.textBox4);
-            this.panel3.Controls.Add(this.cboCurrPriceSaleS);
-            this.panel3.Controls.Add(this.cboCurrPriceCostS);
+            this.panel3.Controls.Add(this.txtSnPriceSaleCurr);
+            this.panel3.Controls.Add(this.txtSnPriceCostCurr);
+            this.panel3.Controls.Add(this.cboSnCurrPriceSale);
+            this.panel3.Controls.Add(this.cboSnCurrPriceCost);
             this.panel3.Controls.Add(this.txtRowNumber);
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.txtPsRemark);
@@ -500,39 +502,39 @@
             this.panel3.Size = new System.Drawing.Size(386, 206);
             this.panel3.TabIndex = 56;
             // 
-            // textBox3
+            // txtSnPriceSaleCurr
             // 
-            this.textBox3.Location = new System.Drawing.Point(218, 85);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(104, 20);
-            this.textBox3.TabIndex = 68;
+            this.txtSnPriceSaleCurr.Location = new System.Drawing.Point(218, 85);
+            this.txtSnPriceSaleCurr.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSnPriceSaleCurr.Name = "txtSnPriceSaleCurr";
+            this.txtSnPriceSaleCurr.Size = new System.Drawing.Size(104, 20);
+            this.txtSnPriceSaleCurr.TabIndex = 68;
             // 
-            // textBox4
+            // txtSnPriceCostCurr
             // 
-            this.textBox4.Location = new System.Drawing.Point(218, 58);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(104, 20);
-            this.textBox4.TabIndex = 67;
+            this.txtSnPriceCostCurr.Location = new System.Drawing.Point(218, 58);
+            this.txtSnPriceCostCurr.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSnPriceCostCurr.Name = "txtSnPriceCostCurr";
+            this.txtSnPriceCostCurr.Size = new System.Drawing.Size(104, 20);
+            this.txtSnPriceCostCurr.TabIndex = 67;
             // 
-            // cboCurrPriceSaleS
+            // cboSnCurrPriceSale
             // 
-            this.cboCurrPriceSaleS.FormattingEnabled = true;
-            this.cboCurrPriceSaleS.Location = new System.Drawing.Point(161, 85);
-            this.cboCurrPriceSaleS.Margin = new System.Windows.Forms.Padding(2);
-            this.cboCurrPriceSaleS.Name = "cboCurrPriceSaleS";
-            this.cboCurrPriceSaleS.Size = new System.Drawing.Size(53, 21);
-            this.cboCurrPriceSaleS.TabIndex = 66;
+            this.cboSnCurrPriceSale.FormattingEnabled = true;
+            this.cboSnCurrPriceSale.Location = new System.Drawing.Point(161, 85);
+            this.cboSnCurrPriceSale.Margin = new System.Windows.Forms.Padding(2);
+            this.cboSnCurrPriceSale.Name = "cboSnCurrPriceSale";
+            this.cboSnCurrPriceSale.Size = new System.Drawing.Size(53, 21);
+            this.cboSnCurrPriceSale.TabIndex = 66;
             // 
-            // cboCurrPriceCostS
+            // cboSnCurrPriceCost
             // 
-            this.cboCurrPriceCostS.FormattingEnabled = true;
-            this.cboCurrPriceCostS.Location = new System.Drawing.Point(161, 58);
-            this.cboCurrPriceCostS.Margin = new System.Windows.Forms.Padding(2);
-            this.cboCurrPriceCostS.Name = "cboCurrPriceCostS";
-            this.cboCurrPriceCostS.Size = new System.Drawing.Size(53, 21);
-            this.cboCurrPriceCostS.TabIndex = 65;
+            this.cboSnCurrPriceCost.FormattingEnabled = true;
+            this.cboSnCurrPriceCost.Location = new System.Drawing.Point(161, 58);
+            this.cboSnCurrPriceCost.Margin = new System.Windows.Forms.Padding(2);
+            this.cboSnCurrPriceCost.Name = "cboSnCurrPriceCost";
+            this.cboSnCurrPriceCost.Size = new System.Drawing.Size(53, 21);
+            this.cboSnCurrPriceCost.TabIndex = 65;
             // 
             // txtRowNumber
             // 
@@ -576,6 +578,7 @@
             this.txtSnPriceSale.Size = new System.Drawing.Size(76, 20);
             this.txtSnPriceSale.TabIndex = 60;
             this.txtSnPriceSale.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSnPriceSale_KeyPress);
+            this.txtSnPriceSale.Leave += new System.EventHandler(this.txtSnPriceSale_Leave);
             // 
             // label13
             // 
@@ -595,6 +598,7 @@
             this.txtSnPriceCost.Size = new System.Drawing.Size(76, 20);
             this.txtSnPriceCost.TabIndex = 58;
             this.txtSnPriceCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSnPriceCost_KeyPress);
+            this.txtSnPriceCost.Leave += new System.EventHandler(this.txtSnPriceCost_Leave);
             // 
             // label12
             // 
@@ -939,6 +943,7 @@
             this.txtPriceSale.TabIndex = 19;
             this.txtPriceSale.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceSale_KeyPress);
             this.txtPriceSale.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPriceSale_KeyUp);
+            this.txtPriceSale.Leave += new System.EventHandler(this.txtPriceSale_Leave);
             // 
             // cboPaCate
             // 
@@ -978,6 +983,7 @@
             this.txtPriceCost.TabIndex = 11;
             this.txtPriceCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceCost_KeyPress);
             this.txtPriceCost.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPriceCost_KeyUp);
+            this.txtPriceCost.Leave += new System.EventHandler(this.txtPriceCost_Leave);
             // 
             // label6
             // 
@@ -1206,12 +1212,12 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox cboCurrPriceCost;
         private System.Windows.Forms.ComboBox cboCurrPriceSale;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox cboCurrPriceSaleS;
-        private System.Windows.Forms.ComboBox cboCurrPriceCostS;
+        private System.Windows.Forms.TextBox txtPriceSaleCurr;
+        private System.Windows.Forms.TextBox txtPriceCostCurr;
+        private System.Windows.Forms.TextBox txtSnPriceSaleCurr;
+        private System.Windows.Forms.TextBox txtSnPriceCostCurr;
+        private System.Windows.Forms.ComboBox cboSnCurrPriceSale;
+        private System.Windows.Forms.ComboBox cboSnCurrPriceCost;
         private System.Windows.Forms.Button btnUnActive;
         private System.Windows.Forms.RadioButton ChkUnActive;
         private System.Windows.Forms.RadioButton chkActive;

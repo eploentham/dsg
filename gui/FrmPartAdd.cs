@@ -38,6 +38,9 @@ namespace dsg.gui
             cboModel = dc.padb.getCboModel(cboModel);
             cboAcftModel = dc.padb.getCboAcftModel(cboAcftModel);
             cboCurrPriceCost = dc.currdb.getCboCurrency(cboCurrPriceCost);
+            cboCurrPriceSale = dc.currdb.getCboCurrency(cboCurrPriceSale);
+            cboSnCurrPriceSale = dc.currdb.getCboCurrency(cboSnCurrPriceSale);
+            cboSnCurrPriceCost = dc.currdb.getCboCurrency(cboSnCurrPriceCost);
             setGrd();
             setControl(paId);
             ofd = new OpenFileDialog();
@@ -56,6 +59,11 @@ namespace dsg.gui
             file1 = Environment.CurrentDirectory + "\\pic\\part\\";
             txtRemarkDraw.Visible = false;
             label19.Visible = false;
+            btnUnActive.Visible = false;
+            txtPriceCostCurr.Enabled = false;
+            txtPriceSaleCurr.Enabled = false;
+            txtSnPriceCostCurr.Enabled = false;
+            txtSnPriceSaleCurr.Enabled = false;
             //foreach (FileInfo file in dir.GetFiles())
             //{
 
@@ -111,7 +119,16 @@ namespace dsg.gui
             txtPaName.Text = pa.Name;
             txtRemark.Text = pa.Remark;
             txtPaNumber.Text = pa.Number;
-
+            if (pa.Active.Equals("1"))
+            {
+                chkActive.Checked = true;
+                ChkUnActive.Checked = false;
+            }
+            else
+            {
+                chkActive.Checked = false;
+                ChkUnActive.Checked = true;
+            }
             String pahtFile = "";
             //File.
             if (File.Exists(pahtFile + "\\" ))
@@ -172,7 +189,7 @@ namespace dsg.gui
                 }
             }
         }
-        private void setPart()
+        private void getPart()
         {
             pa.acftModel = cboAcftModel.Text;
             pa.Model = cboModel.Text;
@@ -188,6 +205,21 @@ namespace dsg.gui
             pa.TypeName = cboPaType.Text;
             pa.Remark = txtRemark.Text;
             pa.Number = txtPaNumber.Text;
+            //pa.PriceCostCurrent = txtPriceCostCurr.Text;
+            //pa.PriceSaleCurrent = txtPriceSaleCurr.Text;
+            //pa.CurrNamePriceCost = cboCurrPriceCost.Text;
+            //pa.CurrNamePriceSale = cboCurrPriceSale.Text;
+
+            Currency currCost = new Currency();
+            currCost = dc.currdb.getCboCurrency(cboCurrPriceCost);
+            pa.CurrNamePriceCost = cboCurrPriceCost.Text;
+            pa.CurrNamePriceSale = cboCurrPriceSale.Text;
+            pa.CurrRatePriceCost = "current_rate_price_cost";
+            pa.CurrRatePriceSale = "current_rate_price_sale";
+            pa.CurrXPriceCost = "current_x_price_cost";
+            pa.CurrXriceSale = "current_x_price_sale";
+            pa.PriceCostCurrent = txtPriceCostCurr.Text;
+            pa.PriceSaleCurrent = txtPriceSaleCurr.Text;
         }
         private void ClearSerialNo()
         {
@@ -421,7 +453,7 @@ namespace dsg.gui
                     return;
                 }
             }
-            setPart();
+            getPart();
             paId = dc.padb.insertPart(pa);
             if (paId.Length >= 1)
             {
@@ -649,6 +681,67 @@ namespace dsg.gui
         private void txtPriceSale_KeyUp(object sender, KeyEventArgs e)
         {
             txtSnPriceSale.Text = txtPriceSale.Text;
+        }
+
+        private void chkActive_Click(object sender, EventArgs e)
+        {
+            btnUnActive.Visible = false;
+        }
+
+        private void ChkUnActive_Click(object sender, EventArgs e)
+        {
+            btnUnActive.Visible = true;
+        }
+
+        private void txtPriceCost_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                txtPriceCostCurr.Text = dc.calCurrency(dc.getCurrencyByList(dc.getValueCboItem(cboCurrPriceCost)), Double.Parse(txtPriceCost.Text));
+                txtSnPriceCostCurr.Text = txtPriceCostCurr.Text;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
+        }
+
+        private void txtPriceSale_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                txtPriceSaleCurr.Text = dc.calCurrency(dc.getCurrencyByList(dc.getValueCboItem(cboCurrPriceCost)), Double.Parse(txtPriceSale.Text));
+                txtSnPriceSaleCurr.Text = txtPriceSaleCurr.Text;
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void txtSnPriceCost_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                txtSnPriceCostCurr.Text = dc.calCurrency(dc.getCurrencyByList(dc.getValueCboItem(cboSnCurrPriceCost)), Double.Parse(txtSnPriceCost.Text));
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void txtSnPriceSale_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                txtSnPriceSaleCurr.Text = dc.calCurrency(dc.getCurrencyByList(dc.getValueCboItem(cboSnCurrPriceSale)), Double.Parse(txtSnPriceSale.Text));
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

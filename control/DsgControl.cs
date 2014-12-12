@@ -40,7 +40,7 @@ namespace dsg.control
 
         public ComboBox cboType, cboSale, cboThoo;
         //public List<Thoo> lTho = new List<Thoo>();
-        //public List<Font1> thoColor = new List<Font1>();
+        public List<Currency> lcurr;
 
         private IniFile iniFile;
         public InitConfig initC;
@@ -79,6 +79,9 @@ namespace dsg.control
             curr = new Currency();
 
             lw = new LogWriter();
+
+            lcurr = new List<Currency>();
+            currdb.getListItemGroup(lcurr);
 
             cboType = new ComboBox();
             cboType = ptdb.getCboPartType(cboType);
@@ -265,6 +268,61 @@ namespace dsg.control
         {
             String file1 = fileName.Replace("_0","_1");
             System.IO.File.Move(fileName, file1);
+        }
+        public Currency getCurrencyByList(String itId)
+        {
+            Currency item = new Currency();
+
+            foreach (Currency i in lcurr)
+            {
+                if (i.Id.Equals(itId))
+                {
+                    //item = i;
+                    return i;
+                }
+            }
+            return item;
+        }
+        public String calCurrency(Currency c, Double m)
+        {
+            Double r = 0;
+            r = (m * Double.Parse(NumberNull1(c.CurrRate))) / Double.Parse(NumberNull0(c.CurrX));
+            return String.Format("{0:#,###,###.00}", r);
+        }
+        private String NumberNull1(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "0";
+            }
+            else
+            {
+                return o;
+            }
+        }
+        private String NumberNull0(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "1";
+            }
+            else
+            {
+                return o;
+            }
+        }
+        public String getValueCboItem(ComboBox c)
+        {
+            ComboBoxItem iSale;
+            iSale = (ComboBoxItem)c.SelectedItem;
+            if (iSale == null)
+            {
+                return "";
+            }
+            else
+            {
+                return iSale.Value;
+            }
         }
     }
 }

@@ -7,6 +7,6 @@ namespace dsg.object1
 {
     public class Currency:Persistent
     {
-        public String Id = "", Name = "", CurrRate = "", CurrX = "", Remark = "", Active = "", Sort1="";
+        public String Id = "", Name = "", CurrRate = "", CurrX = "", Remark = "", Active = "", Sort1="", Default="";
     }
 }
