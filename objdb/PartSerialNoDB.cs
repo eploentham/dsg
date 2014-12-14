@@ -128,6 +128,32 @@ namespace dsg.objdb
             }
             return item;
         }
+        public PartSerialNo selectBySerialNo(String psId)
+        {
+            PartSerialNo item = new PartSerialNo();
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + ps.table + " Where " + ps.serialNo + " = '" + psId + "'";
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                item = setData(item, dt);
+            }
+            return item;
+        }
+        public PartSerialNo selectByPriceCost(String psId)
+        {
+            PartSerialNo item = new PartSerialNo();
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select * From " + ps.table + " Where " + ps.priceCost + "='" + psId + "'";
+            dt = conn.selectData(sql);
+            if (dt.Rows.Count > 0)
+            {
+                item = setData(item, dt);
+            }
+            return item;
+        }
         public PartSerialNo selectByCode(String psCode)
         {
             PartSerialNo item = new PartSerialNo();

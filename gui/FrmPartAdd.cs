@@ -114,8 +114,15 @@ namespace dsg.gui
 
             txtCertify.Text = pa.Certify;
             //txtOnHand.Text = 
-            txtPriceCost.Text = pa.PriceCost;
-            txtPriceSale.Text = pa.PriceSale;
+            txtPriceCost.Text = String.Format("{0:#,###,###.00}", Double.Parse(dc.NumberNull1(pa.PriceCost)));
+            txtPriceSale.Text = String.Format("{0:#,###,###.00}", Double.Parse(dc.NumberNull1(pa.PriceSale)));
+
+            cboCurrPriceCost.Text = pa.CurrNamePriceCost;
+            cboCurrPriceSale.Text = pa.CurrNamePriceSale;
+            txtPriceCostCurr.Text = String.Format("{0:#,###,###.00}", Double.Parse(dc.NumberNull1(pa.PriceCostCurrent)));
+            txtPriceSaleCurr.Text = String.Format("{0:#,###,###.00}", Double.Parse(dc.NumberNull1(pa.PriceSaleCurrent)));
+
+
             txtPaName.Text = pa.Name;
             txtRemark.Text = pa.Remark;
             txtPaNumber.Text = pa.Number;
@@ -138,6 +145,14 @@ namespace dsg.gui
                 pic1.Image = im;
                 pic1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+            if (cboCurrPriceSale.Text.Equals(""))
+            {
+                cboCurrPriceSale.Text = "USD";
+            }
+            if (cboCurrPriceCost.Text.Equals(""))
+            {
+                cboCurrPriceCost.Text = "USD";
+            }
             setGrdSerialNo(paId);
             viewImageCertify(pa.pathPicCertify);
             chkPic1.Checked = true;
@@ -149,6 +164,10 @@ namespace dsg.gui
             dgv1.Rows.Clear();
             //setGrd();
             ClearSerialNo();
+            if (paId.Equals(""))
+            {
+                return;
+            }
             DataTable dt = dc.psdb.selectByPartId(paId);
             if (dt.Rows.Count > 0)
             {
@@ -205,19 +224,21 @@ namespace dsg.gui
             pa.TypeName = cboPaType.Text;
             pa.Remark = txtRemark.Text;
             pa.Number = txtPaNumber.Text;
-            //pa.PriceCostCurrent = txtPriceCostCurr.Text;
-            //pa.PriceSaleCurrent = txtPriceSaleCurr.Text;
+            pa.PriceCost = txtPriceCost.Text;
+            pa.PriceSale = txtPriceSale.Text;
             //pa.CurrNamePriceCost = cboCurrPriceCost.Text;
             //pa.CurrNamePriceSale = cboCurrPriceSale.Text;
 
             Currency currCost = new Currency();
-            currCost = dc.currdb.getCboCurrency(cboCurrPriceCost);
+            currCost = dc.getCurrencyByList1(cboCurrPriceCost.Text);
+            Currency currSale = new Currency();
+            currSale = dc.getCurrencyByList1(cboCurrPriceSale.Text);
             pa.CurrNamePriceCost = cboCurrPriceCost.Text;
             pa.CurrNamePriceSale = cboCurrPriceSale.Text;
-            pa.CurrRatePriceCost = "current_rate_price_cost";
-            pa.CurrRatePriceSale = "current_rate_price_sale";
-            pa.CurrXPriceCost = "current_x_price_cost";
-            pa.CurrXriceSale = "current_x_price_sale";
+            pa.CurrRatePriceCost = currCost.CurrRate;
+            pa.CurrRatePriceSale = currSale.CurrRate;
+            pa.CurrXPriceCost = currCost.CurrX;
+            pa.CurrXriceSale = currSale.CurrX;
             pa.PriceCostCurrent = txtPriceCostCurr.Text;
             pa.PriceSaleCurrent = txtPriceSaleCurr.Text;
         }
@@ -274,6 +295,58 @@ namespace dsg.gui
             else
             {
                 ps.rowNumber = txtRowNumber.Text;
+            }
+        }
+        private void setControlSerialNo(String psId)
+        {
+            ps = dc.psdb.selectByPk(psId);
+
+            txtPsId.Text = ps.Id;
+            txtSnPriceCost.Text = ps.priceCost;
+            txtSnPriceSale.Text = ps.priceSale;
+            txtPsRemark.Text = ps.Remark;
+            txtSerialNo.Text = ps.serialNo;
+            txtRowNumber.Text = ps.rowNumber;
+            chkSerialActive.Checked = true;
+            if (ps.locaId.Equals("1"))
+            {
+                chkLoca1.Checked = true;
+                chkLoca2.Checked = false;
+                chkLoca3.Checked = false;
+                chkLoca4.Checked = false;
+                chkLoca5.Checked = false;
+            }
+            else if (ps.locaId.Equals("2"))
+            {
+                chkLoca1.Checked = false;
+                chkLoca2.Checked = true;
+                chkLoca3.Checked = false;
+                chkLoca4.Checked = false;
+                chkLoca5.Checked = false;
+            }
+            else if (ps.locaId.Equals("3"))
+            {
+                chkLoca1.Checked = false;
+                chkLoca2.Checked = false;
+                chkLoca3.Checked = true;
+                chkLoca4.Checked = false;
+                chkLoca5.Checked = false;
+            }
+            else if (ps.locaId.Equals("4"))
+            {
+                chkLoca1.Checked = false;
+                chkLoca2.Checked = false;
+                chkLoca3.Checked = false;
+                chkLoca4.Checked = true;
+                chkLoca5.Checked = false;
+            }
+            else if (ps.locaId.Equals("5"))
+            {
+                chkLoca1.Checked = false;
+                chkLoca2.Checked = false;
+                chkLoca3.Checked = false;
+                chkLoca4.Checked = false;
+                chkLoca5.Checked = true;
             }
         }
         private void setControlSerialNo(int row)
@@ -467,14 +540,15 @@ namespace dsg.gui
         private void btnSaveSerialNo_Click(object sender, EventArgs e)
         {
             String psId = "", tpa1="", ups="";
-            if ((!chkReceive.Checked) && (!chkDraw.Checked))
-            {
-                MessageBox.Show("ไม่ได้เลือก การรับเข้า หรือเบิกออก", "ป้อนข้อมูลไม่ครบ");
-                return;
-            }
+            //btnSave_Click(null,null);
+            //if ((!chkReceive.Checked) && (!chkDraw.Checked))
+            //{
+            //    MessageBox.Show("ไม่ได้เลือก การรับเข้า หรือเบิกออก", "ป้อนข้อมูลไม่ครบ");
+            //    return;
+            //}
 
-            if (chkReceive.Checked)
-            {
+            //if (chkReceive.Checked)
+            //{
                 if (txtSnPriceCost.Text.Equals(""))
                 {
                     MessageBox.Show("ไม่ได้ป้อนราคาทุน", "ป้อนข้อมูลไม่ครบ");
@@ -501,7 +575,7 @@ namespace dsg.gui
                             }
                         }
                     }
-                }                
+                }
                 //txtPaId.Text = psId;
                 setPartSerialNo();
                 psId = dc.psdb.insertPartSerialNo(ps);
@@ -535,43 +609,43 @@ namespace dsg.gui
                         MessageBox.Show("ไม่สามารถสร้าง Stock Card ได้ insertTPart", "Error");
                     }
                 }
-            }
-            else if (chkDraw.Checked)
-            {
-                if (txtRemarkDraw.Text.Equals(""))
-                {
-                    MessageBox.Show("กรุณาระบุหมายเหตุการเบิก", "หมายเหตุ");
-                    return;
-                }
-                if (MessageBox.Show("ต้องการเบิกหรือจำหน่าย", "เบิกสินค้า", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
-                {
-                    ups = dc.psdb.updateDraw(txtPsId.Text,txtRemarkDraw.Text);
-                    if (ups.Length >= 1)
-                    {
-                        TPart tpa = new TPart();
-                        tpa.Active = "1";
-                        tpa.DateTran = "";
-                        tpa.Id = "";
-                        tpa.partId = txtPaId.Text;
-                        tpa.PsId = txtPsId.Text;
-                        tpa.StatusTran = "2";
+            //}
+            //else if (chkDraw.Checked)
+            //{
+            //    if (txtRemarkDraw.Text.Equals(""))
+            //    {
+            //        MessageBox.Show("กรุณาระบุหมายเหตุการเบิก", "หมายเหตุ");
+            //        return;
+            //    }
+            //    if (MessageBox.Show("ต้องการเบิกหรือจำหน่าย", "เบิกสินค้า", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            //    {
+            //        ups = dc.psdb.updateDraw(txtPsId.Text,txtRemarkDraw.Text);
+            //        if (ups.Length >= 1)
+            //        {
+            //            TPart tpa = new TPart();
+            //            tpa.Active = "1";
+            //            tpa.DateTran = "";
+            //            tpa.Id = "";
+            //            tpa.partId = txtPaId.Text;
+            //            tpa.PsId = txtPsId.Text;
+            //            tpa.StatusTran = "2";
 
-                        tpa1 = dc.tpadb.insertTPart(tpa);
-                        if (tpa1.Length >= 1)
-                        {
-                            MessageBox.Show("บันทึกข้อมูลการเบิก เรียบร้อย", "บันทึกข้อมูล");
-                        }
-                        else
-                        {
-                            MessageBox.Show("ไม่สามารถสร้าง Stock Card ได้ insert TPart", "Error");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("ไม่สามารถบันทึก updateDraw", "Error");
-                    }
-                }
-            }
+            //            tpa1 = dc.tpadb.insertTPart(tpa);
+            //            if (tpa1.Length >= 1)
+            //            {
+            //                MessageBox.Show("บันทึกข้อมูลการเบิก เรียบร้อย", "บันทึกข้อมูล");
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show("ไม่สามารถสร้าง Stock Card ได้ insert TPart", "Error");
+            //            }
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("ไม่สามารถบันทึก updateDraw", "Error");
+            //        }
+            //    }
+            //}
         }
 
         private void dgv1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -665,7 +739,7 @@ namespace dsg.gui
 
         private void txtSnPriceCost_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !(e.KeyChar == 46);
+            //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && !(e.KeyChar == 46);
         }
 
         private void txtSnPriceSale_KeyPress(object sender, KeyPressEventArgs e)
@@ -697,7 +771,8 @@ namespace dsg.gui
         {
             try
             {
-                txtPriceCostCurr.Text = dc.calCurrency(dc.getCurrencyByList(dc.getValueCboItem(cboCurrPriceCost)), Double.Parse(txtPriceCost.Text));
+                txtPriceCost.Text = txtPriceCost.Text.Replace("$", "");
+                txtPriceCostCurr.Text = dc.calCurrency(dc.getCurrencyByList1(cboCurrPriceCost.Text), Double.Parse(txtPriceCost.Text));
                 txtSnPriceCostCurr.Text = txtPriceCostCurr.Text;
             }
             catch (Exception ex)
@@ -711,7 +786,8 @@ namespace dsg.gui
         {
             try
             {
-                txtPriceSaleCurr.Text = dc.calCurrency(dc.getCurrencyByList(dc.getValueCboItem(cboCurrPriceCost)), Double.Parse(txtPriceSale.Text));
+                txtPriceSale.Text = txtPriceSale.Text.Replace("$", "");
+                txtPriceSaleCurr.Text = dc.calCurrency(dc.getCurrencyByList1(cboCurrPriceCost.Text), Double.Parse(txtPriceSale.Text));
                 txtSnPriceSaleCurr.Text = txtPriceSaleCurr.Text;
             }
             catch (Exception ex)
@@ -724,7 +800,7 @@ namespace dsg.gui
         {
             try
             {
-                txtSnPriceCostCurr.Text = dc.calCurrency(dc.getCurrencyByList(dc.getValueCboItem(cboSnCurrPriceCost)), Double.Parse(txtSnPriceCost.Text));
+                txtSnPriceCostCurr.Text = dc.calCurrency(dc.getCurrencyByList1(cboSnCurrPriceCost.Text), Double.Parse(txtSnPriceCost.Text));
             }
             catch (Exception ex)
             {
@@ -736,12 +812,94 @@ namespace dsg.gui
         {
             try
             {
-                txtSnPriceSaleCurr.Text = dc.calCurrency(dc.getCurrencyByList(dc.getValueCboItem(cboSnCurrPriceSale)), Double.Parse(txtSnPriceSale.Text));
+                txtSnPriceSaleCurr.Text = dc.calCurrency(dc.getCurrencyByList1(cboSnCurrPriceSale.Text), Double.Parse(txtSnPriceSale.Text));
             }
             catch (Exception ex)
             {
 
             }
+        }
+
+        private void cboCurrPriceCost_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtPriceCostCurr.Text = dc.calCurrency(dc.getCurrencyByList1(cboCurrPriceCost.Text), Double.Parse(txtPriceCost.Text));
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void cboCurrPriceSale_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtPriceSaleCurr.Text = dc.calCurrency(dc.getCurrencyByList1(cboCurrPriceCost.Text), Double.Parse(txtPriceSale.Text));
+                txtSnPriceSaleCurr.Text = txtPriceSaleCurr.Text;
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void cboSnCurrPriceCost_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtSnPriceCostCurr.Text = dc.calCurrency(dc.getCurrencyByList1(cboSnCurrPriceCost.Text), Double.Parse(txtSnPriceCost.Text));
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void cboSnCurrPriceSale_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtSnPriceSaleCurr.Text = dc.calCurrency(dc.getCurrencyByList1(cboSnCurrPriceSale.Text), Double.Parse(txtSnPriceSale.Text));
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            pa = dc.padb.selectByCode(txtPaCode.Text);
+            setControl(pa.Id);
+        }
+
+        private void txtPriceCost_Enter(object sender, EventArgs e)
+        {
+            //txtPriceCost.SelectAll();
+        }
+
+        private void txtPriceSale_Enter(object sender, EventArgs e)
+        {
+            //txtPriceSale.SelectAll();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            PartSerialNo ps1 = new PartSerialNo();
+            ps1 = dc.psdb.selectByPriceCost(txtSnPriceCost.Text.Replace(",",""));
+            chkReceive.Checked = true;
+            setControlSerialNo(ps1.Id);
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            PartSerialNo ps1 = new PartSerialNo();
+            ps1 = dc.psdb.selectBySerialNo(txtSerialNo.Text);
+            chkReceive.Checked = true;
+            setControlSerialNo(ps1.Id);
         }
     }
 }

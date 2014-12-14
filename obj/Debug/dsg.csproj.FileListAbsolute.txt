@@ -68,8 +68,8 @@ C:\source\dsg\obj\Debug\dsg.Properties.Resources.resources
 C:\source\dsg\obj\Debug\dsg.csproj.GenerateResource.Cache
 C:\source\dsg\bin\Debug\dsg.exe
 C:\source\dsg\bin\Debug\dsg.pdb
-D:\source\dsg\obj\Debug\dsg.csprojResolveAssemblyReference.cache
 D:\source\dsg\obj\Debug\dsg.FrmReport.resources
 D:\source\dsg\bin\Debug\dsg.exe.config
 D:\source\dsg\obj\Debug\dsg.gui.FrmCurrencyAdd.resources
 D:\source\dsg\obj\Debug\dsg.gui.FrmCurrencyView.resources
+D:\source\dsg\obj\Debug\dsg.csprojResolveAssemblyReference.cache

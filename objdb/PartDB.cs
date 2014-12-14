@@ -231,12 +231,12 @@ namespace dsg.objdb
             }
             return item;
         }
-        public Part selectByCode(String pcId)
+        public Part selectByCode(String pcCode)
         {
             Part item = new Part();
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + pa.table + " Where " + pa.Id + "='" + pcId + "' and " + pa.Active + "='1' ";
+            sql = "Select * From " + pa.table + " Where " + pa.Code + "='" + pcCode + "' and " + pa.Active + "='1' ";
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
@@ -279,6 +279,18 @@ namespace dsg.objdb
             p.TypeName = p.TypeName.Replace("''", "'");
             p.acftModel = p.acftModel.Replace("''", "'");
             p.Model = p.Model.Replace("''", "'");
+
+            p.CurrNamePriceCost = p.CurrNamePriceCost.Replace(",", "");
+            p.CurrNamePriceSale = p.CurrNamePriceSale.Replace(",", "");
+            p.CurrRatePriceCost = p.CurrRatePriceCost.Replace(",", "");
+            p.CurrRatePriceSale = p.CurrRatePriceSale.Replace(",", "");
+            p.CurrXPriceCost = p.CurrXPriceCost.Replace(",", "");
+            p.CurrXriceSale = p.CurrXriceSale.Replace(",", "");
+            p.PriceCostCurrent = p.PriceCostCurrent.Replace(",", "");
+            p.PriceSaleCurrent = p.PriceSaleCurrent.Replace(",", "");
+            p.PriceCost = p.PriceCost.Replace(",", "");
+            p.PriceSale = p.PriceSale.Replace(",", "");
+
             sql = "Insert Into " + pa.table + " (" + pa.pkField + "," + pa.acftModel + "," + pa.barcode + "," +
                 pa.CateId + "," + pa.Certify + "," + pa.dateCancel + ", " +
                 pa.dateCreate + "," + pa.dateDraw + "," + pa.dateInv + ", " +
@@ -288,7 +300,10 @@ namespace dsg.objdb
                 pa.SerialNo + "," + pa.stockLoca1 + "," + pa.stockLoca2 + ", " +
                 pa.stockLoca3 + "," + pa.stockLoca4 + "," + pa.stockLoca5 + "," +
                 pa.CateName + "," + pa.TypeId + "," + pa.TypeName + "," +
-                pa.Active + "," + pa.TypeSubId + "," + pa.TypeSubName + "," + pa.Model + ") " +
+                pa.Active + "," + pa.TypeSubId + "," + pa.TypeSubName + "," + 
+                pa.Model + "," + pa.CurrNamePriceCost + "," + pa.CurrNamePriceSale + "," +
+                pa.CurrRatePriceCost + "," + pa.CurrRatePriceSale + "," + pa.CurrXPriceCost + "," + 
+                pa.CurrXriceSale + "," + pa.PriceCostCurrent + "," + pa.PriceSaleCurrent + ") " +
                 "Values('" + p.Id + "','" + p.acftModel + "','" + p.barcode + "','" +
                 p.CateId + "','" + p.Certify + "','" + p.dateCancel + "','"+
                 p.dateCreate + "','" + p.dateDraw + "','" + p.dateInv + "','" +
@@ -298,7 +313,10 @@ namespace dsg.objdb
                 p.SerialNo + "','" + p.stockLoca1 + "','" + p.stockLoca2 + "','" +
                 p.stockLoca3 + "','" + p.stockLoca4 + "','" + p.stockLoca5 + "','" +
                 p.CateName + "','" + p.TypeId + "','" + p.TypeName + "','" +
-                p.Active + "','" + p.TypeSubId + "','" + p.TypeSubName + "','" + p.Model + "')";
+                p.Active + "','" + p.TypeSubId + "','" + p.TypeSubName + "','" +
+                p.Model + "','" + p.CurrNamePriceCost + "','" + p.CurrNamePriceSale + "'," +
+                NumberNull1(p.CurrRatePriceCost) + "," + NumberNull1(p.CurrRatePriceSale) + "," + NumberNull1(p.CurrXPriceCost) + "," +
+                NumberNull1(p.CurrXriceSale) + "," + NumberNull1(p.PriceCostCurrent) + "," + NumberNull1(p.PriceSaleCurrent) + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -323,6 +341,17 @@ namespace dsg.objdb
             p.TypeName = p.TypeName.Replace("''", "'");
             p.Model = p.Model.Replace("''", "'");
 
+            p.CurrNamePriceCost = p.CurrNamePriceCost.Replace(",", "");
+            p.CurrNamePriceSale = p.CurrNamePriceSale.Replace(",", "");
+            p.CurrRatePriceCost = p.CurrRatePriceCost.Replace(",", "");
+            p.CurrRatePriceSale = p.CurrRatePriceSale.Replace(",", "");
+            p.CurrXPriceCost = p.CurrXPriceCost.Replace(",", "");
+            p.CurrXriceSale = p.CurrXriceSale.Replace(",", "");
+            p.PriceCostCurrent = p.PriceCostCurrent.Replace(",", "");
+            p.PriceSaleCurrent = p.PriceSaleCurrent.Replace(",", "");
+            p.PriceCost = p.PriceCost.Replace(",", "");
+            p.PriceSale = p.PriceSale.Replace(",", "");
+
             sql = "Update " + pa.table + " Set " + pa.acftModel + "='" + p.acftModel + "', " +
                 pa.barcode + "='" + p.barcode + "', " +
                 pa.CateId + "='" + p.CateId + "', " +
@@ -338,8 +367,8 @@ namespace dsg.objdb
                 pa.Number + "='" + p.Number + "', " +
                 pa.Remark + "='" + p.Remark + "', " +
                 pa.pathPicCertify + "='" + p.pathPicCertify + "', " +
-                pa.PriceCost + "='" + p.PriceCost + "', " +
-                pa.PriceSale + "='" + p.PriceSale + "', " +
+                pa.PriceCost + "=" + NumberNull1(p.PriceCost) + ", " +
+                pa.PriceSale + "=" + NumberNull1(p.PriceSale) + ", " +
                 pa.SerialNo + "='" + p.SerialNo + "', " +
                 pa.stockLoca1 + "='" + p.stockLoca1 + "', " +
                 pa.stockLoca2 + "='" + p.stockLoca2 + "', " +
@@ -351,7 +380,15 @@ namespace dsg.objdb
                 pa.TypeName + "='" + p.TypeName + "', " +
                 pa.TypeSubId + "='" + p.TypeSubId + "', " +
                 pa.TypeSubName + "='" + p.TypeSubName + "', " +
-                pa.Model + "='" + p.Model + "' " +
+                pa.Model + "='" + p.Model + "', " +
+                pa.CurrNamePriceCost + "='" + p.CurrNamePriceCost + "', " +
+                pa.CurrNamePriceSale + "='" + p.CurrNamePriceSale + "', " +
+                pa.CurrRatePriceCost + "=" + NumberNull1(p.CurrRatePriceCost) + ", " +
+                pa.CurrRatePriceSale + "=" + NumberNull1(p.CurrRatePriceSale) + ", " +
+                pa.CurrXPriceCost + "=" + NumberNull1(p.CurrXPriceCost) + ", " +
+                pa.CurrXriceSale + "=" + NumberNull1(p.CurrXriceSale) + ", " +
+                pa.PriceCostCurrent + "=" + NumberNull1(p.PriceCostCurrent) + ", " +
+                pa.PriceSaleCurrent + "=" + NumberNull1(p.PriceSaleCurrent) + " " +
                 "Where " + pa.pkField + "='" + p.Id + "'";
             try
             {
@@ -525,6 +562,17 @@ namespace dsg.objdb
                 "Where " + pa.CateId + "='" + paId + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;
+        }
+        private String NumberNull1(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "0";
+            }
+            else
+            {
+                return o;
+            }
         }
     }
 }

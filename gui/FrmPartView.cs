@@ -13,8 +13,8 @@ namespace dsg.gui
     public partial class FrmPartView : Form
     {
         DsgControl dc;
-        int colCnt = 8;
-        int colRow = 0, colCode = 1, colName = 2, colModel=3, colType=4, colCate=5, colRemark = 6, colId = 7;
+        int colCnt = 10;
+        int colRow = 0, colCode = 1, colName = 2, colModel = 3, colType = 4, colCate = 5, colPriceCost = 6, colPriceSale = 7, colRemark = 8, colId = 9;
         public FrmPartView(DsgControl d)
         {
             InitializeComponent();
@@ -49,6 +49,8 @@ namespace dsg.gui
             dgvView.Columns[colModel].HeaderText = "Model";
             dgvView.Columns[colType].HeaderText = "ประเภท";
             dgvView.Columns[colCate].HeaderText = "ชนิด";
+            dgvView.Columns[colPriceCost].HeaderText = "ราคาทุน";
+            dgvView.Columns[colPriceSale].HeaderText = "ราคาขาย";
             dgvView.Columns[colRemark].HeaderText = "หมายเหตุ";
             dgvView.Columns[colId].HeaderText = "id";
             //dgvView.Columns[colPriority].HeaderText = "สิทธิใช้งาน";
@@ -71,6 +73,8 @@ namespace dsg.gui
                     dgvView[colModel, i].Value = dt.Rows[i][dc.padb.pa.Model].ToString();
                     dgvView[colType, i].Value = dt.Rows[i][dc.padb.pa.TypeName].ToString();
                     dgvView[colCate, i].Value = dt.Rows[i][dc.padb.pa.CateName].ToString();
+                    dgvView[colPriceCost, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][dc.padb.pa.PriceCost]);
+                    dgvView[colPriceSale, i].Value = String.Format("{0:#,###,###.00}", dt.Rows[i][dc.padb.pa.PriceSale]);
                     dgvView[colId, i].Value = dt.Rows[i][dc.padb.pa.Id].ToString();
 
                     if ((i % 2) != 0)

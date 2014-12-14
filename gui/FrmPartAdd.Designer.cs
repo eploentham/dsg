@@ -225,6 +225,7 @@
             this.txtPriceSaleCurr.Name = "txtPriceSaleCurr";
             this.txtPriceSaleCurr.Size = new System.Drawing.Size(104, 20);
             this.txtPriceSaleCurr.TabIndex = 55;
+            this.txtPriceSaleCurr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPriceCostCurr
             // 
@@ -233,6 +234,7 @@
             this.txtPriceCostCurr.Name = "txtPriceCostCurr";
             this.txtPriceCostCurr.Size = new System.Drawing.Size(104, 20);
             this.txtPriceCostCurr.TabIndex = 54;
+            this.txtPriceCostCurr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cboCurrPriceSale
             // 
@@ -242,6 +244,7 @@
             this.cboCurrPriceSale.Name = "cboCurrPriceSale";
             this.cboCurrPriceSale.Size = new System.Drawing.Size(53, 21);
             this.cboCurrPriceSale.TabIndex = 53;
+            this.cboCurrPriceSale.SelectedIndexChanged += new System.EventHandler(this.cboCurrPriceSale_SelectedIndexChanged);
             // 
             // cboCurrPriceCost
             // 
@@ -251,6 +254,7 @@
             this.cboCurrPriceCost.Name = "cboCurrPriceCost";
             this.cboCurrPriceCost.Size = new System.Drawing.Size(53, 21);
             this.cboCurrPriceCost.TabIndex = 52;
+            this.cboCurrPriceCost.SelectedIndexChanged += new System.EventHandler(this.cboCurrPriceCost_SelectedIndexChanged);
             // 
             // cboModel
             // 
@@ -353,6 +357,7 @@
             this.txtPaId.Name = "txtPaId";
             this.txtPaId.Size = new System.Drawing.Size(30, 20);
             this.txtPaId.TabIndex = 32;
+            this.txtPaId.Visible = false;
             // 
             // btnTypeSubAdd
             // 
@@ -383,6 +388,7 @@
             this.btnSearch.TabIndex = 21;
             this.btnSearch.Text = "...";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnSave
             // 
@@ -526,6 +532,7 @@
             this.cboSnCurrPriceSale.Name = "cboSnCurrPriceSale";
             this.cboSnCurrPriceSale.Size = new System.Drawing.Size(53, 21);
             this.cboSnCurrPriceSale.TabIndex = 66;
+            this.cboSnCurrPriceSale.SelectedIndexChanged += new System.EventHandler(this.cboSnCurrPriceSale_SelectedIndexChanged);
             // 
             // cboSnCurrPriceCost
             // 
@@ -535,6 +542,7 @@
             this.cboSnCurrPriceCost.Name = "cboSnCurrPriceCost";
             this.cboSnCurrPriceCost.Size = new System.Drawing.Size(53, 21);
             this.cboSnCurrPriceCost.TabIndex = 65;
+            this.cboSnCurrPriceCost.SelectedIndexChanged += new System.EventHandler(this.cboSnCurrPriceCost_SelectedIndexChanged);
             // 
             // txtRowNumber
             // 
@@ -543,6 +551,7 @@
             this.txtRowNumber.Name = "txtRowNumber";
             this.txtRowNumber.Size = new System.Drawing.Size(36, 20);
             this.txtRowNumber.TabIndex = 64;
+            this.txtRowNumber.Visible = false;
             // 
             // label14
             // 
@@ -569,10 +578,11 @@
             this.txtPsId.Name = "txtPsId";
             this.txtPsId.Size = new System.Drawing.Size(36, 20);
             this.txtPsId.TabIndex = 61;
+            this.txtPsId.Visible = false;
             // 
             // txtSnPriceSale
             // 
-            this.txtSnPriceSale.Location = new System.Drawing.Point(78, 84);
+            this.txtSnPriceSale.Location = new System.Drawing.Point(78, 85);
             this.txtSnPriceSale.Margin = new System.Windows.Forms.Padding(2);
             this.txtSnPriceSale.Name = "txtSnPriceSale";
             this.txtSnPriceSale.Size = new System.Drawing.Size(76, 20);
@@ -583,7 +593,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(10, 87);
+            this.label13.Location = new System.Drawing.Point(10, 88);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(54, 13);
@@ -609,6 +619,7 @@
             this.label12.Size = new System.Drawing.Size(51, 13);
             this.label12.TabIndex = 57;
             this.label12.Text = "ราคาทุน :";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // txtDateInv
             // 
@@ -708,7 +719,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(278, 6);
+            this.btnAdd.Location = new System.Drawing.Point(279, 9);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(31, 23);
@@ -734,6 +745,7 @@
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 45;
             this.label4.Text = "serial no :";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel2
             // 
@@ -941,6 +953,8 @@
             this.txtPriceSale.Name = "txtPriceSale";
             this.txtPriceSale.Size = new System.Drawing.Size(76, 20);
             this.txtPriceSale.TabIndex = 19;
+            this.txtPriceSale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPriceSale.Enter += new System.EventHandler(this.txtPriceSale_Enter);
             this.txtPriceSale.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceSale_KeyPress);
             this.txtPriceSale.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPriceSale_KeyUp);
             this.txtPriceSale.Leave += new System.EventHandler(this.txtPriceSale_Leave);
@@ -981,6 +995,8 @@
             this.txtPriceCost.Name = "txtPriceCost";
             this.txtPriceCost.Size = new System.Drawing.Size(76, 20);
             this.txtPriceCost.TabIndex = 11;
+            this.txtPriceCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPriceCost.Enter += new System.EventHandler(this.txtPriceCost_Enter);
             this.txtPriceCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceCost_KeyPress);
             this.txtPriceCost.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPriceCost_KeyUp);
             this.txtPriceCost.Leave += new System.EventHandler(this.txtPriceCost_Leave);

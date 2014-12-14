@@ -283,13 +283,27 @@ namespace dsg.control
             }
             return item;
         }
+        public Currency getCurrencyByList1(String Name)
+        {
+            Currency item = new Currency();
+
+            foreach (Currency i in lcurr)
+            {
+                if (i.Name.Equals(Name))
+                {
+                    //item = i;
+                    return i;
+                }
+            }
+            return item;
+        }
         public String calCurrency(Currency c, Double m)
         {
             Double r = 0;
             r = (m * Double.Parse(NumberNull1(c.CurrRate))) / Double.Parse(NumberNull0(c.CurrX));
             return String.Format("{0:#,###,###.00}", r);
         }
-        private String NumberNull1(String o)
+        public String NumberNull1(String o)
         {
             if (o.Equals(""))
             {
@@ -324,5 +338,16 @@ namespace dsg.control
                 return iSale.Value;
             }
         }
+        //public String NumberNull1(String o)
+        //{
+        //    if (o.Equals(""))
+        //    {
+        //        return "0";
+        //    }
+        //    else
+        //    {
+        //        return o;
+        //    }
+        //}
     }
 }
