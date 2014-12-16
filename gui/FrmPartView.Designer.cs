@@ -34,6 +34,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.cboPrint = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +81,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(680, 10);
+            this.btnAdd.Location = new System.Drawing.Point(278, 10);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(74, 32);
@@ -96,15 +97,24 @@
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(74, 32);
             this.btnPrint.TabIndex = 6;
-            this.btnPrint.Text = "Print";
+            this.btnPrint.Text = "Print Part";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // cboPrint
+            // 
+            this.cboPrint.FormattingEnabled = true;
+            this.cboPrint.Location = new System.Drawing.Point(622, 16);
+            this.cboPrint.Name = "cboPrint";
+            this.cboPrint.Size = new System.Drawing.Size(186, 21);
+            this.cboPrint.TabIndex = 7;
             // 
             // FrmPartView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(949, 628);
+            this.ClientSize = new System.Drawing.Size(1044, 628);
+            this.Controls.Add(this.cboPrint);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.button1);
@@ -131,5 +141,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.ComboBox cboPrint;
     }
 }

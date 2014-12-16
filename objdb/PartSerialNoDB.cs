@@ -25,8 +25,8 @@ namespace dsg.objdb
             ps.Id = "part_serial_no_id";
             ps.locaId = "loca_id";
             ps.partId = "part_id";
-            ps.priceCost = "price_cost";
-            ps.priceSale = "price_sale";
+            ps.PriceCost = "price_cost";
+            ps.PriceSale = "price_sale";
             ps.serialNo = "serial_no";
             ps.Remark = "part_serial_no_remark";
             ps.Active = "part_serial_no_active";
@@ -40,6 +40,15 @@ namespace dsg.objdb
             ps.DateModi = "date_modi";
             ps.RemarkDraw = "remark_draw";
 
+            ps.CurrNamePriceCost = "current_name_price_cost";
+            ps.CurrNamePriceSale = "current_name_price_sale";
+            ps.CurrRatePriceCost = "current_rate_price_cost";
+            ps.CurrRatePriceSale = "current_rate_price_sale";
+            ps.CurrXPriceCost = "current_x_price_cost";
+            ps.CurrXriceSale = "current_x_price_sale";
+            ps.PriceCostCurrent = "price_cost_current";
+            ps.PriceSaleCurrent = "price_sale_current";
+
             ps.table = "b_part_serial_no";
             ps.pkField = "part_serial_no_id";
         }
@@ -51,8 +60,8 @@ namespace dsg.objdb
             item.locaId = dt.Rows[0][ps.locaId].ToString();
             item.partId = dt.Rows[0][ps.partId].ToString();
 
-            item.priceCost = dt.Rows[0][ps.priceCost].ToString();
-            item.priceSale = dt.Rows[0][ps.priceSale].ToString();
+            item.PriceCost = dt.Rows[0][ps.PriceCost].ToString();
+            item.PriceSale = dt.Rows[0][ps.PriceSale].ToString();
             item.serialNo = dt.Rows[0][ps.serialNo].ToString();
             item.Remark = dt.Rows[0][ps.Remark].ToString();
             item.Active = dt.Rows[0][ps.Active].ToString();
@@ -67,6 +76,15 @@ namespace dsg.objdb
             item.DateCreate = dt.Rows[0][ps.DateCreate].ToString();
             item.DateModi = dt.Rows[0][ps.DateModi].ToString();
             item.RemarkDraw = dt.Rows[0][ps.RemarkDraw].ToString();
+
+            item.CurrNamePriceCost = dt.Rows[0][ps.CurrNamePriceCost].ToString();
+            item.CurrNamePriceSale = dt.Rows[0][ps.CurrNamePriceSale].ToString();
+            item.CurrRatePriceCost = dt.Rows[0][ps.CurrRatePriceCost].ToString();
+            item.CurrRatePriceSale = dt.Rows[0][ps.CurrRatePriceSale].ToString();
+            item.CurrXPriceCost = dt.Rows[0][ps.CurrXPriceCost].ToString();
+            item.CurrXriceSale = dt.Rows[0][ps.CurrXriceSale].ToString();
+            item.PriceCostCurrent = dt.Rows[0][ps.PriceCostCurrent].ToString();
+            item.PriceSaleCurrent = dt.Rows[0][ps.PriceSaleCurrent].ToString();
 
             return item;
         }
@@ -94,8 +112,8 @@ namespace dsg.objdb
                     item.locaId = dt.Rows[0][ps.locaId].ToString();
                     item.partId = dt.Rows[0][ps.partId].ToString();
 
-                    item.priceCost = dt.Rows[0][ps.priceCost].ToString();
-                    item.priceSale = dt.Rows[0][ps.priceSale].ToString();
+                    item.PriceCost = dt.Rows[0][ps.PriceCost].ToString();
+                    item.PriceSale = dt.Rows[0][ps.PriceSale].ToString();
                     item.serialNo = dt.Rows[0][ps.serialNo].ToString();
                     item.Remark = dt.Rows[0][ps.Remark].ToString();
                     item.Active = dt.Rows[0][ps.Active].ToString();
@@ -109,6 +127,15 @@ namespace dsg.objdb
                     item.DateCreate = dt.Rows[0][ps.DateCreate].ToString();
                     item.DateModi = dt.Rows[0][ps.DateModi].ToString();
                     item.RemarkDraw = dt.Rows[0][ps.RemarkDraw].ToString();
+
+                    item.CurrNamePriceCost = dt.Rows[0][ps.CurrNamePriceCost].ToString();
+                    item.CurrNamePriceSale = dt.Rows[0][ps.CurrNamePriceSale].ToString();
+                    item.CurrRatePriceCost = dt.Rows[0][ps.CurrRatePriceCost].ToString();
+                    item.CurrRatePriceSale = dt.Rows[0][ps.CurrRatePriceSale].ToString();
+                    item.CurrXPriceCost = dt.Rows[0][ps.CurrXPriceCost].ToString();
+                    item.CurrXriceSale = dt.Rows[0][ps.CurrXriceSale].ToString();
+                    item.PriceCostCurrent = dt.Rows[0][ps.PriceCostCurrent].ToString();
+                    item.PriceSaleCurrent = dt.Rows[0][ps.PriceSaleCurrent].ToString();
 
                     ls.Add(item);
                 }
@@ -146,7 +173,7 @@ namespace dsg.objdb
             PartSerialNo item = new PartSerialNo();
             String sql = "";
             DataTable dt = new DataTable();
-            sql = "Select * From " + ps.table + " Where " + ps.priceCost + "='" + psId + "'";
+            sql = "Select * From " + ps.table + " Where " + ps.PriceCost + "='" + psId + "'";
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
@@ -186,15 +213,15 @@ namespace dsg.objdb
             dt = conn.selectData(sql);
             if (dt.Rows.Count > 0)
             {
-                if (dt.Rows[0][ps.rowNumber] != null)
+                if (dt.Rows[0]["cnt"] != null)
                 {
-                    if (dt.Rows[0][ps.rowNumber].ToString().Equals(""))
+                    if (dt.Rows[0]["cnt"].ToString().Equals(""))
                     {
                         cnt = "1";
                     }
                     else
                     {
-                        cnt = dt.Rows[0][ps.rowNumber].ToString();
+                        cnt = dt.Rows[0]["cnt"].ToString();
                     }
                     
                 }
@@ -223,14 +250,32 @@ namespace dsg.objdb
             //p.Remark = p.Remark.Replace("''", "'");
             p.DateCreate = p.dateGenDB;
             p.Remark = p.Remark.Replace("''", "'");
+
+            p.CurrNamePriceCost = p.CurrNamePriceCost.Replace(",", "");
+            p.CurrNamePriceSale = p.CurrNamePriceSale.Replace(",", "");
+            p.CurrRatePriceCost = p.CurrRatePriceCost.Replace(",", "");
+            p.CurrRatePriceSale = p.CurrRatePriceSale.Replace(",", "");
+            p.CurrXPriceCost = p.CurrXPriceCost.Replace(",", "");
+            p.CurrXriceSale = p.CurrXriceSale.Replace(",", "");
+            p.PriceCostCurrent = p.PriceCostCurrent.Replace(",", "");
+            p.PriceSaleCurrent = p.PriceSaleCurrent.Replace(",", "");
+            p.PriceCost = p.PriceCost.Replace(",", "");
+            p.PriceSale = p.PriceSale.Replace(",", "");
+
             sql = "Insert Into " + ps.table + " (" + ps.pkField + "," + ps.dateInv + "," + ps.dateReceive + "," +
-                ps.locaId + "," + ps.partId + "," + ps.priceCost + "," +
-                ps.priceSale + "," + ps.serialNo + "," + ps.Remark + "," +
-                ps.Active + "," + ps.StatusTran + "," + ps.DateCreate + ") " +
+                ps.locaId + "," + ps.partId + "," + ps.PriceCost + "," +
+                ps.PriceSale + "," + ps.serialNo + "," + ps.Remark + "," +
+                ps.Active + "," + ps.StatusTran + "," + ps.DateCreate + "," +
+                ps.CurrNamePriceCost + "," + ps.CurrNamePriceSale + "," + ps.CurrRatePriceCost + "," +
+                ps.CurrRatePriceSale + "," + ps.CurrXPriceCost + "," + ps.CurrXriceSale + "," +
+                ps.PriceCostCurrent + "," + ps.PriceSaleCurrent + ") " +
                 "Values('" + p.Id + "','" + p.dateInv + "','" + p.dateReceive + "','" +
-                p.locaId + "','" + p.partId + "','" + p.priceCost + "','" +
-                p.priceSale + "','" + p.serialNo + "','" + p.Remark + "','" +
-                p.Active + "','" + p.StatusTran + "'," + p.DateCreate + ")";
+                p.locaId + "','" + p.partId + "'," + NumberNull1(p.PriceCost) + "," +
+                NumberNull1(p.PriceSale) + ",'" + p.serialNo + "','" + p.Remark + "','" +
+                p.Active + "','" + p.StatusTran + "'," + p.DateCreate + "','" + 
+                p.CurrNamePriceCost + "','" + p.CurrNamePriceSale + "'," + NumberNull1(p.CurrRatePriceCost) + "," + 
+                NumberNull1(p.CurrRatePriceSale) + "," + NumberNull1(p.CurrXPriceCost) + "," + NumberNull1(p.CurrXriceSale) + "," + 
+                NumberNull1(p.PriceCostCurrent) + "," + NumberNull1(p.PriceSaleCurrent) + ")";
             try
             {
                 chk = conn.ExecuteNonQuery(sql);
@@ -252,16 +297,37 @@ namespace dsg.objdb
             p.Remark = p.Remark.Replace("''", "'");
             p.DateModi = p.dateGenDB;
             //p.partTName = p.partTName.Replace("''", "'");
+
+            p.CurrNamePriceCost = p.CurrNamePriceCost.Replace(",", "");
+            p.CurrNamePriceSale = p.CurrNamePriceSale.Replace(",", "");
+            p.CurrRatePriceCost = p.CurrRatePriceCost.Replace(",", "");
+            p.CurrRatePriceSale = p.CurrRatePriceSale.Replace(",", "");
+            p.CurrXPriceCost = p.CurrXPriceCost.Replace(",", "");
+            p.CurrXriceSale = p.CurrXriceSale.Replace(",", "");
+            p.PriceCostCurrent = p.PriceCostCurrent.Replace(",", "");
+            p.PriceSaleCurrent = p.PriceSaleCurrent.Replace(",", "");
+            p.PriceCost = p.PriceCost.Replace(",", "");
+            p.PriceSale = p.PriceSale.Replace(",", "");
+
             sql = "Update " + ps.table + " Set " + ps.dateInv + "='" + p.dateInv + "', " +
                 ps.dateReceive + "='" + p.dateReceive + "', " +
                 ps.locaId + "='" + p.locaId + "', " +
                 ps.partId + "='" + p.partId + "', " +
-                ps.priceCost + "='" + p.priceCost + "', " +
-                ps.priceSale + "='" + p.priceSale + "', " +
+                ps.PriceCost + "=" + NumberNull1(p.PriceCost) + ", " +
+                ps.PriceSale + "=" + NumberNull1(p.PriceSale) + ", " +
                 ps.serialNo + "='" + p.serialNo + "', " +
                 ps.Remark + "='" + p.Remark + "', " +
                 ps.Active + "='" + p.Active + "', " +
-                ps.DateModi + "=" + p.DateModi + " " +
+                ps.DateModi + "=" + p.DateModi + ", " +
+                ps.CurrNamePriceCost + "='" + p.CurrNamePriceCost + "', " +
+                ps.CurrNamePriceSale + "='" + p.CurrNamePriceSale + "', " +
+                ps.CurrRatePriceCost + "=" + NumberNull1(p.CurrRatePriceCost) + ", " +
+                ps.CurrRatePriceSale + "=" + NumberNull1(p.CurrRatePriceSale) + ", " +
+                ps.CurrXPriceCost + "=" + NumberNull1(p.CurrXPriceCost) + ", " +
+                ps.CurrXriceSale + "=" + NumberNull1(p.CurrXriceSale) + ", " +
+                ps.PriceCostCurrent + "=" + NumberNull1(p.PriceCostCurrent) + ", " +
+                ps.PriceSaleCurrent + "=" + NumberNull1(p.PriceSaleCurrent) + " " +
+
                 "Where " + ps.pkField + "='" + p.Id + "'";
             try
             {
@@ -340,6 +406,17 @@ namespace dsg.objdb
                 "Where " + ps.pkField + "='" + psId + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;
+        }
+        private String NumberNull1(String o)
+        {
+            if (o.Equals(""))
+            {
+                return "0";
+            }
+            else
+            {
+                return o;
+            }
         }
     }
 }

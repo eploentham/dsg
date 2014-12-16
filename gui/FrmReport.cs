@@ -58,6 +58,34 @@ namespace dsg
                 dc.lw.WriteLog("rpt.setReportCheckUpSticker Error " + chk);
             }
         }
+        public void setReportPartSerialNo(DataTable dt)
+        {
+            String chk = "";
+            ReportDocument rpt = new ReportDocument();
+            try
+            {
+                dc.lw.WriteLog("rpt.PartSerialNoPrint OK ");
+                rpt.Load(dc.initC.PathReport + "\\PartSerialNoPrint.rpt");
+                dc.lw.WriteLog("rpt.setReportBtem OK Load" + dc.initC.PathReport + "\\PartSerialNoPrint.rpt");
+                rpt.SetDataSource(dt);
+                dc.lw.WriteLog("rpt.PartSerialNoPrint OK SetDataSource");
+
+                rpt.SetParameterValue("line1", "NORTHERN AVIATION SERVICES COMPANY LIMITED");
+                rpt.SetParameterValue("line2", "PART INVENTORY");
+                rpt.SetParameterValue("line3", "Part by Serial no current Update at " + System.DateTime.Now.ToShortDateString());
+
+                //rpt.SetParameterValue("custName", "Test Company");
+
+
+                this.crystalReportViewer1.ReportSource = rpt;
+                this.crystalReportViewer1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                chk = ex.Message.ToString();
+                dc.lw.WriteLog("rpt.setReportCheckUpSticker Error " + chk);
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             

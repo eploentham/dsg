@@ -25,6 +25,9 @@ namespace dsg.gui
             dc = d;
             setGrd();
             //dt = lc.selectStaffAll();
+            cboPrint.Items.Add("Print Part");
+            cboPrint.Items.Add("Print Serial No");
+            cboPrint.Items.Add("");
         }
         public void setGrd()
         {
@@ -132,9 +135,19 @@ namespace dsg.gui
         private void btnPrint_Click(object sender, EventArgs e)
         {
             //String sql = "";
-            DataTable dt = dc.padb.selectBitemListPrint();
+            DataTable dt = new DataTable();
             FrmReport frm = new FrmReport(dc);
-            frm.setReportBtem(dt);
+            if (cboPrint.Text.Equals("Print Part"))
+            {
+                dt = dc.padb.selectBitemListPrint();
+                frm.setReportBtem(dt);
+            }
+            else if (cboPrint.Text.Equals("Print Serial No"))
+            {
+                dt = dc.padb.selectPartSerialNoListPrint();
+                frm.setReportPartSerialNo(dt);
+            }
+            
             frm.ShowDialog(this);
         }
     }

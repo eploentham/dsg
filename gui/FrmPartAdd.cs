@@ -18,7 +18,7 @@ namespace dsg.gui
         Part pa;
         int colCnt = 8;
         int colRow = 0, colSerialNo = 1, colPriceCost = 2, colPriceSale = 3, colLoca = 4, coLRemark = 5, colId = 6, colLocaId=7;
-        String fileCertify = "", file1="";
+        String fileCertify = "", filePart="";
         PartSerialNo ps;
         //FolderBrowserDialog fbd;
         OpenFileDialog ofd;
@@ -41,6 +41,7 @@ namespace dsg.gui
             cboCurrPriceSale = dc.currdb.getCboCurrency(cboCurrPriceSale);
             cboSnCurrPriceSale = dc.currdb.getCboCurrency(cboSnCurrPriceSale);
             cboSnCurrPriceCost = dc.currdb.getCboCurrency(cboSnCurrPriceCost);
+            filePart = dc.initC.pathImage;
             setGrd();
             setControl(paId);
             ofd = new OpenFileDialog();
@@ -56,7 +57,8 @@ namespace dsg.gui
             if (!isExists)
                 System.IO.Directory.CreateDirectory(Environment.CurrentDirectory + "\\pic\\certify");
             fileCertify = Environment.CurrentDirectory + "\\pic\\certify\\";
-            file1 = Environment.CurrentDirectory + "\\pic\\part\\";
+            //file1 = Environment.CurrentDirectory + "\\pic\\part\\";
+            
             txtRemarkDraw.Visible = false;
             label19.Visible = false;
             btnUnActive.Visible = false;
@@ -64,6 +66,7 @@ namespace dsg.gui
             txtPriceSaleCurr.Enabled = false;
             txtSnPriceCostCurr.Enabled = false;
             txtSnPriceSaleCurr.Enabled = false;
+            btnUnActive.Visible = false;
             //foreach (FileInfo file in dir.GetFiles())
             //{
 
@@ -154,7 +157,7 @@ namespace dsg.gui
                 cboCurrPriceCost.Text = "USD";
             }
             setGrdSerialNo(paId);
-            viewImageCertify(pa.pathPicCertify);
+            viewImageCertify(pa.pathPicPart);//ใช้อันนี้ไปก่อน
             chkPic1.Checked = true;
             viewImage(pa.pathPic1);
             //DataTable dt = dc.psdb.se
@@ -177,8 +180,8 @@ namespace dsg.gui
                     dgv1[colRow, i].Value = (i + 1);
                     dgv1[colId, i].Value = dt.Rows[i][dc.psdb.ps.Id].ToString();
                     dgv1[colSerialNo, i].Value = dt.Rows[i][dc.psdb.ps.serialNo].ToString();
-                    dgv1[colPriceCost, i].Value = dt.Rows[i][dc.psdb.ps.priceCost].ToString();
-                    dgv1[colPriceSale, i].Value = dt.Rows[i][dc.psdb.ps.priceSale].ToString();
+                    dgv1[colPriceCost, i].Value = dt.Rows[i][dc.psdb.ps.PriceCost].ToString();
+                    dgv1[colPriceSale, i].Value = dt.Rows[i][dc.psdb.ps.PriceSale].ToString();
                     dgv1[coLRemark, i].Value = dt.Rows[i][dc.psdb.ps.Remark].ToString();
                     dgv1[colLocaId, i].Value = dt.Rows[i][dc.psdb.ps.locaId].ToString();
                     if (dt.Rows[i][dc.psdb.ps.locaId].ToString().Equals("1"))
@@ -255,7 +258,7 @@ namespace dsg.gui
             chkLoca4.Checked = false;
             chkLoca5.Checked = false;
         }
-        private void setPartSerialNo()
+        private void getPartSerialNo()
         {
             ps.Id = txtPsId.Text;
             ps.Active = "1";
@@ -283,11 +286,12 @@ namespace dsg.gui
                 ps.locaId = "5";
             }
             ps.partId = txtPaId.Text;
-            ps.priceCost = txtSnPriceCost.Text;
-            ps.priceSale = txtSnPriceSale.Text;
+            ps.PriceCost = txtSnPriceCost.Text;
+            ps.PriceSale = txtSnPriceSale.Text;
             ps.Remark = txtPsRemark.Text;
             ps.serialNo = txtSerialNo.Text;
             ps.StatusTran = "0";
+
             if (txtRowNumber.Text.Equals(""))
             {
                 ps.rowNumber = dc.psdb.selectMaxRowNumberByPartId(txtPaId.Text);
@@ -296,14 +300,27 @@ namespace dsg.gui
             {
                 ps.rowNumber = txtRowNumber.Text;
             }
+
+            Currency currCost = new Currency();
+            currCost = dc.getCurrencyByList1(cboSnCurrPriceCost.Text);
+            Currency currSale = new Currency();
+            currSale = dc.getCurrencyByList1(cboSnCurrPriceSale.Text);
+            ps.CurrNamePriceCost = cboSnCurrPriceCost.Text;
+            ps.CurrNamePriceSale = cboSnCurrPriceSale.Text;
+            ps.CurrRatePriceCost = currCost.CurrRate;
+            ps.CurrRatePriceSale = currSale.CurrRate;
+            ps.CurrXPriceCost = currCost.CurrX;
+            ps.CurrXriceSale = currSale.CurrX;
+            ps.PriceCostCurrent = txtSnPriceCostCurr.Text;
+            ps.PriceSaleCurrent = txtSnPriceSaleCurr.Text;
         }
         private void setControlSerialNo(String psId)
         {
             ps = dc.psdb.selectByPk(psId);
 
             txtPsId.Text = ps.Id;
-            txtSnPriceCost.Text = ps.priceCost;
-            txtSnPriceSale.Text = ps.priceSale;
+            txtSnPriceCost.Text = ps.PriceCost;
+            txtSnPriceSale.Text = ps.PriceSale;
             txtPsRemark.Text = ps.Remark;
             txtSerialNo.Text = ps.serialNo;
             txtRowNumber.Text = ps.rowNumber;
@@ -352,10 +369,12 @@ namespace dsg.gui
         private void setControlSerialNo(int row)
         {
             txtPsId.Text = dgv1[colId, row].Value.ToString();
+            PartSerialNo ps1 = new PartSerialNo();
+            ps1 = dc.psdb.selectByPk(txtPsId.Text);
             txtSnPriceCost.Text = dgv1[colPriceCost, row].Value.ToString();
             txtSnPriceSale.Text = dgv1[colPriceSale, row].Value.ToString();
             txtPsRemark.Text = dgv1[coLRemark, row].Value.ToString();
-            txtSerialNo.Text = dgv1[colSerialNo, row].Value.ToString();
+            txtSerialNo.Text = ps1.serialNo;
             txtRowNumber.Text = dgv1[colRow, row].Value.ToString();
             if (dgv1[colLocaId, row].Value.ToString().Equals("1"))
             {
@@ -397,6 +416,10 @@ namespace dsg.gui
                 chkLoca4.Checked = false;
                 chkLoca5.Checked = true;
             }
+            cboSnCurrPriceCost.Text = ps1.CurrNamePriceCost;
+            cboSnCurrPriceSale.Text = ps1.CurrNamePriceSale;
+            txtSnPriceCostCurr.Text = ps1.PriceCostCurrent;
+            txtSnPriceSaleCurr.Text = ps1.PriceSaleCurrent;
         }
         private void viewImageCertify(String filename)
         {
@@ -413,6 +436,29 @@ namespace dsg.gui
                 pic1.Image = Image.FromFile(filename);
                 pic1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+        }
+        private void saveImagePart()
+        {
+            String fileName = "", fileName1 = "", ex = "";
+            fileName = filePart+"\\" + txtPaId.Text + "";
+            ofd.ShowDialog();
+            if (ofd.FileName.Equals(""))
+            {
+                return;
+            }
+            fileName1 = ofd.FileName;
+            ex = fileName1.Substring(ofd.FileName.IndexOf("."));
+            //fbd.SelectedPath = Environment.CurrentDirectory + "\\pic";
+            //DirectoryInfo dir = new DirectoryInfo(ofd.FileName);
+
+            if (System.IO.File.Exists(ofd.FileName))
+            {
+                Image image = Image.FromFile(ofd.FileName);
+                dc.DeleteFileImage(fileName + ex);
+                image.Save(fileName + ex);
+            }
+            dc.padb.UpdatePathPicPart(txtPaId.Text, fileName + ex);
+            viewImageCertify(fileName + ex);
         }
         private void saveImageCertify()
         {
@@ -439,7 +485,7 @@ namespace dsg.gui
         private void saveImage(String flag)
         {
             String fileName = "", fileName1 = "", ex = "";
-            fileName = file1 + txtPaId.Text + flag;
+            fileName = filePart + txtPaId.Text + flag;
             ofd.ShowDialog();
             fileName1 = ofd.FileName;
             ex = fileName1.Substring(ofd.FileName.IndexOf("."));
@@ -577,7 +623,7 @@ namespace dsg.gui
                     }
                 }
                 //txtPaId.Text = psId;
-                setPartSerialNo();
+                getPartSerialNo();
                 psId = dc.psdb.insertPartSerialNo(ps);
                 if (psId.Length >= 1)
                 {
@@ -680,7 +726,7 @@ namespace dsg.gui
 
         private void btnPicCertify_Click(object sender, EventArgs e)
         {
-            saveImageCertify();
+            saveImagePart();
         }
 
         private void btnPicPart2_Click(object sender, EventArgs e)
@@ -760,11 +806,50 @@ namespace dsg.gui
         private void chkActive_Click(object sender, EventArgs e)
         {
             btnUnActive.Visible = false;
+
+            txtPaCode.Enabled = true;
+            cboPaType.Enabled = true;
+            cboTypeSub.Enabled = true;
+            cboPaCate.Enabled = true;
+            txtBarcode.Enabled = true;
+            txtPaNumber.Enabled = true;
+            txtPaName.Enabled = true;
+            cboModel.Enabled = true;
+            cboAcftModel.Enabled = true;
+            txtCertify.Enabled = true;
+            txtOnHand.Enabled = true;
+            txtPriceCost.Enabled = true;
+            cboCurrPriceCost.Enabled = true;
+            txtPriceCostCurr.Enabled = true;
+            txtPriceSale.Enabled = true;
+            cboCurrPriceSale.Enabled = true;
+            txtPriceSaleCurr.Enabled = true;
+            txtRemark.Enabled = true;
+
         }
 
         private void ChkUnActive_Click(object sender, EventArgs e)
         {
             btnUnActive.Visible = true;
+
+            txtPaCode.Enabled = false;
+            cboPaType.Enabled = false;
+            cboTypeSub.Enabled = false;
+            cboPaCate.Enabled = false;
+            txtBarcode.Enabled = false;
+            txtPaNumber.Enabled = false;
+            txtPaName.Enabled = false;
+            cboModel.Enabled = false;
+            cboAcftModel.Enabled = false;
+            txtCertify.Enabled = false;
+            txtOnHand.Enabled = false;
+            txtPriceCost.Enabled = false;
+            cboCurrPriceCost.Enabled = false;
+            txtPriceCostCurr.Enabled = false;
+            txtPriceSale.Enabled = false;
+            cboCurrPriceSale.Enabled = false;
+            txtPriceSaleCurr.Enabled = false;
+            txtRemark.Enabled = false;
         }
 
         private void txtPriceCost_Leave(object sender, EventArgs e)
@@ -900,6 +985,30 @@ namespace dsg.gui
             ps1 = dc.psdb.selectBySerialNo(txtSerialNo.Text);
             chkReceive.Checked = true;
             setControlSerialNo(ps1.Id);
+        }
+
+        private void btnUnActive_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("ต้องการยกเลิก", "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                dc.padb.VoidPart(txtPaId.Text);
+                this.Dispose();
+            }
+        }
+
+        private void btnSerialUnActive_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkSerialActive_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkSerialUnActive_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

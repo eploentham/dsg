@@ -228,6 +228,17 @@
       <DependentUpon>ItemPrint.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="report\PartSerialNoDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartSerialNoDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="report\PartSerialNoPrint.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartSerialNoPrint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="gui\FrmCurrencyAdd.resx">
       <DependentUpon>FrmCurrencyAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,6 +312,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ItemPrint.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="report\PartSerialNoPrint.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PartSerialNoPrint.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -321,6 +336,16 @@
     </None>
     <None Include="report\ItemDS.xss">
       <DependentUpon>ItemDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\PartSerialNoDS.xsc">
+      <DependentUpon>PartSerialNoDS.xsd</DependentUpon>
+    </None>
+    <None Include="report\PartSerialNoDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PartSerialNoDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="report\PartSerialNoDS.xss">
+      <DependentUpon>PartSerialNoDS.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup />

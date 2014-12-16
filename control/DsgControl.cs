@@ -349,5 +349,11 @@ namespace dsg.control
         //        return o;
         //    }
         //}
+        public void DeleteFileImage(String fileName)
+        {
+            //String file1 = fileName.Replace("_0", "_1");
+            System.IO.File.Delete(fileName);
+
+        }
     }
 }

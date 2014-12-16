@@ -68,6 +68,8 @@ namespace dsg.objdb
             pa.PriceCostCurrent = "price_cost_current";
             pa.PriceSaleCurrent = "price_sale_current";
 
+            pa.pathPicPart = "path_pic_part";
+
             pa.table = "b_part";
             pa.pkField = "part_id";
         }
@@ -117,6 +119,7 @@ namespace dsg.objdb
 
             item.TypeId = dt.Rows[0][pa.TypeId].ToString();
             item.CateName = dt.Rows[0][pa.CateName].ToString();
+            item.Active = dt.Rows[0][pa.Active].ToString();
 
             item.CurrNamePriceCost = dt.Rows[0][pa.CurrNamePriceCost].ToString();
             item.CurrNamePriceSale = dt.Rows[0][pa.CurrNamePriceSale].ToString();
@@ -127,6 +130,8 @@ namespace dsg.objdb
             item.PriceCostCurrent = dt.Rows[0][pa.PriceCostCurrent].ToString();
             item.PriceSaleCurrent = dt.Rows[0][pa.PriceSaleCurrent].ToString();
 
+            item.pathPicPart = dt.Rows[0][pa.pathPicPart].ToString();
+            item.pathPicPart = item.pathPicPart.Replace("@","\\");
             return item;
         }
         public DataTable selectAll()
@@ -155,6 +160,18 @@ namespace dsg.objdb
                 "pa.part_remark, '' as stock_location, pa.part_cate_name, pa.part_type_name, pa.price_cost, pa.price_sale, pa.sort1, pas.part_serial_no_remark as serial_remark  " +
                 "From " + pa.table + " pa Left Join b_part_serial_no pas on pa.part_id = pas.part_id "+
                 " Where " + pa.Active + "='1'";
+            dt = conn.selectData(sql);
+
+            return dt;
+        }
+        public DataTable selectPartSerialNoListPrint()
+        {
+            String sql = "";
+            DataTable dt = new DataTable();
+            sql = "Select pa.part_id , pa.part_code, pa.part_number, pa.barcode, ps.serial_no, pa.certify, pa.description, pa.part_model, pa.date_receive, pa.acft_model, " +
+                "pa.part_remark, ps.loca_id as stock_location, pa.part_cate_name, pa.part_type_name, ps.price_cost, ps.price_sale, pa.sort1, ps.part_serial_no_remark as serial_remark, ps.part_serial_no_id, ps.row_number  " +
+                "From " + pa.table + " pa Left Join b_part_serial_no ps on pa.part_id = ps.part_id " +
+                " Where pa." + pa.Active + "='1' and ps.part_serial_no_active = '1' ";
             dt = conn.selectData(sql);
 
             return dt;
@@ -212,6 +229,21 @@ namespace dsg.objdb
                     item.pathPic4 = dt.Rows[0][pa.pathPic4].ToString();
                     item.pathPic5 = dt.Rows[0][pa.pathPic5].ToString();
                     item.pathPicCertify = dt.Rows[0][pa.pathPicCertify].ToString();
+
+                    //item.TypeName = dt.Rows[0][pa.TypeName].ToString();
+
+                    //item.TypeId = dt.Rows[0][pa.TypeId].ToString();
+                    //item.CateName = dt.Rows[0][pa.CateName].ToString();
+                    item.Active = dt.Rows[0][pa.Active].ToString();
+
+                    item.CurrNamePriceCost = dt.Rows[0][pa.CurrNamePriceCost].ToString();
+                    item.CurrNamePriceSale = dt.Rows[0][pa.CurrNamePriceSale].ToString();
+                    item.CurrRatePriceCost = dt.Rows[0][pa.CurrRatePriceCost].ToString();
+                    item.CurrRatePriceSale = dt.Rows[0][pa.CurrRatePriceSale].ToString();
+                    item.CurrXPriceCost = dt.Rows[0][pa.CurrXPriceCost].ToString();
+                    item.CurrXriceSale = dt.Rows[0][pa.CurrXriceSale].ToString();
+                    item.PriceCostCurrent = dt.Rows[0][pa.PriceCostCurrent].ToString();
+                    item.PriceSaleCurrent = dt.Rows[0][pa.PriceSaleCurrent].ToString();
 
                     ls.Add(item);
                 }
@@ -473,12 +505,21 @@ namespace dsg.objdb
             }
             return c;
         }
-        public String VoidPartType(String ptId)
+        public String VoidPart(String ptId)
         {
             String sql = "", chk = "";
 
             sql = "Update " + pa.table + " Set " + pa.Active + "='3' " +
                 "Where " + pa.pkField + "='" + ptId + "'";
+            chk = conn.ExecuteNonQuery(sql);
+            return chk;
+        }
+        public String UpdatePathPicPart(String paId, String fileName)
+        {
+            String sql = "", chk = "";
+            fileName = fileName.Replace("\\", "@");
+            sql = "Update " + pa.table + " Set " + pa.pathPicPart + "='" + fileName + "' " +
+                "Where " + pa.pkField + "='" + paId + "'";
             chk = conn.ExecuteNonQuery(sql);
             return chk;
         }

@@ -183,12 +183,13 @@
             // 
             // btnUnActive
             // 
-            this.btnUnActive.Location = new System.Drawing.Point(821, 206);
+            this.btnUnActive.Location = new System.Drawing.Point(823, 206);
             this.btnUnActive.Name = "btnUnActive";
             this.btnUnActive.Size = new System.Drawing.Size(86, 23);
             this.btnUnActive.TabIndex = 66;
             this.btnUnActive.Text = "ยกเลิกการใช้งาน";
             this.btnUnActive.UseVisualStyleBackColor = true;
+            this.btnUnActive.Click += new System.EventHandler(this.btnUnActive_Click);
             // 
             // ChkUnActive
             // 
@@ -425,12 +426,13 @@
             // 
             // btnSerialUnActive
             // 
-            this.btnSerialUnActive.Location = new System.Drawing.Point(551, 114);
+            this.btnSerialUnActive.Location = new System.Drawing.Point(553, 114);
             this.btnSerialUnActive.Name = "btnSerialUnActive";
             this.btnSerialUnActive.Size = new System.Drawing.Size(86, 23);
             this.btnSerialUnActive.TabIndex = 68;
             this.btnSerialUnActive.Text = "ยกเลิกการใช้งาน";
             this.btnSerialUnActive.UseVisualStyleBackColor = true;
+            this.btnSerialUnActive.Click += new System.EventHandler(this.btnSerialUnActive_Click);
             // 
             // chkSerialUnActive
             // 
@@ -444,6 +446,7 @@
             this.chkSerialUnActive.TabStop = true;
             this.chkSerialUnActive.Text = "ยกเลิก";
             this.chkSerialUnActive.UseVisualStyleBackColor = true;
+            this.chkSerialUnActive.Click += new System.EventHandler(this.chkSerialUnActive_Click);
             // 
             // chkSerialActive
             // 
@@ -457,6 +460,7 @@
             this.chkSerialActive.TabStop = true;
             this.chkSerialActive.Text = "ใช้งาน";
             this.chkSerialActive.UseVisualStyleBackColor = true;
+            this.chkSerialActive.Click += new System.EventHandler(this.chkSerialActive_Click);
             // 
             // label19
             // 
