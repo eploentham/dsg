@@ -169,7 +169,9 @@ namespace dsg.objdb
             String sql = "";
             DataTable dt = new DataTable();
             sql = "Select pa.part_id , pa.part_code, pa.part_number, pa.barcode, ps.serial_no, pa.certify, pa.description, pa.part_model, pa.date_receive, pa.acft_model, " +
-                "pa.part_remark, ps.loca_id as stock_location, pa.part_cate_name, pa.part_type_name, ps.price_cost, ps.price_sale, pa.sort1, ps.part_serial_no_remark as serial_remark, ps.part_serial_no_id, ps.row_number  " +
+                "pa.part_remark, ps.loca_id as stock_location, pa.part_cate_name, pa.part_type_name, ps.price_cost, ps.price_sale, pa.sort1, ps.part_serial_no_remark as serial_remark, "+
+                "ps.part_serial_no_id, ps.row_number,ps.current_name_price_sale,ps.current_rate_price_cost,ps.current_rate_price_sale,ps.current_x_price_cost,ps.current_x_price_sale, "+
+                "ps.price_cost_current,ps.price_sale_current,ps.current_name_price_cost " +
                 "From " + pa.table + " pa Left Join b_part_serial_no ps on pa.part_id = ps.part_id " +
                 " Where pa." + pa.Active + "='1' and ps.part_serial_no_active = '1' ";
             dt = conn.selectData(sql);

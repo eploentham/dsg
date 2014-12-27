@@ -98,3 +98,54 @@
 15/12/2557 14:41->rpt.PartSerialNoPrint OK 
 15/12/2557 14:41->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
 15/12/2557 14:41->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 11:33->rpt.PartSerialNoPrint OK 
+18/12/2557 11:33->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 11:33->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 12:57->rpt.PartSerialNoPrint OK 
+18/12/2557 12:57->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 12:57->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 13:40->rpt.PartSerialNoPrint OK 
+18/12/2557 13:40->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 13:40->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 13:41->rpt.PartSerialNoPrint OK 
+18/12/2557 13:41->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 13:41->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 13:42->rpt.PartSerialNoPrint OK 
+18/12/2557 13:42->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 13:42->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 13:44->rpt.PartSerialNoPrint OK 
+18/12/2557 13:44->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 13:44->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 13:48->rpt.PartSerialNoPrint OK 
+18/12/2557 13:48->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 13:48->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 13:48->rpt.PartSerialNoPrint OK 
+18/12/2557 13:48->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 13:48->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 13:49->rpt.PartSerialNoPrint OK 
+18/12/2557 13:49->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 13:49->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 13:50->rpt.PartSerialNoPrint OK 
+18/12/2557 13:50->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 13:50->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 13:50->rpt.PartSerialNoPrint OK 
+18/12/2557 13:50->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 13:50->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 14:00->rpt.PartSerialNoPrint OK 
+18/12/2557 14:00->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 14:00->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 14:05->rpt.PartSerialNoPrint OK 
+18/12/2557 14:05->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 14:05->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 14:08->rpt.PartSerialNoPrint OK 
+18/12/2557 14:08->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 14:08->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 14:12->rpt.PartSerialNoPrint OK 
+18/12/2557 14:12->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 14:12->rpt.PartSerialNoPrint OK SetDataSource
+18/12/2557 14:12->rpt.PartSerialNoPrint OK 
+18/12/2557 14:12->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+18/12/2557 14:12->rpt.PartSerialNoPrint OK SetDataSource
+20/12/2557 10:57->rpt.PartSerialNoPrint OK 
+20/12/2557 10:57->rpt.setReportBtem OK LoadD:\source\dsg\report\PartSerialNoPrint.rpt
+20/12/2557 10:57->rpt.PartSerialNoPrint OK SetDataSource

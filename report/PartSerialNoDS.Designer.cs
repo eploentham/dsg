@@ -319,6 +319,22 @@ namespace dsg.report {
             
             private global::System.Data.DataColumn columnrow_number;
             
+            private global::System.Data.DataColumn columncurrent_name_price_sale;
+            
+            private global::System.Data.DataColumn columncurrent_rate_price_cost;
+            
+            private global::System.Data.DataColumn columncurrent_rate_price_sale;
+            
+            private global::System.Data.DataColumn columncurrent_x_price_cost;
+            
+            private global::System.Data.DataColumn columncurrent_x_price_sale;
+            
+            private global::System.Data.DataColumn columnprice_cost_current;
+            
+            private global::System.Data.DataColumn columnprice_sale_current;
+            
+            private global::System.Data.DataColumn columncurrent_name_price_cost;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public b_part_serial_noDataTable() {
@@ -514,6 +530,70 @@ namespace dsg.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn current_name_price_saleColumn {
+                get {
+                    return this.columncurrent_name_price_sale;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn current_rate_price_costColumn {
+                get {
+                    return this.columncurrent_rate_price_cost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn current_rate_price_saleColumn {
+                get {
+                    return this.columncurrent_rate_price_sale;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn current_x_price_costColumn {
+                get {
+                    return this.columncurrent_x_price_cost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn current_x_price_saleColumn {
+                get {
+                    return this.columncurrent_x_price_sale;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn price_cost_currentColumn {
+                get {
+                    return this.columnprice_cost_current;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn price_sale_currentColumn {
+                get {
+                    return this.columnprice_sale_current;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn current_name_price_costColumn {
+                get {
+                    return this.columncurrent_name_price_cost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -569,7 +649,15 @@ namespace dsg.report {
                         string sort1, 
                         string serial_remark, 
                         string part_serial_no_id, 
-                        string row_number) {
+                        string row_number, 
+                        string current_name_price_sale, 
+                        string current_rate_price_cost, 
+                        string current_rate_price_sale, 
+                        string current_x_price_cost, 
+                        string current_x_price_sale, 
+                        string price_cost_current, 
+                        string price_sale_current, 
+                        string current_name_price_cost) {
                 b_part_serial_noRow rowb_part_serial_noRow = ((b_part_serial_noRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         part_id,
@@ -591,7 +679,15 @@ namespace dsg.report {
                         sort1,
                         serial_remark,
                         part_serial_no_id,
-                        row_number};
+                        row_number,
+                        current_name_price_sale,
+                        current_rate_price_cost,
+                        current_rate_price_sale,
+                        current_x_price_cost,
+                        current_x_price_sale,
+                        price_cost_current,
+                        price_sale_current,
+                        current_name_price_cost};
                 rowb_part_serial_noRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowb_part_serial_noRow);
                 return rowb_part_serial_noRow;
@@ -634,6 +730,14 @@ namespace dsg.report {
                 this.columnserial_remark = base.Columns["serial_remark"];
                 this.columnpart_serial_no_id = base.Columns["part_serial_no_id"];
                 this.columnrow_number = base.Columns["row_number"];
+                this.columncurrent_name_price_sale = base.Columns["current_name_price_sale"];
+                this.columncurrent_rate_price_cost = base.Columns["current_rate_price_cost"];
+                this.columncurrent_rate_price_sale = base.Columns["current_rate_price_sale"];
+                this.columncurrent_x_price_cost = base.Columns["current_x_price_cost"];
+                this.columncurrent_x_price_sale = base.Columns["current_x_price_sale"];
+                this.columnprice_cost_current = base.Columns["price_cost_current"];
+                this.columnprice_sale_current = base.Columns["price_sale_current"];
+                this.columncurrent_name_price_cost = base.Columns["current_name_price_cost"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -679,6 +783,22 @@ namespace dsg.report {
                 base.Columns.Add(this.columnpart_serial_no_id);
                 this.columnrow_number = new global::System.Data.DataColumn("row_number", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrow_number);
+                this.columncurrent_name_price_sale = new global::System.Data.DataColumn("current_name_price_sale", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncurrent_name_price_sale);
+                this.columncurrent_rate_price_cost = new global::System.Data.DataColumn("current_rate_price_cost", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncurrent_rate_price_cost);
+                this.columncurrent_rate_price_sale = new global::System.Data.DataColumn("current_rate_price_sale", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncurrent_rate_price_sale);
+                this.columncurrent_x_price_cost = new global::System.Data.DataColumn("current_x_price_cost", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncurrent_x_price_cost);
+                this.columncurrent_x_price_sale = new global::System.Data.DataColumn("current_x_price_sale", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncurrent_x_price_sale);
+                this.columnprice_cost_current = new global::System.Data.DataColumn("price_cost_current", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprice_cost_current);
+                this.columnprice_sale_current = new global::System.Data.DataColumn("price_sale_current", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprice_sale_current);
+                this.columncurrent_name_price_cost = new global::System.Data.DataColumn("current_name_price_cost", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncurrent_name_price_cost);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1141,6 +1261,140 @@ namespace dsg.report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string current_name_price_sale {
+                get {
+                    try {
+                        return ((string)(this[this.tableb_part_serial_no.current_name_price_saleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'current_name_price_sale\' in table \'b_part_serial_no\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableb_part_serial_no.current_name_price_saleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string current_rate_price_cost {
+                get {
+                    try {
+                        return ((string)(this[this.tableb_part_serial_no.current_rate_price_costColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'current_rate_price_cost\' in table \'b_part_serial_no\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableb_part_serial_no.current_rate_price_costColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string current_rate_price_sale {
+                get {
+                    try {
+                        return ((string)(this[this.tableb_part_serial_no.current_rate_price_saleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'current_rate_price_sale\' in table \'b_part_serial_no\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableb_part_serial_no.current_rate_price_saleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string current_x_price_cost {
+                get {
+                    try {
+                        return ((string)(this[this.tableb_part_serial_no.current_x_price_costColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'current_x_price_cost\' in table \'b_part_serial_no\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableb_part_serial_no.current_x_price_costColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string current_x_price_sale {
+                get {
+                    try {
+                        return ((string)(this[this.tableb_part_serial_no.current_x_price_saleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'current_x_price_sale\' in table \'b_part_serial_no\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableb_part_serial_no.current_x_price_saleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string price_cost_current {
+                get {
+                    try {
+                        return ((string)(this[this.tableb_part_serial_no.price_cost_currentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'price_cost_current\' in table \'b_part_serial_no\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableb_part_serial_no.price_cost_currentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string price_sale_current {
+                get {
+                    try {
+                        return ((string)(this[this.tableb_part_serial_no.price_sale_currentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'price_sale_current\' in table \'b_part_serial_no\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableb_part_serial_no.price_sale_currentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string current_name_price_cost {
+                get {
+                    try {
+                        return ((string)(this[this.tableb_part_serial_no.current_name_price_costColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'current_name_price_cost\' in table \'b_part_serial_no\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableb_part_serial_no.current_name_price_costColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Ispart_idNull() {
                 return this.IsNull(this.tableb_part_serial_no.part_idColumn);
             }
@@ -1377,6 +1631,102 @@ namespace dsg.report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setrow_numberNull() {
                 this[this.tableb_part_serial_no.row_numberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscurrent_name_price_saleNull() {
+                return this.IsNull(this.tableb_part_serial_no.current_name_price_saleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcurrent_name_price_saleNull() {
+                this[this.tableb_part_serial_no.current_name_price_saleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscurrent_rate_price_costNull() {
+                return this.IsNull(this.tableb_part_serial_no.current_rate_price_costColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcurrent_rate_price_costNull() {
+                this[this.tableb_part_serial_no.current_rate_price_costColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscurrent_rate_price_saleNull() {
+                return this.IsNull(this.tableb_part_serial_no.current_rate_price_saleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcurrent_rate_price_saleNull() {
+                this[this.tableb_part_serial_no.current_rate_price_saleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscurrent_x_price_costNull() {
+                return this.IsNull(this.tableb_part_serial_no.current_x_price_costColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcurrent_x_price_costNull() {
+                this[this.tableb_part_serial_no.current_x_price_costColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscurrent_x_price_saleNull() {
+                return this.IsNull(this.tableb_part_serial_no.current_x_price_saleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcurrent_x_price_saleNull() {
+                this[this.tableb_part_serial_no.current_x_price_saleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isprice_cost_currentNull() {
+                return this.IsNull(this.tableb_part_serial_no.price_cost_currentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setprice_cost_currentNull() {
+                this[this.tableb_part_serial_no.price_cost_currentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isprice_sale_currentNull() {
+                return this.IsNull(this.tableb_part_serial_no.price_sale_currentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setprice_sale_currentNull() {
+                this[this.tableb_part_serial_no.price_sale_currentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscurrent_name_price_costNull() {
+                return this.IsNull(this.tableb_part_serial_no.current_name_price_costColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcurrent_name_price_costNull() {
+                this[this.tableb_part_serial_no.current_name_price_costColumn] = global::System.Convert.DBNull;
             }
         }
         

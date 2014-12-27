@@ -67,6 +67,8 @@ namespace dsg.gui
             txtSnPriceCostCurr.Enabled = false;
             txtSnPriceSaleCurr.Enabled = false;
             btnUnActive.Visible = false;
+            btnSerialUnActive.Visible = false;
+
             //foreach (FileInfo file in dir.GetFiles())
             //{
 
@@ -416,10 +418,19 @@ namespace dsg.gui
                 chkLoca4.Checked = false;
                 chkLoca5.Checked = true;
             }
+            if (ps1.Active.Equals("1"))
+            {
+                chkSerialActive.Checked = true;
+                chkSerialUnActive.Checked = false;
+            }else
+            {
+                chkSerialUnActive.Checked = true;
+                chkSerialActive.Checked = false;
+            }
             cboSnCurrPriceCost.Text = ps1.CurrNamePriceCost;
             cboSnCurrPriceSale.Text = ps1.CurrNamePriceSale;
-            txtSnPriceCostCurr.Text = ps1.PriceCostCurrent;
-            txtSnPriceSaleCurr.Text = ps1.PriceSaleCurrent;
+            txtSnPriceCostCurr.Text = String.Format("{0:#,###,###.00}",Double.Parse(dc.NumberNull1(ps1.PriceCostCurrent)));
+            txtSnPriceSaleCurr.Text = String.Format("{0:#,###,###.00}",Double.Parse(dc.NumberNull1(ps1.PriceSaleCurrent)));
         }
         private void viewImageCertify(String filename)
         {
@@ -998,17 +1009,67 @@ namespace dsg.gui
 
         private void btnSerialUnActive_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("ต้องการยกเลิก", "ยกเลิก", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                dc.psdb.VoidPartSerialNo(txtPsId.Text);
+                this.Dispose();
+            }
         }
 
         private void chkSerialActive_Click(object sender, EventArgs e)
         {
-
+            btnSerialUnActive.Visible = false;
+            txtSerialNo.Enabled = true;
+            chkLoca1.Enabled = true;
+            chkLoca2.Enabled = true;
+            chkLoca3.Enabled = true;
+            chkLoca4.Enabled = true;
+            chkLoca5.Enabled = true;
+            txtSnPriceCost.Enabled = true;
+            txtSnPriceSale.Enabled = true;
+            cboSnCurrPriceCost.Enabled = true;
+            cboSnCurrPriceSale.Enabled = true;
+            txtSnPriceCostCurr.Enabled = true;
+            txtSnPriceSaleCurr.Enabled = true;
+            txtInvNumber.Enabled = true;
+            txtDateInv.Enabled = true;
+            txtPsRemark.Enabled = true;
+            chkPic1.Enabled = true;
+            chkPic2.Enabled = true;
+            chkPic3.Enabled = true;
+            chkPic4.Enabled = true;
+            btnPicPart1.Enabled = true;
+            btnPicPart2.Enabled = true;
+            btnPicPart3.Enabled = true;
+            btnPicPart4.Enabled = true;
         }
 
         private void chkSerialUnActive_Click(object sender, EventArgs e)
         {
-
+            btnSerialUnActive.Visible = true;
+            txtSerialNo.Enabled = false;
+            chkLoca1.Enabled = false;
+            chkLoca2.Enabled = false;
+            chkLoca3.Enabled = false;
+            chkLoca4.Enabled = false;
+            chkLoca5.Enabled = false;
+            txtSnPriceCost.Enabled = false;
+            txtSnPriceSale.Enabled = false;
+            cboSnCurrPriceCost.Enabled = false;
+            cboSnCurrPriceSale.Enabled = false;
+            txtSnPriceCostCurr.Enabled = false;
+            txtSnPriceSaleCurr.Enabled = false;
+            txtInvNumber.Enabled = false;
+            txtDateInv.Enabled = false;
+            txtPsRemark.Enabled = false;
+            chkPic1.Enabled = false;
+            chkPic2.Enabled = false;
+            chkPic3.Enabled = false;
+            chkPic4.Enabled = false;
+            btnPicPart1.Enabled = false;
+            btnPicPart2.Enabled = false;
+            btnPicPart3.Enabled = false;
+            btnPicPart4.Enabled = false;
         }
     }
 }

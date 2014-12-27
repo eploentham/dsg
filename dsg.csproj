@@ -228,6 +228,10 @@
       <DependentUpon>ItemPrint.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="report\PartSerialNoDS.cs">
+      <DependentUpon>PartSerialNoDS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="report\PartSerialNoDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

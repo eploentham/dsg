@@ -272,7 +272,7 @@ namespace dsg.objdb
                 "Values('" + p.Id + "','" + p.dateInv + "','" + p.dateReceive + "','" +
                 p.locaId + "','" + p.partId + "'," + NumberNull1(p.PriceCost) + "," +
                 NumberNull1(p.PriceSale) + ",'" + p.serialNo + "','" + p.Remark + "','" +
-                p.Active + "','" + p.StatusTran + "'," + p.DateCreate + "','" + 
+                p.Active + "','" + p.StatusTran + "'," + p.DateCreate + ",'" + 
                 p.CurrNamePriceCost + "','" + p.CurrNamePriceSale + "'," + NumberNull1(p.CurrRatePriceCost) + "," + 
                 NumberNull1(p.CurrRatePriceSale) + "," + NumberNull1(p.CurrXPriceCost) + "," + NumberNull1(p.CurrXriceSale) + "," + 
                 NumberNull1(p.PriceCostCurrent) + "," + NumberNull1(p.PriceSaleCurrent) + ")";

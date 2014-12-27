@@ -72,4 +72,3 @@ D:\source\dsg\obj\Debug\dsg.FrmReport.resources
 D:\source\dsg\bin\Debug\dsg.exe.config
 D:\source\dsg\obj\Debug\dsg.gui.FrmCurrencyAdd.resources
 D:\source\dsg\obj\Debug\dsg.gui.FrmCurrencyView.resources
-D:\source\dsg\obj\Debug\dsg.csprojResolveAssemblyReference.cache
