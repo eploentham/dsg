@@ -35,6 +35,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.cboPrint = new System.Windows.Forms.ComboBox();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.pB1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,11 +111,31 @@
             this.cboPrint.Size = new System.Drawing.Size(186, 21);
             this.cboPrint.TabIndex = 7;
             // 
+            // btnExcel
+            // 
+            this.btnExcel.Location = new System.Drawing.Point(925, 9);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(74, 32);
+            this.btnExcel.TabIndex = 8;
+            this.btnExcel.Text = "Excel Part";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
+            // pB1
+            // 
+            this.pB1.Location = new System.Drawing.Point(367, 13);
+            this.pB1.Name = "pB1";
+            this.pB1.Size = new System.Drawing.Size(226, 23);
+            this.pB1.TabIndex = 9;
+            // 
             // FrmPartView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 628);
+            this.Controls.Add(this.pB1);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.cboPrint);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnAdd);
@@ -142,5 +164,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.ComboBox cboPrint;
+        private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.ProgressBar pB1;
     }
 }
