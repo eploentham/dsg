@@ -716,6 +716,8 @@ namespace dsg.gui
             ClearSerialNo();
             dgv1.Enabled = false;
             panel3.Enabled = true;
+            chkActive.Enabled = false;
+            ChkUnActive.Enabled = false;
             txtRemarkDraw.Visible = false;
             label19.Visible = false;
         }
@@ -725,6 +727,9 @@ namespace dsg.gui
             ClearSerialNo();
             dgv1.Enabled = true;
             panel3.Enabled = false;
+            panel2.Enabled = false;
+            chkActive.Enabled = false;
+            ChkUnActive.Enabled = false;
             txtRemarkDraw.Visible = true;
             label19.Visible = true;
         }

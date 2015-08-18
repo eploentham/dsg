@@ -157,7 +157,7 @@ namespace dsg.objdb
             String sql = "";
             DataTable dt = new DataTable();
             sql = "Select pa.part_id , pa.part_code, pa.part_number, pa.barcode, pa.serial_no, pa.certify, pa.description, pa.part_model, pa.date_receive, pa.acft_model, " +
-                "pa.part_remark, '' as stock_location, pa.part_cate_name, pa.part_type_name, pa.price_cost, pa.price_sale, pa.sort1, pas.part_serial_no_remark as serial_remark  " +
+                "pa.part_remark, '' as stock_location, pa.part_cate_name, pa.part_type_name, pas.price_cost, pas.price_sale, pa.sort1, pas.part_serial_no_remark as serial_remark, pas.current_name_price_cost, pas.current_name_price_sale  " +
                 "From " + pa.table + " pa Left Join b_part_serial_no pas on pa.part_id = pas.part_id "+
                 " Where " + pa.Active + "='1'";
             dt = conn.selectData(sql);

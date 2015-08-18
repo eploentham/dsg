@@ -157,19 +157,17 @@ namespace dsg.gui
             //String sql = "";
             DataTable dt = new DataTable();
             //FrmReport frm = new FrmReport(dc);
-            if (cboPrint.Text.Equals("Print Part"))
-            {
-                dt = dc.padb.selectBitemListPrint();
-                //frm.setReportBtem(dt);
-            }
-            else if (cboPrint.Text.Equals("Print Serial No"))
-            {
-                dt = dc.padb.selectPartSerialNoListPrint();
-                //frm.setReportPartSerialNo(dt);
-            }
-
-
-
+            //if (cboPrint.Text.Equals("Print Part"))
+            //{
+            //    dt = dc.padb.selectBitemListPrint();
+            //    //frm.setReportBtem(dt);
+            //}
+            //else if (cboPrint.Text.Equals("Print Serial No"))
+            //{
+            //    dt = dc.padb.selectPartSerialNoListPrint();
+            //    //frm.setReportPartSerialNo(dt);
+            //}
+            
             pB1.Show();
             Microsoft.Office.Interop.Excel.Application excelapp = new Microsoft.Office.Interop.Excel.Application();
             excelapp.Visible = false;
@@ -178,100 +176,92 @@ namespace dsg.gui
             Microsoft.Office.Interop.Excel._Workbook workbook = (Microsoft.Office.Interop.Excel._Workbook)(excelapp.Workbooks.Add(Type.Missing));
             Microsoft.Office.Interop.Excel._Worksheet worksheet = (Microsoft.Office.Interop.Excel._Worksheet)workbook.ActiveSheet;
             pB1.Minimum = 0;
-            pB1.Maximum = dt.Rows.Count;
+            pB1.Maximum = dgvView.RowCount;
             //worksheet.Cells[0, 0] = "patient name";
-            for (int i = 1; i < dt.Rows.Count; i++)
+            for (int i = 1; i < dgvView.Rows.Count; i++)
             {
                 try
                 {
-                    worksheet.Cells[i, colPatientHnno] = dgvAdd[colPatientHnno, i].Value.ToString();
-                    worksheet.Cells[i, colPatientName] = dgvAdd[colPatientName, i].Value.ToString();
-                    err = "001 " + dgvAdd[colPatientHnno, i].Value.ToString();
+                    //MessageBox.Show("Error row " + i, "error " + err);
+                    worksheet.Cells[i, colCode] = dgvView[colCode, i].Value.ToString();
+                    worksheet.Cells[i, colName] = dgvView[colName, i].Value.ToString();
+                    err = "001 " + dgvView[colCode, i].Value.ToString();
                     //worksheet.Cells[i, colDate] = dgvAdd[colDate, i].Value.ToString();
                     //worksheet.Cells[i, colTime] = dgvAdd[colTime, i].Value.ToString();
-                    worksheet.Cells[i, colDiaCD1] = config1.stringNull(dgvAdd[colDiaCD1, i].Value.ToString());
-                    if (dgvAdd[colDate, i].Value == null)
+                    worksheet.Cells[i, colModel] = dc.cf.stringNull(dgvView[colModel, i].Value.ToString());
+                    //if (dgvView[colDate, i].Value == null)
+                    //{
+                    //    worksheet.Cells[i, colDate].Value = "";
+                    //}
+                    //else
+                    //{
+                    //    visitDate = dgvView[colDate, i].Value.ToString();
+                    //    worksheet.Cells[i, colDate] = visitDate;
+                    //    visitTime = dgvView[colTime, i].Value.ToString();
+                    //    worksheet.Cells[i, colTime] = visitTime;
+                    //}
+                    err = "002 ";
+                    if (dgvView[colType, i].Value == null)
                     {
-                        worksheet.Cells[i, colDate].Value = "";
+                        worksheet.Cells[i, colType] = "";
                     }
                     else
                     {
-                        visitDate = dgvAdd[colDate, i].Value.ToString();
-                        worksheet.Cells[i, colDate] = visitDate;
-                        visitTime = dgvAdd[colTime, i].Value.ToString();
-                        worksheet.Cells[i, colTime] = visitTime;
+                        worksheet.Cells[i, colType] = dc.cf.stringNull1(dgvView[colType, i].Value.ToString());
                     }
-                    err = "002 Dia";
-                    if (dgvAdd[colDiaCD2, i].Value == null)
+                    err = "003 ";
+                    if (dgvView[colCate, i].Value == null)
                     {
-                        worksheet.Cells[i, colDiaCD2] = "";
+                        worksheet.Cells[i, colCate] = "";
                     }
                     else
                     {
-                        worksheet.Cells[i, colDiaCD2] = config1.stringNull1(dgvAdd[colDiaCD2, i].Value.ToString());
+                        worksheet.Cells[i, colCate] = dc.cf.stringNull1(dgvView[colCate, i].Value.ToString());
                     }
-                    err = "003 Chronic ";
-                    worksheet.Cells[i, colDiaCD3] = config1.stringNull1(dgvAdd[colDiaCD3, i].Value);
-                    worksheet.Cells[i, colDiaCD4] = config1.stringNull1(dgvAdd[colDiaCD4, i].Value);
-                    worksheet.Cells[i, colDiaCD5] = config1.stringNull1(dgvAdd[colDiaCD5, i].Value);
-
-                    worksheet.Cells[i, colCHRONICCODE1] = config1.stringNull1(dgvAdd[colCHRONICCODE1, i].Value);
-                    worksheet.Cells[i, colCHRONICCODE2] = config1.stringNull1(dgvAdd[colCHRONICCODE2, i].Value);
-                    worksheet.Cells[i, colCHRONICCODE3] = config1.stringNull1(dgvAdd[colCHRONICCODE3, i].Value);
-                    worksheet.Cells[i, colCHRONICCODE4] = config1.stringNull1(dgvAdd[colCHRONICCODE4, i].Value);
-                    worksheet.Cells[i, colCHRONICCODE5] = config1.stringNull1(dgvAdd[colCHRONICCODE5, i].Value);
-                    if (nudChronic.Value <= 5)
+                    if (dgvView[colPriceCost, i].Value == null)
                     {
-                        continue;
+                        worksheet.Cells[i, colPriceCost] = "";
                     }
-
-                    worksheet.Cells[i, colCHRONICCODE6] = config1.stringNull1(dgvAdd[colCHRONICCODE6, i].Value);
-                    worksheet.Cells[i, colCHRONICCODE7] = config1.stringNull1(dgvAdd[colCHRONICCODE7, i].Value);
-                    worksheet.Cells[i, colCHRONICCODE8] = config1.stringNull1(dgvAdd[colCHRONICCODE8, i].Value);
-                    worksheet.Cells[i, colCHRONICCODE9] = config1.stringNull1(dgvAdd[colCHRONICCODE9, i].Value);
-                    worksheet.Cells[i, colCHRONICCODE10] = config1.stringNull1(dgvAdd[colCHRONICCODE10, i].Value);
-                    err = "004 Drug ";
-
-                    worksheet.Cells[i, colDrug1] = config1.stringNull1(dgvAdd[colDrug1, i].Value);
-                    worksheet.Cells[i, colDrug2] = config1.stringNull1(dgvAdd[colDrug2, i].Value);
-                    worksheet.Cells[i, colDrug3] = config1.stringNull1(dgvAdd[colDrug3, i].Value);
-                    worksheet.Cells[i, colDrug4] = config1.stringNull1(dgvAdd[colDrug4, i].Value);
-                    worksheet.Cells[i, colDrug5] = config1.stringNull1(dgvAdd[colDrug5, i].Value);
-
-                    worksheet.Cells[i, colDrug6] = config1.stringNull1(dgvAdd[colDrug6, i].Value);
-                    worksheet.Cells[i, colDrug7] = config1.stringNull1(dgvAdd[colDrug7, i].Value);
-                    worksheet.Cells[i, colDrug8] = config1.stringNull1(dgvAdd[colDrug8, i].Value);
-                    worksheet.Cells[i, colDrug9] = config1.stringNull1(dgvAdd[colDrug9, i].Value);
-                    worksheet.Cells[i, colDrug10] = config1.stringNull1(dgvAdd[colDrug10, i].Value);
-                    if (nudDrug.Value <= 10)
+                    else
                     {
-                        continue;
+                        worksheet.Cells[i, colPriceCost] = dc.cf.stringNull1(dgvView[colPriceCost, i].Value.ToString());
                     }
-
-                    worksheet.Cells[i, colDrug11] = config1.stringNull1(dgvAdd[colDrug11, i].Value);
-                    worksheet.Cells[i, colDrug12] = config1.stringNull1(dgvAdd[colDrug12, i].Value);
-                    worksheet.Cells[i, colDrug13] = config1.stringNull1(dgvAdd[colDrug13, i].Value);
-                    worksheet.Cells[i, colDrug14] = config1.stringNull1(dgvAdd[colDrug14, i].Value);
-                    worksheet.Cells[i, colDrug15] = config1.stringNull1(dgvAdd[colDrug15, i].Value);
-
-                    worksheet.Cells[i, colDrug16] = config1.stringNull1(dgvAdd[colDrug16, i].Value);
-                    worksheet.Cells[i, colDrug17] = config1.stringNull1(dgvAdd[colDrug17, i].Value);
-                    worksheet.Cells[i, colDrug18] = config1.stringNull1(dgvAdd[colDrug18, i].Value);
-                    worksheet.Cells[i, colDrug19] = config1.stringNull1(dgvAdd[colDrug19, i].Value);
-                    worksheet.Cells[i, colDrug20] = config1.stringNull1(dgvAdd[colDrug20, i].Value);
+                    if (dgvView[colPriceSale, i].Value == null)
+                    {
+                        worksheet.Cells[i, colPriceSale] = "";
+                    }
+                    else
+                    {
+                        worksheet.Cells[i, colPriceSale] = dc.cf.stringNull1(dgvView[colPriceSale, i].Value.ToString());
+                    }
+                    if (dgvView[colRemark, i].Value == null)
+                    {
+                        worksheet.Cells[i, colRemark] = "";
+                    }
+                    else
+                    {
+                        worksheet.Cells[i, colRemark] = dc.cf.stringNull1(dgvView[colRemark, i].Value.ToString());
+                    }
+                    if (dgvView[colId, i].Value == null)
+                    {
+                        worksheet.Cells[i, colId] = "";
+                    }
+                    else
+                    {
+                        worksheet.Cells[i, colId] = dc.cf.stringNull1(dgvView[colId, i].Value.ToString());
+                    }
                     pB1.Value = i;
                 }
                 catch (Exception ex)
                 {
                     //MessageBox.Show("Error " + ex.Message + "\n row " + i, "error " + err);
                 }
-                if (dgvAdd[colPatientHnno, i].Value == null)
-                {
-                    continue;
-                }
+                //if (dgvView[colPatientHnno, i].Value == null)
+                //{
+                //    continue;
+                //}
 
             }
-
 
             //worksheet.Cells[1, 1] = "Name";
             //worksheet.Cells[1, 2] = "Bid";
